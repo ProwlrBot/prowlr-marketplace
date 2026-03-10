@@ -1,0 +1,40 @@
+{
+  "name": "prowlr-hub",
+  "description": "War Room multi-agent coordination — connect multiple Claude Code terminals into one team",
+  "version": "1.0.0",
+  "author": "mcpcentral",
+  "category": "mcp-servers",
+  "license": "Apache-2.0",
+  "tags": ["coordination", "multi-agent", "war-room", "file-locking", "mission-board"],
+  "tier": "default",
+  "install": {
+    "command": "python3",
+    "args": ["-m", "prowlrbot.hub"],
+    "env": {
+      "PYTHONPATH": "./src",
+      "PROWLR_AGENT_NAME": "my-agent",
+      "PROWLR_CAPABILITIES": "code,review"
+    }
+  },
+  "tools": [
+    {"name": "check_mission_board", "description": "See all tasks, owners, priorities, and progress"},
+    {"name": "claim_task", "description": "Create and/or claim a task with atomic file locking"},
+    {"name": "update_task", "description": "Post a progress note on your current task"},
+    {"name": "complete_task", "description": "Mark task done and release all file locks"},
+    {"name": "fail_task", "description": "Mark task as failed with a reason"},
+    {"name": "lock_file", "description": "Advisory lock on a file path"},
+    {"name": "unlock_file", "description": "Release a file lock"},
+    {"name": "check_conflicts", "description": "Check if files are locked before editing"},
+    {"name": "get_agents", "description": "See all connected agents and their status"},
+    {"name": "broadcast_status", "description": "Send a message to all agents"},
+    {"name": "share_finding", "description": "Store a key-value finding for other agents"},
+    {"name": "get_shared_context", "description": "Read findings shared by other agents"},
+    {"name": "get_events", "description": "See recent war room activity"}
+  ],
+  "requirements": {
+    "python": ">=3.10",
+    "packages": ["pydantic"]
+  },
+  "docs_url": "https://github.com/mcpcentral/prowlrbot/tree/main/src/prowlrbot/hub",
+  "install_url": "https://github.com/mcpcentral/prowlrbot/blob/main/INSTALL.md"
+}

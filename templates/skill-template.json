@@ -1,0 +1,17 @@
+{
+  "name": "my-skill-name",
+  "title": "My Skill Title",
+  "description": "What this skill does in 1-2 sentences.",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "tags": ["productivity", "automation"],
+  "pricing_model": "free",
+  "price": 0.0,
+  "min_prowlrbot_version": "0.1.0",
+  "entry_point": "SKILL.md",
+  "references": [],
+  "scripts": [],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/your-username/your-skill-repo",
+  "_comment": "See MarketplaceListing model for all fields: category is inferred from the directory."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "workflow-daily-standup",
+  "title": "Daily Standup",
+  "description": "Automated daily status aggregation across all your agents. What got done, what's blocked, what's next — delivered to your channel every morning.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "category": "workflows",
+  "tags": ["standup", "status", "daily", "reporting"],
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "steps": ["collect-agent-status", "aggregate-findings", "format-report", "deliver-to-channel"],
+  "triggers": ["cron:0 9 * * 1-5", "manual"],
+  "config_schema": {
+    "delivery_channel": { "type": "string", "default": "console" },
+    "timezone": { "type": "string", "default": "UTC" }
+  }
+}

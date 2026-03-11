@@ -1,0 +1,18 @@
+{
+  "id": "agent-prowlr-guard",
+  "title": "Prowlr Guard",
+  "description": "Security monitoring agent that watches your infrastructure, scans for vulnerabilities, and alerts on threats. The silent sentinel of your stack.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "category": "agents",
+  "tags": ["security", "monitoring", "vulnerability-scanning", "alerts"],
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "capabilities": ["port-scanning", "dependency-audit", "log-analysis", "threat-detection"],
+  "config_schema": {
+    "scan_interval_minutes": { "type": "integer", "default": 60 },
+    "alert_channels": { "type": "array", "default": ["console"] }
+  }
+}

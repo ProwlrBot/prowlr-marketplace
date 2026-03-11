@@ -1,0 +1,14 @@
+{
+  "id": "prompt-code-assistant",
+  "title": "Code Assistant",
+  "description": "Prompt pack for coding — refactoring, debugging, documentation, test generation, and architecture review. Your pair programmer that never takes breaks.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "category": "prompts",
+  "tags": ["coding", "debugging", "documentation", "testing"],
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "prompts": ["refactor-guide", "debug-assistant", "doc-generator", "test-writer", "architecture-review"]
+}

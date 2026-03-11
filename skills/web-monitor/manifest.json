@@ -1,0 +1,11 @@
+{
+  "id": "skills-web-monitor",
+  "title": "Web Monitor",
+  "description": "Watch any webpage for changes and get notified instantly. Tracks content diffs, sends alerts via webhook, Discord, or Telegram. Never miss an update again.",
+  "author": "prowlrbot",
+  "version": "1.0.0",
+  "category": "skills",
+  "tags": ["monitoring", "web", "alerts", "automation"],
+  "pricing_model": "free",
+  "price": 0
+}

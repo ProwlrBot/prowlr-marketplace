@@ -1,0 +1,17 @@
+{
+  "name": "my-theme",
+  "title": "My Theme Name",
+  "description": "Visual theme for the ProwlrBot console.",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "tags": ["dark", "minimal"],
+  "pricing_model": "free",
+  "price": 0.0,
+  "colors": {
+    "primary": "#00E5FF",
+    "background": "#0a0a0f",
+    "surface": "#1a1a2e",
+    "text": "#e0e0e0"
+  },
+  "license": "Apache-2.0"
+}

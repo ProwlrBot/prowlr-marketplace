@@ -1,0 +1,15 @@
+{
+  "id": "mcp-prowlr-tools",
+  "title": "ProwlrTools MCP Server",
+  "description": "Essential agent tools via MCP — file operations, shell execution, browser automation, and screenshot capture. The hands of your agents.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "category": "mcp-servers",
+  "tags": ["mcp", "tools", "file-io", "shell", "browser"],
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlrbot",
+  "min_prowlrbot_version": "0.1.0",
+  "transport": ["stdio"],
+  "tools": ["read_file", "write_file", "shell_exec", "browser_navigate", "screenshot", "send_file"]
+}

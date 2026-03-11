@@ -1,0 +1,16 @@
+{
+  "name": "my-mcp-server",
+  "title": "My MCP Server",
+  "description": "What tools/resources this MCP server provides.",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "tags": ["tools", "integration"],
+  "pricing_model": "free",
+  "price": 0.0,
+  "transport": "stdio",
+  "tools": [],
+  "resources": [],
+  "min_prowlrbot_version": "0.1.0",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/your-username/your-mcp-repo"
+}

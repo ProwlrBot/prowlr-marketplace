@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON manifests
+        run: |
+          echo "Validating all manifest.json files..."
+          find . -name "manifest.json" -print0 | while IFS= read -r -d '' file; do
+            echo "  Checking $file"
+            python3 -c "import json; json.load(open('$file'))" || exit 1
+          done
+          echo "All manifests valid."
+
+      - name: Check required fields
+        run: |
+          echo "Checking required manifest fields..."
+          find . -name "manifest.json" -print0 | while IFS= read -r -d '' file; do
+            for field in id title description version author category; do
+              python3 -c "
+import json, sys
+data = json.load(open('$file'))
+if '$field' not in data:
+    print(f'  MISSING: $field in $file')
+    sys.exit(1)
+" || exit 1
+            done
+          done
+          echo "All required fields present."

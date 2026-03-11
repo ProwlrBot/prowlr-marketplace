@@ -1,0 +1,13 @@
+{
+  "name": "my-prompt-pack",
+  "title": "My Prompt Pack",
+  "description": "A collection of prompts for a specific use case.",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "tags": ["productivity", "writing"],
+  "pricing_model": "free",
+  "price": 0.0,
+  "prompt_count": 10,
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/your-username/your-prompt-repo"
+}

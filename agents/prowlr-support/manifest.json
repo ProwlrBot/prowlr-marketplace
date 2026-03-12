@@ -1,0 +1,58 @@
+{
+  "id": "agent-prowlr-support",
+  "title": "Prowlr Support",
+  "description": "Customer support automation that never sleeps. Ticket triage, FAQ generation, troubleshooting guides, and escalation management. Always watching your support queue.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "customer-support",
+    "ticket-triage",
+    "faq",
+    "troubleshooting",
+    "automation"
+  ],
+  "capabilities": [
+    "ticket-classification",
+    "faq-generation",
+    "troubleshooting-guides",
+    "escalation-routing",
+    "sentiment-analysis",
+    "response-templates"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "business"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "response_tone": {
+      "type": "string",
+      "default": "friendly-professional",
+      "enum": [
+        "friendly-professional",
+        "formal",
+        "casual",
+        "technical"
+      ]
+    },
+    "auto_escalate_sentiment": {
+      "type": "string",
+      "default": "negative",
+      "enum": [
+        "never",
+        "negative",
+        "very-negative"
+      ]
+    },
+    "max_auto_responses": {
+      "type": "integer",
+      "default": 3
+    }
+  }
+}

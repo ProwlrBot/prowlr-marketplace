@@ -5,14 +5,43 @@
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "agents",
-  "tags": ["research", "web-search", "summarization", "reports"],
+  "tags": [
+    "research",
+    "web-search",
+    "summarization",
+    "reports"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "capabilities": ["web-search", "content-summarization", "report-generation", "source-tracking"],
+  "capabilities": [
+    "web-search",
+    "content-summarization",
+    "report-generation",
+    "source-tracking"
+  ],
   "config_schema": {
-    "max_sources": { "type": "integer", "default": 10 },
-    "output_format": { "type": "string", "default": "markdown", "enum": ["markdown", "json", "html"] }
-  }
+    "max_sources": {
+      "type": "integer",
+      "default": 10
+    },
+    "output_format": {
+      "type": "string",
+      "default": "markdown",
+      "enum": [
+        "markdown",
+        "json",
+        "html"
+      ]
+    }
+  },
+  "difficulty": "beginner",
+  "persona_tags": [
+    "developer",
+    "business",
+    "everyone"
+  ],
+  "rating": 4.7,
+  "downloads": 0
 }

@@ -1,0 +1,55 @@
+{
+  "id": "theme-sunset-horizon",
+  "title": "Sunset Horizon",
+  "description": "Warm gradient theme with orange and purple tones. Easy on the eyes during long sessions, beautiful enough to show off. Where productivity meets aesthetics.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "themes",
+  "tags": [
+    "warm",
+    "gradient",
+    "orange",
+    "purple",
+    "aesthetic"
+  ],
+  "capabilities": [
+    "syntax-highlighting",
+    "gradient-backgrounds",
+    "warm-palette",
+    "custom-fonts"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "creator",
+    "everyone"
+  ],
+  "rating": 4.5,
+  "config_schema": {
+    "primary_color": {
+      "type": "string",
+      "default": "#ff6b35"
+    },
+    "secondary_color": {
+      "type": "string",
+      "default": "#9b59b6"
+    },
+    "background": {
+      "type": "string",
+      "default": "#1a1a2e"
+    },
+    "font_family": {
+      "type": "string",
+      "default": "Inter",
+      "enum": [
+        "Inter",
+        "Nunito",
+        "Source Sans Pro"
+      ]
+    }
+  }
+}

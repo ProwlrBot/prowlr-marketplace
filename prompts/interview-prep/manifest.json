@@ -1,0 +1,68 @@
+{
+  "id": "prompt-interview-prep",
+  "title": "Interview Prep",
+  "description": "Technical interview preparation covering system design, algorithms, behavioral questions, and mock interviews. Practice with an AI that adapts to your target company and role.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "prompts",
+  "tags": [
+    "interview",
+    "system-design",
+    "algorithms",
+    "behavioral",
+    "career"
+  ],
+  "capabilities": [
+    "system-design-practice",
+    "algorithm-coaching",
+    "behavioral-prep",
+    "mock-interviews",
+    "feedback-generation"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer",
+    "student"
+  ],
+  "rating": 4.8,
+  "config_schema": {
+    "target_level": {
+      "type": "string",
+      "default": "senior",
+      "enum": [
+        "junior",
+        "mid",
+        "senior",
+        "staff",
+        "principal"
+      ]
+    },
+    "focus_area": {
+      "type": "string",
+      "default": "full-stack",
+      "enum": [
+        "full-stack",
+        "backend",
+        "frontend",
+        "ml",
+        "data",
+        "devops"
+      ]
+    },
+    "company_tier": {
+      "type": "string",
+      "default": "faang",
+      "enum": [
+        "faang",
+        "unicorn",
+        "startup",
+        "enterprise"
+      ]
+    }
+  }
+}

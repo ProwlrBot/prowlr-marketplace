@@ -1,0 +1,54 @@
+{
+  "id": "prompt-incident-responder",
+  "title": "Incident Responder",
+  "description": "Production incident response playbook prompts. Structured triage, communication templates, root cause analysis, and post-mortem frameworks. Stay calm under fire.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "prompts",
+  "tags": [
+    "incident-response",
+    "production",
+    "triage",
+    "post-mortem",
+    "on-call"
+  ],
+  "capabilities": [
+    "incident-triage",
+    "communication-templates",
+    "root-cause-framework",
+    "post-mortem-generation",
+    "runbook-creation"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "severity_levels": {
+      "type": "integer",
+      "default": 4
+    },
+    "notification_channels": {
+      "type": "array",
+      "default": [
+        "slack",
+        "email"
+      ]
+    },
+    "post_mortem_template": {
+      "type": "string",
+      "default": "blameless",
+      "enum": [
+        "blameless",
+        "five-whys",
+        "timeline"
+      ]
+    }
+  }
+}

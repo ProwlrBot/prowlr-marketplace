@@ -1,0 +1,63 @@
+{
+  "id": "agent-prowlr-security",
+  "title": "Prowlr Security",
+  "description": "Security auditor and penetration testing guide. OWASP compliance checks, dependency scanning, secret detection, and vulnerability assessment. The lock on your digital door.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "security",
+    "owasp",
+    "penetration-testing",
+    "dependency-scanning",
+    "secret-detection"
+  ],
+  "capabilities": [
+    "owasp-scanning",
+    "dependency-audit",
+    "secret-detection",
+    "vulnerability-assessment",
+    "compliance-checking",
+    "security-hardening"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.8,
+  "config_schema": {
+    "scan_scope": {
+      "type": "string",
+      "default": "full",
+      "enum": [
+        "full",
+        "dependencies-only",
+        "code-only",
+        "config-only"
+      ]
+    },
+    "owasp_version": {
+      "type": "string",
+      "default": "2025",
+      "enum": [
+        "2021",
+        "2025"
+      ]
+    },
+    "severity_threshold": {
+      "type": "string",
+      "default": "medium",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    }
+  }
+}

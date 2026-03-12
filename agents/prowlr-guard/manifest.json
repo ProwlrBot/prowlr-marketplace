@@ -5,14 +5,38 @@
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "agents",
-  "tags": ["security", "monitoring", "vulnerability-scanning", "alerts"],
+  "tags": [
+    "security",
+    "monitoring",
+    "vulnerability-scanning",
+    "alerts"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "capabilities": ["port-scanning", "dependency-audit", "log-analysis", "threat-detection"],
+  "capabilities": [
+    "port-scanning",
+    "dependency-audit",
+    "log-analysis",
+    "threat-detection"
+  ],
   "config_schema": {
-    "scan_interval_minutes": { "type": "integer", "default": 60 },
-    "alert_channels": { "type": "array", "default": ["console"] }
-  }
+    "scan_interval_minutes": {
+      "type": "integer",
+      "default": 60
+    },
+    "alert_channels": {
+      "type": "array",
+      "default": [
+        "console"
+      ]
+    }
+  },
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.8,
+  "downloads": 0
 }

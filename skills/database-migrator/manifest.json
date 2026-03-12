@@ -1,0 +1,58 @@
+{
+  "id": "skill-database-migrator",
+  "title": "Database Migrator",
+  "description": "Schema migration planning, data transformation scripts, and rollback strategies. Migrate with confidence. Every change reversible, every step verified.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "database",
+    "migration",
+    "schema",
+    "rollback",
+    "data-transformation"
+  ],
+  "capabilities": [
+    "schema-diffing",
+    "migration-generation",
+    "rollback-planning",
+    "data-transformation",
+    "compatibility-checking"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "database_type": {
+      "type": "string",
+      "default": "postgresql",
+      "enum": [
+        "postgresql",
+        "mysql",
+        "sqlite",
+        "mongodb"
+      ]
+    },
+    "migration_tool": {
+      "type": "string",
+      "default": "alembic",
+      "enum": [
+        "alembic",
+        "knex",
+        "prisma",
+        "flyway"
+      ]
+    },
+    "auto_rollback": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "prompt-content-calendar",
+  "title": "Content Calendar",
+  "description": "Social media content planning, scheduling templates, and engagement analysis prompts. Plan a month of content in minutes. Consistent posting, maximum reach.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "prompts",
+  "tags": [
+    "content",
+    "social-media",
+    "planning",
+    "scheduling",
+    "engagement"
+  ],
+  "capabilities": [
+    "content-planning",
+    "schedule-generation",
+    "engagement-analysis",
+    "hashtag-research",
+    "cross-platform-adaptation"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "creator",
+    "business",
+    "freelancer"
+  ],
+  "rating": 4.5,
+  "config_schema": {
+    "platforms": {
+      "type": "array",
+      "default": [
+        "twitter",
+        "linkedin"
+      ]
+    },
+    "posting_frequency": {
+      "type": "string",
+      "default": "daily",
+      "enum": [
+        "daily",
+        "3x-week",
+        "weekly"
+      ]
+    },
+    "content_pillars": {
+      "type": "array",
+      "default": [
+        "educational",
+        "promotional",
+        "engagement"
+      ]
+    }
+  }
+}

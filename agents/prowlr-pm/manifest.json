@@ -1,0 +1,59 @@
+{
+  "id": "agent-prowlr-pm",
+  "title": "Prowlr PM",
+  "description": "Project management agent that keeps your team on track. Sprint planning, task decomposition, milestone tracking, and standup report generation. Ships on time, every time.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "project-management",
+    "sprint-planning",
+    "task-management",
+    "agile"
+  ],
+  "capabilities": [
+    "sprint-planning",
+    "task-decomposition",
+    "milestone-tracking",
+    "standup-generation",
+    "burndown-charts",
+    "risk-assessment"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "business",
+    "developer",
+    "freelancer"
+  ],
+  "rating": 4.5,
+  "config_schema": {
+    "methodology": {
+      "type": "string",
+      "default": "scrum",
+      "enum": [
+        "scrum",
+        "kanban",
+        "waterfall",
+        "hybrid"
+      ]
+    },
+    "sprint_duration_days": {
+      "type": "integer",
+      "default": 14
+    },
+    "standup_format": {
+      "type": "string",
+      "default": "three-questions",
+      "enum": [
+        "three-questions",
+        "narrative",
+        "blockers-only"
+      ]
+    }
+  }
+}

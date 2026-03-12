@@ -1,0 +1,57 @@
+{
+  "id": "skill-git-workflow",
+  "title": "Git Workflow",
+  "description": "Branch management, PR creation, merge conflict resolution, and changelog generation. Streamlines your entire git workflow from branch to release.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "git",
+    "workflow",
+    "pull-requests",
+    "changelog",
+    "branching"
+  ],
+  "capabilities": [
+    "branch-management",
+    "pr-creation",
+    "conflict-resolution",
+    "changelog-generation",
+    "release-tagging",
+    "commit-linting"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.8,
+  "config_schema": {
+    "branch_strategy": {
+      "type": "string",
+      "default": "github-flow",
+      "enum": [
+        "github-flow",
+        "gitflow",
+        "trunk-based"
+      ]
+    },
+    "changelog_format": {
+      "type": "string",
+      "default": "keep-a-changelog",
+      "enum": [
+        "keep-a-changelog",
+        "conventional",
+        "custom"
+      ]
+    },
+    "auto_squash": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

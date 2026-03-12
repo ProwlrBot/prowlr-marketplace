@@ -1,0 +1,59 @@
+{
+  "id": "workflow-onboarding",
+  "title": "Repo Onboarding",
+  "description": "New repository setup workflow. Initialize project, configure dependencies, set up CI/CD, generate docs, and create your first PR. From zero to shipping in minutes.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "workflows",
+  "tags": [
+    "onboarding",
+    "setup",
+    "ci-cd",
+    "documentation",
+    "first-pr"
+  ],
+  "capabilities": [
+    "project-scaffolding",
+    "dependency-setup",
+    "ci-cd-configuration",
+    "doc-generation",
+    "pr-creation"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "developer",
+    "student"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "language": {
+      "type": "string",
+      "default": "python",
+      "enum": [
+        "python",
+        "javascript",
+        "typescript",
+        "go",
+        "rust"
+      ]
+    },
+    "ci_provider": {
+      "type": "string",
+      "default": "github-actions",
+      "enum": [
+        "github-actions",
+        "gitlab-ci",
+        "circleci"
+      ]
+    },
+    "include_docs": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

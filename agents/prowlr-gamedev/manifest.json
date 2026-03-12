@@ -1,0 +1,67 @@
+{
+  "id": "agent-prowlr-gamedev",
+  "title": "Prowlr GameDev",
+  "description": "Game development specialist for Unity, Unreal, and web-based games. Game mechanics, physics, AI behavior trees, and shader programming. Level up your game development.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "gamedev",
+    "unity",
+    "unreal",
+    "web-games",
+    "game-design"
+  ],
+  "capabilities": [
+    "game-mechanics-design",
+    "physics-simulation",
+    "ai-behavior-trees",
+    "shader-programming",
+    "level-design",
+    "asset-pipeline"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer",
+    "creator"
+  ],
+  "rating": 4.4,
+  "config_schema": {
+    "engine": {
+      "type": "string",
+      "default": "unity",
+      "enum": [
+        "unity",
+        "unreal",
+        "godot",
+        "web-canvas",
+        "three-js"
+      ]
+    },
+    "game_type": {
+      "type": "string",
+      "default": "2d",
+      "enum": [
+        "2d",
+        "3d",
+        "vr",
+        "ar"
+      ]
+    },
+    "scripting_language": {
+      "type": "string",
+      "default": "csharp",
+      "enum": [
+        "csharp",
+        "cpp",
+        "gdscript",
+        "javascript"
+      ]
+    }
+  }
+}

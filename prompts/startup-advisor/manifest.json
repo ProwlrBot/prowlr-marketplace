@@ -1,0 +1,68 @@
+{
+  "id": "prompt-startup-advisor",
+  "title": "Startup Advisor",
+  "description": "Business plan frameworks, pitch deck structures, market analysis templates, and funding strategy prompts. From idea to Series A, guided every step.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "prompts",
+  "tags": [
+    "startup",
+    "business-plan",
+    "pitch-deck",
+    "funding",
+    "market-analysis"
+  ],
+  "capabilities": [
+    "business-plan-framework",
+    "pitch-deck-structure",
+    "market-analysis",
+    "financial-modeling",
+    "investor-outreach"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "business",
+    "freelancer"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "stage": {
+      "type": "string",
+      "default": "pre-seed",
+      "enum": [
+        "idea",
+        "pre-seed",
+        "seed",
+        "series-a",
+        "growth"
+      ]
+    },
+    "industry": {
+      "type": "string",
+      "default": "saas",
+      "enum": [
+        "saas",
+        "marketplace",
+        "fintech",
+        "healthtech",
+        "edtech",
+        "other"
+      ]
+    },
+    "region": {
+      "type": "string",
+      "default": "us",
+      "enum": [
+        "us",
+        "eu",
+        "asia",
+        "global"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "skill-test-runner",
+  "title": "Test Runner",
+  "description": "Comprehensive test suite runner with coverage reports. Supports Python (pytest), JavaScript (jest/vitest), Rust (cargo test), and Go (go test). Run, analyze, report.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "testing",
+    "coverage",
+    "pytest",
+    "jest",
+    "ci"
+  ],
+  "capabilities": [
+    "multi-language-testing",
+    "coverage-reporting",
+    "failure-analysis",
+    "test-generation",
+    "parallel-execution"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "default_runner": {
+      "type": "string",
+      "default": "auto",
+      "enum": [
+        "auto",
+        "pytest",
+        "jest",
+        "vitest",
+        "cargo-test",
+        "go-test"
+      ]
+    },
+    "coverage_threshold": {
+      "type": "integer",
+      "default": 80
+    },
+    "parallel": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "skill-secret-scanner",
+  "title": "Secret Scanner",
+  "description": "Detect leaked credentials, API keys, tokens, and secrets in code and git history. Scan before you ship. Because one leaked key can cost everything.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "security",
+    "secrets",
+    "credentials",
+    "scanning",
+    "git-history"
+  ],
+  "capabilities": [
+    "credential-detection",
+    "git-history-scan",
+    "entropy-analysis",
+    "pattern-matching",
+    "remediation-guidance"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.8,
+  "config_schema": {
+    "scan_scope": {
+      "type": "string",
+      "default": "full",
+      "enum": [
+        "full",
+        "staged-only",
+        "last-commit",
+        "branch-diff"
+      ]
+    },
+    "include_git_history": {
+      "type": "boolean",
+      "default": true
+    },
+    "custom_patterns": {
+      "type": "array",
+      "default": []
+    }
+  }
+}

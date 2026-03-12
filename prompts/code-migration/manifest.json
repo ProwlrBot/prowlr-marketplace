@@ -1,0 +1,58 @@
+{
+  "id": "prompt-code-migration",
+  "title": "Code Migration",
+  "description": "Language and framework migration playbooks. Python 2 to 3, React class to hooks, monolith to microservices, and more. Migrate without breaking everything.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "prompts",
+  "tags": [
+    "migration",
+    "refactoring",
+    "framework",
+    "language",
+    "modernization"
+  ],
+  "capabilities": [
+    "migration-planning",
+    "compatibility-assessment",
+    "automated-transforms",
+    "test-coverage-analysis",
+    "rollback-strategy"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "migration_type": {
+      "type": "string",
+      "default": "framework",
+      "enum": [
+        "language",
+        "framework",
+        "architecture",
+        "database",
+        "cloud"
+      ]
+    },
+    "risk_tolerance": {
+      "type": "string",
+      "default": "moderate",
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ]
+    },
+    "parallel_running": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

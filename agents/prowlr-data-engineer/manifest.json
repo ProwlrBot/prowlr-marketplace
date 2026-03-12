@@ -1,0 +1,66 @@
+{
+  "id": "agent-prowlr-data-engineer",
+  "title": "Prowlr Data Engineer",
+  "description": "ETL pipelines, data modeling, SQL optimization, and warehouse design. Turns your data chaos into structured gold. Always watching your data flow.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "data-engineering",
+    "etl",
+    "sql",
+    "data-modeling",
+    "data-warehouse"
+  ],
+  "capabilities": [
+    "etl-design",
+    "query-optimization",
+    "schema-modeling",
+    "warehouse-architecture",
+    "data-quality-checks",
+    "pipeline-monitoring"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "warehouse": {
+      "type": "string",
+      "default": "postgresql",
+      "enum": [
+        "postgresql",
+        "snowflake",
+        "bigquery",
+        "redshift",
+        "clickhouse"
+      ]
+    },
+    "etl_framework": {
+      "type": "string",
+      "default": "python",
+      "enum": [
+        "python",
+        "dbt",
+        "airflow",
+        "prefect"
+      ]
+    },
+    "modeling_approach": {
+      "type": "string",
+      "default": "star-schema",
+      "enum": [
+        "star-schema",
+        "snowflake-schema",
+        "data-vault",
+        "one-big-table"
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "agent-prowlr-writer",
+  "title": "Prowlr Writer",
+  "description": "Content creation powerhouse. Blog posts, documentation, SEO-optimized copy, and technical writing. Words that work as hard as you do. Never misses a deadline.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "content-creation",
+    "writing",
+    "seo",
+    "documentation",
+    "copywriting"
+  ],
+  "capabilities": [
+    "blog-generation",
+    "seo-optimization",
+    "tone-matching",
+    "readability-analysis",
+    "headline-generation",
+    "content-repurposing"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "creator",
+    "freelancer",
+    "business"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "tone": {
+      "type": "string",
+      "default": "professional",
+      "enum": [
+        "professional",
+        "casual",
+        "technical",
+        "conversational",
+        "academic"
+      ]
+    },
+    "target_reading_level": {
+      "type": "string",
+      "default": "general",
+      "enum": [
+        "general",
+        "technical",
+        "academic",
+        "simple"
+      ]
+    },
+    "seo_enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "skill-doc-generator",
+  "title": "Doc Generator",
+  "description": "Auto-generate API documentation, README files, and architecture diagrams from your codebase. Never write docs from scratch again. Always up to date.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "documentation",
+    "api-docs",
+    "readme",
+    "diagrams",
+    "auto-generation"
+  ],
+  "capabilities": [
+    "api-doc-generation",
+    "readme-scaffolding",
+    "diagram-creation",
+    "docstring-extraction",
+    "changelog-generation"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "developer",
+    "everyone"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "output_format": {
+      "type": "string",
+      "default": "markdown",
+      "enum": [
+        "markdown",
+        "html",
+        "rst"
+      ]
+    },
+    "diagram_tool": {
+      "type": "string",
+      "default": "mermaid",
+      "enum": [
+        "mermaid",
+        "plantuml",
+        "d2"
+      ]
+    },
+    "include_examples": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

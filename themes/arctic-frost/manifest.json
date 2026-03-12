@@ -1,0 +1,54 @@
+{
+  "id": "theme-arctic-frost",
+  "title": "Arctic Frost",
+  "description": "Cool blue-white minimalist theme. Clean lines, generous whitespace, and icy accents. Maximum readability, minimum distraction. Crystal clear focus.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "themes",
+  "tags": [
+    "light",
+    "minimalist",
+    "blue",
+    "clean",
+    "frost"
+  ],
+  "capabilities": [
+    "syntax-highlighting",
+    "light-mode",
+    "high-contrast",
+    "custom-fonts"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "everyone"
+  ],
+  "rating": 4.4,
+  "config_schema": {
+    "accent_color": {
+      "type": "string",
+      "default": "#2196f3"
+    },
+    "background": {
+      "type": "string",
+      "default": "#f8f9fa"
+    },
+    "border_color": {
+      "type": "string",
+      "default": "#e3e8ee"
+    },
+    "font_family": {
+      "type": "string",
+      "default": "Inter",
+      "enum": [
+        "Inter",
+        "SF Pro",
+        "Roboto"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "theme-midnight-hacker",
+  "title": "Midnight Hacker",
+  "description": "Deep black background with neon green accents. Matrix-inspired terminal aesthetics for the developer who lives in the command line. Code in the dark.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "themes",
+  "tags": [
+    "dark",
+    "hacker",
+    "matrix",
+    "neon",
+    "terminal"
+  ],
+  "capabilities": [
+    "syntax-highlighting",
+    "terminal-colors",
+    "icon-pack",
+    "custom-fonts"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "developer",
+    "everyone"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "accent_color": {
+      "type": "string",
+      "default": "#00ff41"
+    },
+    "background": {
+      "type": "string",
+      "default": "#0d0d0d"
+    },
+    "font_family": {
+      "type": "string",
+      "default": "JetBrains Mono",
+      "enum": [
+        "JetBrains Mono",
+        "Fira Code",
+        "Cascadia Code",
+        "IBM Plex Mono"
+      ]
+    }
+  }
+}

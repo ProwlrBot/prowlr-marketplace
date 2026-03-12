@@ -1,0 +1,63 @@
+{
+  "id": "agent-prowlr-devops",
+  "title": "Prowlr DevOps",
+  "description": "CI/CD pipelines, Docker orchestration, Kubernetes deployments, and infrastructure automation. Ships your code while you sleep. Always deploying. Always reliable.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "devops",
+    "ci-cd",
+    "docker",
+    "kubernetes",
+    "infrastructure"
+  ],
+  "capabilities": [
+    "pipeline-generation",
+    "dockerfile-optimization",
+    "k8s-manifest-creation",
+    "deployment-automation",
+    "infrastructure-as-code"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "ci_platform": {
+      "type": "string",
+      "default": "github-actions",
+      "enum": [
+        "github-actions",
+        "gitlab-ci",
+        "jenkins",
+        "circleci"
+      ]
+    },
+    "container_runtime": {
+      "type": "string",
+      "default": "docker",
+      "enum": [
+        "docker",
+        "podman",
+        "containerd"
+      ]
+    },
+    "cloud_provider": {
+      "type": "string",
+      "default": "aws",
+      "enum": [
+        "aws",
+        "gcp",
+        "azure",
+        "self-hosted"
+      ]
+    }
+  }
+}

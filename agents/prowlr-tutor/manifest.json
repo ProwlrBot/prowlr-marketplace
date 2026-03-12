@@ -1,0 +1,66 @@
+{
+  "id": "agent-prowlr-tutor",
+  "title": "Prowlr Tutor",
+  "description": "Adaptive learning assistant that meets you where you are. Explains concepts at your level, creates exercises, tracks progress, and adjusts difficulty. Patient, tireless, always ready to teach.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "education",
+    "learning",
+    "tutoring",
+    "exercises",
+    "adaptive"
+  ],
+  "capabilities": [
+    "concept-explanation",
+    "exercise-generation",
+    "progress-tracking",
+    "difficulty-adaptation",
+    "knowledge-assessment",
+    "spaced-repetition"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "student",
+    "everyone"
+  ],
+  "rating": 4.9,
+  "config_schema": {
+    "subject_area": {
+      "type": "string",
+      "default": "programming",
+      "enum": [
+        "programming",
+        "math",
+        "science",
+        "languages",
+        "general"
+      ]
+    },
+    "difficulty_level": {
+      "type": "string",
+      "default": "auto",
+      "enum": [
+        "auto",
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "exercise_frequency": {
+      "type": "string",
+      "default": "after-each-concept",
+      "enum": [
+        "after-each-concept",
+        "end-of-session",
+        "on-demand"
+      ]
+    }
+  }
+}

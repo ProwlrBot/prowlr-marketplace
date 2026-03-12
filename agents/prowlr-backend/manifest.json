@@ -1,0 +1,67 @@
+{
+  "id": "agent-prowlr-backend",
+  "title": "Prowlr Backend",
+  "description": "API design, database optimization, microservices architecture, and authentication systems. The engine behind every great app. Built to scale, hardened to last.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "backend",
+    "api-design",
+    "database",
+    "microservices",
+    "authentication"
+  ],
+  "capabilities": [
+    "api-design",
+    "query-optimization",
+    "schema-design",
+    "auth-implementation",
+    "caching-strategy",
+    "rate-limiting"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.7,
+  "config_schema": {
+    "framework": {
+      "type": "string",
+      "default": "fastapi",
+      "enum": [
+        "fastapi",
+        "express",
+        "django",
+        "spring",
+        "gin"
+      ]
+    },
+    "database": {
+      "type": "string",
+      "default": "postgresql",
+      "enum": [
+        "postgresql",
+        "mysql",
+        "mongodb",
+        "sqlite",
+        "redis"
+      ]
+    },
+    "auth_method": {
+      "type": "string",
+      "default": "jwt",
+      "enum": [
+        "jwt",
+        "oauth2",
+        "session",
+        "api-key"
+      ]
+    }
+  }
+}

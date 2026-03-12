@@ -1,0 +1,66 @@
+{
+  "id": "agent-prowlr-frontend",
+  "title": "Prowlr Frontend",
+  "description": "React, Next.js, and Vue specialist. Component architecture, responsive layouts, accessibility audits, and performance optimization. Pixel-perfect execution, every time.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "frontend",
+    "react",
+    "nextjs",
+    "vue",
+    "accessibility",
+    "performance"
+  ],
+  "capabilities": [
+    "component-design",
+    "responsive-layout",
+    "a11y-audit",
+    "performance-profiling",
+    "css-optimization",
+    "state-management"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.8,
+  "config_schema": {
+    "framework": {
+      "type": "string",
+      "default": "react",
+      "enum": [
+        "react",
+        "nextjs",
+        "vue",
+        "svelte",
+        "angular"
+      ]
+    },
+    "styling": {
+      "type": "string",
+      "default": "tailwind",
+      "enum": [
+        "tailwind",
+        "css-modules",
+        "styled-components",
+        "sass"
+      ]
+    },
+    "a11y_standard": {
+      "type": "string",
+      "default": "WCAG-AA",
+      "enum": [
+        "WCAG-A",
+        "WCAG-AA",
+        "WCAG-AAA"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "workflow-pr-review-pipeline",
+  "title": "PR Review Pipeline",
+  "description": "Automated pull request review pipeline. Lint, test, security scan, code review, and approval in one seamless flow. Every PR reviewed thoroughly, every time.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "workflows",
+  "tags": [
+    "pr-review",
+    "ci-cd",
+    "automation",
+    "code-quality",
+    "pipeline"
+  ],
+  "capabilities": [
+    "auto-linting",
+    "test-execution",
+    "security-scanning",
+    "code-review",
+    "auto-approval"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.8,
+  "config_schema": {
+    "stages": {
+      "type": "array",
+      "default": [
+        "lint",
+        "test",
+        "security",
+        "review"
+      ]
+    },
+    "auto_approve_threshold": {
+      "type": "number",
+      "default": 0.95
+    },
+    "block_on_security": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

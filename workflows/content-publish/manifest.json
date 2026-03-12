@@ -1,0 +1,52 @@
+{
+  "id": "workflow-content-publish",
+  "title": "Content Publish Pipeline",
+  "description": "Full content lifecycle from draft to distribution. Write, review, SEO optimize, publish, and promote across social channels. Content that reaches its audience.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "workflows",
+  "tags": [
+    "content",
+    "publishing",
+    "seo",
+    "social-media",
+    "distribution"
+  ],
+  "capabilities": [
+    "content-drafting",
+    "editorial-review",
+    "seo-optimization",
+    "multi-platform-publishing",
+    "social-promotion"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "creator",
+    "business",
+    "freelancer"
+  ],
+  "rating": 4.5,
+  "config_schema": {
+    "platforms": {
+      "type": "array",
+      "default": [
+        "blog",
+        "twitter",
+        "linkedin"
+      ]
+    },
+    "review_rounds": {
+      "type": "integer",
+      "default": 1
+    },
+    "auto_promote": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

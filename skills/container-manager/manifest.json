@@ -1,0 +1,57 @@
+{
+  "id": "skill-container-manager",
+  "title": "Container Manager",
+  "description": "Docker Compose generation, Kubernetes manifest creation, and container health monitoring. Orchestrate your containers with precision. Always running, always healthy.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "docker",
+    "kubernetes",
+    "containers",
+    "orchestration",
+    "health-monitoring"
+  ],
+  "capabilities": [
+    "compose-generation",
+    "k8s-manifests",
+    "health-monitoring",
+    "resource-optimization",
+    "multi-stage-builds"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.5,
+  "config_schema": {
+    "orchestrator": {
+      "type": "string",
+      "default": "docker-compose",
+      "enum": [
+        "docker-compose",
+        "kubernetes",
+        "docker-swarm"
+      ]
+    },
+    "registry": {
+      "type": "string",
+      "default": "dockerhub",
+      "enum": [
+        "dockerhub",
+        "ghcr",
+        "ecr",
+        "gcr"
+      ]
+    },
+    "health_check_interval": {
+      "type": "integer",
+      "default": 30
+    }
+  }
+}

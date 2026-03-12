@@ -1,0 +1,65 @@
+{
+  "id": "agent-prowlr-sales",
+  "title": "Prowlr Sales",
+  "description": "Cold outreach, follow-up sequences, proposal generation, and lead research. CRM-ready automation that turns prospects into customers. Always closing.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "sales",
+    "outreach",
+    "proposals",
+    "lead-generation",
+    "crm"
+  ],
+  "capabilities": [
+    "cold-email-generation",
+    "follow-up-sequences",
+    "proposal-drafting",
+    "lead-research",
+    "crm-integration",
+    "pipeline-tracking"
+  ],
+  "difficulty": "beginner",
+  "persona_tags": [
+    "business",
+    "freelancer"
+  ],
+  "rating": 4.5,
+  "config_schema": {
+    "outreach_style": {
+      "type": "string",
+      "default": "consultative",
+      "enum": [
+        "consultative",
+        "direct",
+        "storytelling",
+        "value-based"
+      ]
+    },
+    "follow_up_cadence_days": {
+      "type": "array",
+      "default": [
+        2,
+        5,
+        10,
+        21
+      ]
+    },
+    "crm_platform": {
+      "type": "string",
+      "default": "none",
+      "enum": [
+        "none",
+        "hubspot",
+        "salesforce",
+        "pipedrive"
+      ]
+    }
+  }
+}

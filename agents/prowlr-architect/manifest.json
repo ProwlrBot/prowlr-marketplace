@@ -1,0 +1,57 @@
+{
+  "id": "agent-prowlr-architect",
+  "title": "Prowlr Architect",
+  "description": "System architecture and design review agent. Analyzes codebases for structural integrity, suggests proven patterns, and reviews pull requests for architectural consistency. Your blueprint guardian.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "architecture",
+    "design-patterns",
+    "code-review",
+    "system-design"
+  ],
+  "capabilities": [
+    "codebase-analysis",
+    "pattern-detection",
+    "dependency-mapping",
+    "architecture-review",
+    "diagram-generation"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.9,
+  "config_schema": {
+    "max_depth": {
+      "type": "integer",
+      "default": 5,
+      "description": "Max directory depth for analysis"
+    },
+    "pattern_library": {
+      "type": "string",
+      "default": "gang-of-four",
+      "enum": [
+        "gang-of-four",
+        "domain-driven",
+        "microservices",
+        "event-driven"
+      ]
+    },
+    "diagram_format": {
+      "type": "string",
+      "default": "mermaid",
+      "enum": [
+        "mermaid",
+        "plantuml",
+        "ascii"
+      ]
+    }
+  }
+}

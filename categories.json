@@ -1,8 +1,37 @@
 [
-  {"id": "skills", "name": "Skills", "description": "Agent capability packs"},
-  {"id": "agents", "name": "Agents", "description": "Pre-built agent configurations"},
-  {"id": "prompts", "name": "Prompts", "description": "System prompts and templates"},
-  {"id": "mcp-servers", "name": "MCP Servers", "description": "Model Context Protocol integrations"},
-  {"id": "themes", "name": "Themes", "description": "Console UI themes"},
-  {"id": "workflows", "name": "Workflows", "description": "Multi-step automation recipes"}
+  {
+    "id": "skills",
+    "name": "Skills",
+    "description": "Agent capability packs"
+  },
+  {
+    "id": "agents",
+    "name": "Agents",
+    "description": "Pre-built agent configurations"
+  },
+  {
+    "id": "prompts",
+    "name": "Prompts",
+    "description": "System prompts and templates"
+  },
+  {
+    "id": "mcp-servers",
+    "name": "MCP Servers",
+    "description": "Model Context Protocol integrations"
+  },
+  {
+    "id": "themes",
+    "name": "Themes",
+    "description": "Console UI themes"
+  },
+  {
+    "id": "workflows",
+    "name": "Workflows",
+    "description": "Multi-step automation recipes"
+  },
+  {
+    "id": "specs",
+    "name": "Specs",
+    "description": "Protocol specifications and standards"
+  }
 ]

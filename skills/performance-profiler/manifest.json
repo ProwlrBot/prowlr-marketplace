@@ -1,0 +1,53 @@
+{
+  "id": "skill-performance-profiler",
+  "title": "Performance Profiler",
+  "description": "CPU and memory profiling, bottleneck detection, and optimization suggestions. Find what's slow, understand why, and fix it. Every millisecond counts.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "skills",
+  "tags": [
+    "performance",
+    "profiling",
+    "optimization",
+    "bottleneck",
+    "memory"
+  ],
+  "capabilities": [
+    "cpu-profiling",
+    "memory-analysis",
+    "bottleneck-detection",
+    "flamegraph-generation",
+    "optimization-suggestions"
+  ],
+  "difficulty": "advanced",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "profiler": {
+      "type": "string",
+      "default": "auto",
+      "enum": [
+        "auto",
+        "cProfile",
+        "py-spy",
+        "perf",
+        "instruments"
+      ]
+    },
+    "sample_duration_seconds": {
+      "type": "integer",
+      "default": 30
+    },
+    "memory_tracking": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

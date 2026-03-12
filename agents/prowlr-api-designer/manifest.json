@@ -1,0 +1,64 @@
+{
+  "id": "agent-prowlr-api-designer",
+  "title": "Prowlr API Designer",
+  "description": "REST and GraphQL API design specialist. Generates OpenAPI specs, SDK scaffolding, and comprehensive documentation. Your API, designed right from the start.",
+  "version": "1.0.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "downloads": 0,
+  "category": "agents",
+  "tags": [
+    "api-design",
+    "rest",
+    "graphql",
+    "openapi",
+    "sdk"
+  ],
+  "capabilities": [
+    "openapi-generation",
+    "graphql-schema-design",
+    "sdk-scaffolding",
+    "api-documentation",
+    "versioning-strategy",
+    "rate-limit-design"
+  ],
+  "difficulty": "intermediate",
+  "persona_tags": [
+    "developer"
+  ],
+  "rating": 4.6,
+  "config_schema": {
+    "api_style": {
+      "type": "string",
+      "default": "rest",
+      "enum": [
+        "rest",
+        "graphql",
+        "grpc",
+        "websocket"
+      ]
+    },
+    "spec_format": {
+      "type": "string",
+      "default": "openapi-3.1",
+      "enum": [
+        "openapi-3.0",
+        "openapi-3.1",
+        "asyncapi"
+      ]
+    },
+    "auth_scheme": {
+      "type": "string",
+      "default": "bearer",
+      "enum": [
+        "bearer",
+        "api-key",
+        "oauth2",
+        "none"
+      ]
+    }
+  }
+}

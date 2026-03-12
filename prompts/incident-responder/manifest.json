@@ -8,7 +8,6 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "downloads": 0,
   "category": "prompts",
   "tags": [
     "incident-response",
@@ -28,7 +27,6 @@
   "persona_tags": [
     "developer"
   ],
-  "rating": 4.7,
   "config_schema": {
     "severity_levels": {
       "type": "integer",

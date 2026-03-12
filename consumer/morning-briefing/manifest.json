@@ -1,0 +1,51 @@
+{
+  "id": "morning-briefing",
+  "name": "Morning Briefing",
+  "version": "1.2.0",
+  "description": "Wake up to a personalized daily summary covering your calendar, unread emails, local weather, and top news stories. Delivered to your preferred channel before you even pour your coffee.",
+  "author": "ProwlrBot Team",
+  "category": "workflows",
+  "difficulty": "beginner",
+  "setup_time_minutes": 5,
+  "persona_tags": ["parent", "business", "explorer"],
+  "tags": ["morning-routine", "email", "calendar", "weather", "news", "daily-digest", "productivity"],
+  "skill_scan": {
+    "automation": 9,
+    "ease": 9,
+    "privacy": 7,
+    "reliability": 8,
+    "personalization": 8
+  },
+  "before_after": {
+    "before": "Checking 4 different apps every morning, losing 20 minutes before the day even starts",
+    "after": "One concise briefing waiting in your inbox or chat at 6:30 AM sharp",
+    "time_saved": "20 min/day"
+  },
+  "works_with": ["Google Calendar", "Outlook", "Gmail", "Apple Mail", "OpenWeatherMap", "NewsAPI", "Slack", "Telegram", "Discord"],
+  "user_stories": [
+    {
+      "quote": "I used to open five apps before breakfast. Now I glance at one message and I know exactly what my day looks like.",
+      "name": "Rachel M.",
+      "role": "Working Parent"
+    },
+    {
+      "quote": "The weather-plus-calendar combo saved me from biking to a client meeting in a thunderstorm. Twice.",
+      "name": "Derek S.",
+      "role": "Freelance Consultant"
+    },
+    {
+      "quote": "I forward the briefing to my team Slack every morning. Everyone starts the day on the same page.",
+      "name": "Priya K.",
+      "role": "Startup Founder"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Connect your email account (Gmail or Outlook) through the integrations panel." },
+    { "step": 2, "instruction": "Link your calendar so the briefing can pull today's events." },
+    { "step": 3, "instruction": "Set your location for weather forecasts (city name or zip code)." },
+    { "step": 4, "instruction": "Pick your news topics — business, tech, local, world, or custom keywords." },
+    { "step": 5, "instruction": "Choose delivery time and channel (email, Slack, Telegram, or Discord)." }
+  ],
+  "hero_animation": "sunrise-inbox-cascade",
+  "demo_url": ""
+}

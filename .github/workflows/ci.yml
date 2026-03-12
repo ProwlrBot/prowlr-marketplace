@@ -6,11 +6,19 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   validate-manifests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
       - name: Validate JSON manifests
         run: |
@@ -30,3 +38,40 @@ jobs:
             done
           done
           echo "All required fields present."
+
+      - name: Check no hardcoded placeholder data
+        run: |
+          python3 -c "
+          import json, pathlib, sys
+          errors = []
+          for p in pathlib.Path('.').rglob('manifest.json'):
+              if '.github' in p.parts:
+                  continue
+              data = json.loads(p.read_text())
+              if data.get('rating') == 4.5:
+                  errors.append(f'{p}: hardcoded rating 4.5 -- remove this field (ratings come from backend)')
+          if errors:
+              print('Placeholder data detected:')
+              for e in errors:
+                  print(f'  {e}')
+              sys.exit(1)
+          print('No placeholder data found.')
+          "
+
+      - name: Check index.json is up-to-date (PRs)
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/build_index.py --check
+
+      - name: Rebuild and commit index.json (main push)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          python3 scripts/build_index.py
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          if git diff --staged --quiet; then
+            echo "index.json unchanged"
+          else
+            git commit -m "chore: regenerate index.json [skip ci]"
+            git push
+          fi

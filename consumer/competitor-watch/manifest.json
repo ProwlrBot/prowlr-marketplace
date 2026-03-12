@@ -1,0 +1,51 @@
+{
+  "id": "competitor-watch",
+  "name": "Competitor Watch",
+  "version": "1.0.0",
+  "description": "Monitors competitor websites, pricing pages, job listings, and social accounts for meaningful changes — then sends you a plain-English summary of what changed and why it matters.",
+  "author": "ProwlrBot Team",
+  "category": "skills",
+  "difficulty": "intermediate",
+  "setup_time_minutes": 8,
+  "persona_tags": ["business", "freelancer"],
+  "tags": ["competitive-intelligence", "monitoring", "pricing", "market-research", "alerts", "business-strategy"],
+  "skill_scan": {
+    "automation": 10,
+    "ease": 7,
+    "privacy": 8,
+    "reliability": 8,
+    "personalization": 7
+  },
+  "before_after": {
+    "before": "Manually checking competitor websites every few days, missing pricing changes, and finding out about new product launches from your customers instead of ahead of time",
+    "after": "Instant alerts when competitors change pricing, launch features, post jobs, or update messaging — with a weekly digest summarizing the competitive landscape",
+    "time_saved": "3 hrs/week"
+  },
+  "works_with": ["Any public website", "Twitter/X", "LinkedIn", "Product Hunt", "Slack", "Email", "Discord"],
+  "user_stories": [
+    {
+      "quote": "A competitor dropped their prices by 20% on a Tuesday. I found out within the hour and adjusted our positioning before we lost a single deal.",
+      "name": "Nathan B.",
+      "role": "Head of sales, SaaS startup"
+    },
+    {
+      "quote": "I'm a freelance web designer and I watch 5 agencies in my area. When one of them updated their portfolio, I saw what kind of clients they're going after and pivoted my outreach.",
+      "name": "Morgan C.",
+      "role": "Freelance web designer"
+    },
+    {
+      "quote": "Their job postings told me they were hiring 3 data engineers before they announced their analytics product. Gave us a 2-month head start on our response.",
+      "name": "Hiroshi T.",
+      "role": "Product manager, mid-size tech company"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Add competitor URLs you want to monitor — homepages, pricing pages, blog, careers page, etc." },
+    { "step": 2, "instruction": "Set monitoring frequency: real-time (checks every hour), daily, or weekly." },
+    { "step": 3, "instruction": "Choose what types of changes to track — pricing, new features, job postings, messaging changes, or all." },
+    { "step": 4, "instruction": "Pick your alert channel (email, Slack, Discord) and choose between instant alerts and weekly digests." },
+    { "step": 5, "instruction": "Optionally add competitor social accounts (Twitter/X, LinkedIn) for broader coverage." }
+  ],
+  "hero_animation": "radar-sweep-detect",
+  "demo_url": ""
+}

@@ -1,0 +1,51 @@
+{
+  "id": "client-followup",
+  "name": "Client Follow-Up",
+  "version": "1.0.0",
+  "description": "Never lose a deal or damage a relationship because you forgot to follow up. Tracks every client interaction and sends timely, personalized follow-ups so you stay top-of-mind without a full CRM.",
+  "author": "ProwlrBot Team",
+  "category": "agents",
+  "difficulty": "intermediate",
+  "setup_time_minutes": 8,
+  "persona_tags": ["freelancer", "business"],
+  "tags": ["crm", "follow-up", "clients", "sales", "relationships", "email", "automation", "pipeline"],
+  "skill_scan": {
+    "automation": 9,
+    "ease": 7,
+    "privacy": 7,
+    "reliability": 9,
+    "personalization": 9
+  },
+  "before_after": {
+    "before": "Promising to 'circle back next week' and forgetting, letting warm leads go cold, scrambling through old emails to remember where a conversation left off",
+    "after": "Every client relationship tracked with automatic follow-ups, context-rich reminders, and a pipeline view showing exactly who needs attention today",
+    "time_saved": "5 hrs/week"
+  },
+  "works_with": ["Gmail", "Outlook", "Google Contacts", "Calendly", "Slack", "LinkedIn", "Notion"],
+  "user_stories": [
+    {
+      "quote": "I'm a freelance photographer and I follow up with every couple 3 months after their wedding. This automates those check-ins and I've gotten 8 referrals from it.",
+      "name": "Jasmine K.",
+      "role": "Freelance wedding photographer"
+    },
+    {
+      "quote": "I manage 40+ client accounts. Before this, at least 3 would go quiet every month because I forgot to check in. Now nothing falls through.",
+      "name": "David L.",
+      "role": "Account manager, marketing agency"
+    },
+    {
+      "quote": "The follow-up emails it drafts sound exactly like me. Clients have no idea they're automated. One even replied 'you always remember to check in, I love that.'",
+      "name": "Sonia M.",
+      "role": "Business coach, solo practice"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Connect your email account (Gmail or Outlook) so the agent can track client conversations." },
+    { "step": 2, "instruction": "Import your client list or let the agent build one from your recent email history." },
+    { "step": 3, "instruction": "Set default follow-up intervals — e.g., 3 days after a proposal, 1 week after a meeting, monthly for existing clients." },
+    { "step": 4, "instruction": "Choose whether follow-ups should be auto-sent or queued as drafts for your review." },
+    { "step": 5, "instruction": "Customize the follow-up tone and style so messages sound like you, not a robot." }
+  ],
+  "hero_animation": "relationship-timeline-pulse",
+  "demo_url": ""
+}

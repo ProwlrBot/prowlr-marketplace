@@ -1,0 +1,51 @@
+{
+  "id": "invoice-chaser",
+  "name": "Invoice Chaser",
+  "version": "1.1.0",
+  "description": "Tracks every outstanding invoice, sends polite escalating follow-ups on your behalf, and gives you a weekly cash-flow summary so you stop losing money to forgotten receivables.",
+  "author": "ProwlrBot Team",
+  "category": "agents",
+  "difficulty": "beginner",
+  "setup_time_minutes": 5,
+  "persona_tags": ["business", "freelancer"],
+  "tags": ["invoicing", "payments", "accounts-receivable", "follow-up", "email", "finance", "freelance"],
+  "skill_scan": {
+    "automation": 10,
+    "ease": 9,
+    "privacy": 7,
+    "reliability": 9,
+    "personalization": 7
+  },
+  "before_after": {
+    "before": "Manually tracking 15+ invoices in a spreadsheet, writing awkward follow-up emails, discovering a $3,000 invoice is 60 days overdue",
+    "after": "Every invoice tracked automatically with escalating follow-ups — you see a clean dashboard and only step in when the agent flags a problem",
+    "time_saved": "4 hrs/week"
+  },
+  "works_with": ["Gmail", "Outlook", "QuickBooks", "FreshBooks", "Xero", "Stripe", "Wave"],
+  "user_stories": [
+    {
+      "quote": "I'm a freelance designer and I used to lose track of who paid me. Last month this thing recovered $4,200 I'd basically forgotten about.",
+      "name": "Diana L.",
+      "role": "Freelance graphic designer"
+    },
+    {
+      "quote": "The polite-but-firm follow-up emails are better than anything I'd write myself. My average payment time dropped from 38 days to 12.",
+      "name": "Raj P.",
+      "role": "Small agency owner, 6 employees"
+    },
+    {
+      "quote": "I hate confrontation. Having an agent handle overdue reminders means I maintain good client relationships and still get paid on time.",
+      "name": "Samantha W.",
+      "role": "Freelance copywriter"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Connect your invoicing tool (QuickBooks, FreshBooks, Xero) or email account where you send invoices." },
+    { "step": 2, "instruction": "Set your follow-up schedule — how many days after the due date to send the first, second, and final reminder." },
+    { "step": 3, "instruction": "Choose the email tone: friendly and casual, professional and polite, or direct and firm." },
+    { "step": 4, "instruction": "Pick your weekly summary day and delivery channel (email, Slack, or console)." },
+    { "step": 5, "instruction": "Optionally set a threshold amount for immediate alerts (e.g., notify me instantly for invoices over $1,000)." }
+  ],
+  "hero_animation": "invoice-tracker-pulse",
+  "demo_url": ""
+}

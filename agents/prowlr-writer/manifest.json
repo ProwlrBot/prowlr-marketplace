@@ -8,7 +8,6 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "downloads": 0,
   "category": "agents",
   "tags": [
     "content-creation",
@@ -31,7 +30,6 @@
     "freelancer",
     "business"
   ],
-  "rating": 4.6,
   "config_schema": {
     "tone": {
       "type": "string",

@@ -1,0 +1,51 @@
+{
+  "id": "meal-planner",
+  "name": "Meal Planner",
+  "version": "1.1.0",
+  "description": "Get a full week of meals with a consolidated grocery list, personalized to your family's size, dietary needs, budget, and cooking skill. Reuses ingredients across meals to cut waste and cost.",
+  "author": "ProwlrBot Team",
+  "category": "workflows",
+  "difficulty": "beginner",
+  "setup_time_minutes": 5,
+  "persona_tags": ["parent", "explorer"],
+  "tags": ["meals", "cooking", "grocery", "family", "budget", "recipes", "health", "meal-prep"],
+  "skill_scan": {
+    "automation": 7,
+    "ease": 9,
+    "privacy": 9,
+    "reliability": 8,
+    "personalization": 10
+  },
+  "before_after": {
+    "before": "Standing in the kitchen at 5:30 PM with no plan, ordering takeout 3 times a week at $45 a pop, throwing away forgotten groceries every Sunday",
+    "after": "A full weekly meal plan with recipes and a sorted grocery list every Sunday morning — eating better, spending $120 less per week on food",
+    "time_saved": "4 hrs/week"
+  },
+  "works_with": ["Instacart", "Amazon Fresh", "Apple Reminders", "Google Keep", "AnyList"],
+  "user_stories": [
+    {
+      "quote": "I feed a family of five and one kid is gluten-free. This plans around all of that AND keeps us under $150 a week. I didn't think that was possible.",
+      "name": "Michelle R.",
+      "role": "Mom of three, part-time accountant"
+    },
+    {
+      "quote": "I'm a terrible cook but this gives me dead-simple recipes with like 6 ingredients. I've actually cooked dinner every night this week for the first time in years.",
+      "name": "James H.",
+      "role": "Single guy, software engineer"
+    },
+    {
+      "quote": "The grocery list is sorted by aisle and factors in what I already have. My weekly shop went from an hour of wandering to 25 focused minutes.",
+      "name": "Patricia D.",
+      "role": "Busy parent, works full-time"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Tell the planner how many people you're cooking for and any dietary restrictions (vegetarian, gluten-free, etc.)." },
+    { "step": 2, "instruction": "Set your cooking skill level and max time per meal (15, 30, or 45+ minutes)." },
+    { "step": 3, "instruction": "Enter your weekly grocery budget so the planner keeps meals within range." },
+    { "step": 4, "instruction": "Optionally list what you already have in your fridge or pantry to reduce the shopping list." },
+    { "step": 5, "instruction": "Choose your planning day (Sunday, Saturday, etc.) and delivery channel for the weekly plan." }
+  ],
+  "hero_animation": "plate-assemble-sequence",
+  "demo_url": ""
+}

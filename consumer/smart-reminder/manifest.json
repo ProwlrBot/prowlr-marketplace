@@ -1,0 +1,49 @@
+{
+  "id": "smart-reminder",
+  "name": "Smart Reminder",
+  "version": "1.1.0",
+  "description": "Tell it what you need to remember in plain language and it figures out exactly when and how to remind you. Adapts to your schedule, follows up if you don't act, and never lets important things slip through the cracks.",
+  "author": "ProwlrBot Team",
+  "category": "skills",
+  "difficulty": "beginner",
+  "setup_time_minutes": 2,
+  "persona_tags": ["parent", "business", "student", "creator", "freelancer", "developer", "explorer"],
+  "tags": ["reminders", "tasks", "memory", "scheduling", "notifications", "productivity", "context-aware"],
+  "skill_scan": {
+    "automation": 9,
+    "ease": 10,
+    "privacy": 8,
+    "reliability": 9,
+    "personalization": 8
+  },
+  "before_after": {
+    "before": "Forgetting to cancel free trials (charged $14.99), missing prescription refills, and remembering your anniversary the morning of",
+    "after": "Just say 'remind me to cancel Hulu before the trial ends March 20' and it handles timing, urgency, and follow-up automatically",
+    "time_saved": "1 hr/week plus money saved from missed deadlines"
+  },
+  "works_with": ["Apple Reminders", "Google Calendar", "Todoist", "Slack", "Telegram", "Discord", "Email"],
+  "user_stories": [
+    {
+      "quote": "I told it 'remind me to book a vet appointment for Max sometime next week' and it pinged me Monday morning with the vet's number. So simple.",
+      "name": "Emma T.",
+      "role": "Dog owner, graphic designer"
+    },
+    {
+      "quote": "I set it to remind me 6 weeks before every passport and license expiration. It's like having a personal assistant who never forgets.",
+      "name": "Robert F.",
+      "role": "Frequent traveler, sales rep"
+    },
+    {
+      "quote": "It noticed I kept snoozing my 8 AM reminders and started sending them at 9:30 instead. It actually learns your habits.",
+      "name": "Lisa C.",
+      "role": "College student"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Choose where reminders should be delivered — console, email, Slack, Telegram, or phone notification." },
+    { "step": 2, "instruction": "Set your persistence preference: remind once, remind until done, or escalate if no response." },
+    { "step": 3, "instruction": "Optionally connect your calendar so reminders avoid busy times and adapt to schedule changes." }
+  ],
+  "hero_animation": "reminder-ripple-adapt",
+  "demo_url": ""
+}

@@ -8,7 +8,6 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "downloads": 0,
   "category": "workflows",
   "tags": [
     "onboarding",
@@ -29,7 +28,6 @@
     "developer",
     "student"
   ],
-  "rating": 4.6,
   "config_schema": {
     "language": {
       "type": "string",

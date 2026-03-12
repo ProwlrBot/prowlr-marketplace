@@ -1,0 +1,50 @@
+{
+  "id": "homework-helper",
+  "name": "Homework Helper",
+  "version": "1.1.0",
+  "description": "A patient, always-available tutor that walks kids through homework step by step — building real understanding instead of just giving answers. Works from third-grade math to college chemistry.",
+  "author": "ProwlrBot Team",
+  "category": "agents",
+  "difficulty": "beginner",
+  "setup_time_minutes": 3,
+  "persona_tags": ["parent", "student"],
+  "tags": ["homework", "education", "math", "writing", "tutoring", "study", "kids"],
+  "skill_scan": {
+    "automation": 6,
+    "ease": 10,
+    "privacy": 9,
+    "reliability": 8,
+    "personalization": 8
+  },
+  "before_after": {
+    "before": "45-minute homework battles every night, with frustrated kids and parents Googling half-remembered algebra",
+    "after": "Kids ask the helper, get step-by-step explanations at their level, and finish homework independently in 20 minutes",
+    "time_saved": "3 hrs/week"
+  },
+  "works_with": ["Google Docs", "PDF uploads", "Photo capture", "Khan Academy", "Google Classroom"],
+  "user_stories": [
+    {
+      "quote": "My daughter went from crying over fractions to explaining them to her little brother. This thing meets her exactly where she is.",
+      "name": "Jennifer M.",
+      "role": "Mom of three, nurse"
+    },
+    {
+      "quote": "I'm in college and English isn't my first language. This helped me understand my chemistry textbook way better than re-reading it five times.",
+      "name": "Carlos R.",
+      "role": "Community college sophomore"
+    },
+    {
+      "quote": "My son has ADHD and traditional homework help overwhelms him. This breaks problems into small enough pieces that he can actually finish on his own.",
+      "name": "Tom W.",
+      "role": "Parent of a 10th grader"
+    }
+  ],
+  "setup_steps": [
+    { "step": 1, "instruction": "Select the student's grade level — elementary, middle school, high school, or college." },
+    { "step": 2, "instruction": "Choose primary subjects (math, science, reading/writing, history, or all)." },
+    { "step": 3, "instruction": "Pick an explanation style: simple with examples, step-by-step with practice problems, or concise hints." },
+    { "step": 4, "instruction": "Optionally connect Google Classroom to pull assignments automatically." }
+  ],
+  "hero_animation": "chalkboard-step-through",
+  "demo_url": ""
+}

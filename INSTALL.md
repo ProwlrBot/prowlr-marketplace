@@ -6,7 +6,7 @@
 
 ### Prerequisites
 
-- ProwlrBot installed ([setup guide](https://github.com/mcpcentral/prowlrbot/blob/main/INSTALL.md))
+- ProwlrBot installed ([setup guide](https://github.com/ProwlrBot/prowlrbot/blob/main/INSTALL.md))
 - Python 3.10+
 
 ### Browse and Install
@@ -47,7 +47,7 @@ Then restart Claude Code and ask your agent to `check_mission_board`.
 ### 1. Clone the marketplace
 
 ```bash
-git clone https://github.com/mcpcentral/prowlr-marketplace.git
+git clone https://github.com/ProwlrBot/prowlr-marketplace.git
 cd prowlr-marketplace
 ```
 
@@ -112,6 +112,6 @@ prowlr-marketplace/
 
 ## Links
 
-- [ProwlrBot](https://github.com/mcpcentral/prowlrbot) — Core platform
+- [ProwlrBot](https://github.com/ProwlrBot/prowlrbot) — Core platform
 - [Publishing Guide](docs/publishing-guide.md) — Detailed submission instructions
 - [Revenue Sharing](docs/revenue-sharing.md) — How paid items work

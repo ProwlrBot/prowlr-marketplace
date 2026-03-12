@@ -2,7 +2,7 @@
   "name": "prowlr-hub",
   "description": "War Room multi-agent coordination — connect multiple Claude Code terminals into one team",
   "version": "1.0.0",
-  "author": "mcpcentral",
+  "author": "ProwlrBot",
   "category": "mcp-servers",
   "license": "Apache-2.0",
   "tags": ["coordination", "multi-agent", "war-room", "file-locking", "mission-board"],
@@ -35,6 +35,6 @@
     "python": ">=3.10",
     "packages": ["pydantic"]
   },
-  "docs_url": "https://github.com/mcpcentral/prowlrbot/tree/main/src/prowlrbot/hub",
-  "install_url": "https://github.com/mcpcentral/prowlrbot/blob/main/INSTALL.md"
+  "docs_url": "https://github.com/ProwlrBot/prowlrbot/tree/main/src/prowlrbot/hub",
+  "install_url": "https://github.com/ProwlrBot/prowlrbot/blob/main/INSTALL.md"
 }

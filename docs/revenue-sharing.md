@@ -50,4 +50,4 @@ Creators keep **70%** of revenue. The platform takes **30%** for hosting, review
 
 ## Questions?
 
-Open an issue at [github.com/mcpcentral/prowlr-marketplace/issues](https://github.com/mcpcentral/prowlr-marketplace/issues).
+Open an issue at [github.com/ProwlrBot/prowlr-marketplace/issues](https://github.com/ProwlrBot/prowlr-marketplace/issues).

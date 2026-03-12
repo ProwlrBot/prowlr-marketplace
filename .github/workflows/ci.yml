@@ -17,7 +17,7 @@ jobs:
           echo "Validating all manifest.json files..."
           find . -name "manifest.json" -print0 | while IFS= read -r -d '' file; do
             echo "  Checking $file"
-            python3 -c "import json; json.load(open('$file'))" || exit 1
+            python3 -c "import json, sys; json.load(open(sys.argv[1]))" "$file" || exit 1
           done
           echo "All manifests valid."
 
@@ -26,13 +26,7 @@ jobs:
           echo "Checking required manifest fields..."
           find . -name "manifest.json" -print0 | while IFS= read -r -d '' file; do
             for field in id title description version author category; do
-              python3 -c "
-import json, sys
-data = json.load(open('$file'))
-if '$field' not in data:
-    print(f'  MISSING: $field in $file')
-    sys.exit(1)
-" || exit 1
+              python3 -c "import json, sys; data=json.load(open(sys.argv[1])); assert sys.argv[2] in data, f'{sys.argv[2]} missing'" "$file" "$field" || exit 1
             done
           done
           echo "All required fields present."

@@ -21,6 +21,9 @@ _PRIVATE_NETS = [
     ipaddress.ip_network("fc00::/7"),
     ipaddress.ip_network("::ffff:127.0.0.0/104"),
 ]
+# NOTE: DNS rebinding attacks (where a hostname first resolves to a public IP
+# then re-resolves to a private one) are a known limitation in v1. A full fix
+# requires binding the resolved IP at fetch time (not just at validation time).
 
 _HEX_RE = re.compile(r"^0x[0-9a-fA-F]+$")
 _OCT_RE = re.compile(r"^0[0-7]+$")
@@ -75,6 +78,9 @@ def _check_ip(ip_str: str) -> None:
         addr = ipaddress.ip_address(ip_str)
     except ValueError:
         return
+    # Unpack IPv4-mapped IPv6 (::ffff:x.x.x.x) to plain IPv4 for range checks
+    if isinstance(addr, ipaddress.IPv6Address) and addr.ipv4_mapped is not None:
+        addr = addr.ipv4_mapped
     for net in _PRIVATE_NETS:
         try:
             if addr in net:

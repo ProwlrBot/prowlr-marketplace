@@ -76,7 +76,7 @@ def _write_entry(
             f"/main/gallery/screenshots/{entry_id}.png"
         ),
         "author": author,
-        "created": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "created": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "tags": [],
     }
     if ref_url:
@@ -99,21 +99,32 @@ def share(
     ref_url: str | None = None,
     component: Path | None = None,
 ) -> None:
+    if not re.fullmatch(r"[a-zA-Z0-9_\-]{1,64}", author):
+        print("author must be 1-64 alphanumeric/underscore/hyphen characters", file=sys.stderr)
+        sys.exit(1)
+
     index_path = repo_dir / "gallery" / "index.json"
     existing: list = []
     if index_path.exists():
         existing = json.loads(index_path.read_text(encoding="utf-8")).get("entries", [])
 
-    date_str = datetime.datetime.utcnow().strftime("%Y%m%d")
+    date_str = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d")
     seq = get_next_seq(existing, author, date_str)
     entry_id = f"{author}-{date_str}-{seq}"
 
     _write_entry(repo_dir, entry_id, title, prompt, aesthetic, mode,
                  author, ref_url, screenshot, component)
 
-    _git(["add", "gallery/"], cwd=repo_dir)
+    add_result = _git(["add", "gallery/"], cwd=repo_dir)
+    if add_result.returncode != 0:
+        print(f"git add failed: {add_result.stderr}", file=sys.stderr)
+        sys.exit(1)
+
     commit_msg = f"gallery: add {strip_markup(title)} by {author}"
-    _git(["commit", "-m", commit_msg], cwd=repo_dir)
+    commit_result = _git(["commit", "-m", commit_msg], cwd=repo_dir)
+    if commit_result.returncode != 0:
+        print(f"git commit failed: {commit_result.stderr}", file=sys.stderr)
+        sys.exit(1)
 
     push = _git(["push"], cwd=repo_dir)
     if push.returncode != 0:

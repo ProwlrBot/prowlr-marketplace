@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import html as _html
 import http.server
 import os
 import socket
@@ -29,7 +30,7 @@ def _find_free_port() -> int:
 def _build_gallery_html(files: list[Path]) -> str:
     cards = ""
     for f in files:
-        label = f.stem
+        label = _html.escape(f.stem)
         cards += (
             f'<div style="display:flex;flex-direction:column;align-items:center;gap:8px">'
             f'<div style="font-family:monospace;font-size:11px;color:#888">{label}</div>'

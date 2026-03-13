@@ -84,7 +84,7 @@ _EXTRACT_JS = """
 
     return {
         bg_primary: bgPrimary,
-        bg_secondary: bodyStyle.backgroundColor,
+        bg_secondary: firstColor('--background-secondary', '--bg-secondary', '--color-surface', '--surface') || bodyStyle.backgroundColor,
         fg_primary: fgPrimary,
         fg_secondary: '#888888',
         accent: accent,
@@ -144,6 +144,8 @@ def extract(url: str, out_dir: Path) -> None:
             page.screenshot(path=str(out_dir / "screenshot.png"), full_page=False)
 
             raw = page.evaluate(_EXTRACT_JS)
+            if not isinstance(raw, dict):
+                raw = {}
             tokens: dict[str, Any] = {**DEFAULT_TOKENS, **raw}
             tokens["uses_gradients"] = bool(tokens.get("uses_gradients"))
             aesthetic = classify_aesthetic(tokens)

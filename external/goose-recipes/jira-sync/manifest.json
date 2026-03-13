@@ -1,0 +1,13 @@
+{
+  "id": "jira-sync",
+  "registry": "goose-recipes",
+  "source": "https://github.com/block/goose/tree/main/docs/recipes",
+  "name": "Jira Sync",
+  "description": "Sync GitHub issues/PRs with Jira tickets, auto-create tickets from commits, and generate sprint summaries. From Block's Goose recipes.",
+  "version": "1.0.0",
+  "tags": ["jira", "github", "project-management", "sync"],
+  "license": "Apache-2.0",
+  "author": "Block (formerly Square)",
+  "verified": true,
+  "risk_level": "clean"
+}

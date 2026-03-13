@@ -1,0 +1,93 @@
+name: incident-response
+version: 1.0.0
+description: Structured incident response workflow — detect, triage, communicate, resolve, post-mortem.
+triggers:
+  - type: monitor
+    condition: "error_rate > 5% for 5 minutes"
+  - type: monitor
+    condition: "p99_latency > 2000ms for 3 minutes"
+  - type: manual
+    label: "Declare Incident"
+
+agents:
+  - id: debugger
+    ref: prowlr-debugger
+    role: incident-commander
+  - id: support
+    ref: prowlr-support
+    role: communications
+
+steps:
+  - id: declare
+    name: Declare incident
+    action: create_incident
+    severity: "${SEVERITY:-P2}"
+    title: "${INCIDENT_TITLE}"
+    output_var: incident_id
+
+  - id: notify-team
+    name: Page on-call
+    action: pagerduty_trigger
+    incident_id: ${incident_id}
+    message: "Incident declared: ${INCIDENT_TITLE}"
+
+  - id: initial-status
+    name: Post initial status update
+    agent: support
+    input: |
+      Draft an initial incident status update for our status page.
+      Incident: ${INCIDENT_TITLE}
+      Severity: ${SEVERITY}
+      What we know: investigating elevated error rates.
+      Keep it brief, honest, and non-technical.
+    action: post_status_page
+    output_var: initial_update
+
+  - id: triage
+    name: Triage root cause
+    agent: debugger
+    input: |
+      We have an active incident. Help triage the root cause.
+      Incident: ${INCIDENT_TITLE}
+      Recent logs: ${RECENT_LOGS}
+      Recent deploys: ${RECENT_DEPLOYS}
+      Error rate chart: ${ERROR_RATE_DATA}
+    output_var: triage_findings
+
+  - id: resolution-loop
+    name: Resolution tracking
+    action: human_handoff
+    message: |
+      Triage findings:
+      ${triage_findings}
+
+      Resolve the incident and call "mark_resolved" when done.
+    wait_for: incident_resolved
+
+  - id: resolved-update
+    name: Post resolution update
+    agent: support
+    input: |
+      Draft a resolution update for our status page.
+      Incident: ${INCIDENT_TITLE}
+      Duration: ${incident_duration}
+      Resolution: ${RESOLUTION_SUMMARY}
+    action: post_status_page
+
+  - id: schedule-postmortem
+    name: Schedule post-mortem
+    action: calendar_event
+    title: "Post-mortem: ${INCIDENT_TITLE}"
+    when: "+48h"
+    attendees: "${ONCALL_TEAM}"
+    template: postmortem
+
+notifications:
+  on_declare:
+    channel: slack
+    room: "#incidents"
+    message: "🔴 Incident declared: ${INCIDENT_TITLE} (${SEVERITY})"
+  on_resolve:
+    channel: slack
+    room: "#incidents"
+    message: "✅ Incident resolved: ${INCIDENT_TITLE} | Duration: ${incident_duration}"

@@ -1,122 +1,250 @@
 {
-  "version": "1",
-  "generated_at": "2026-03-12T17:23:53.728105+00:00",
-  "total": 60,
+  "version": "2",
+  "generated_at": "2026-03-13T07:51:11.909741+00:00",
+  "total": 52,
   "categories": {
+    "skills": 27,
     "agents": 19,
-    "consumer": 10,
-    "mcp-servers": 2,
-    "prompts": 7,
-    "skills": 11,
-    "themes": 5,
     "workflows": 6
   },
   "listings": [
+    {
+      "id": "skill-api-tester",
+      "slug": "api-tester",
+      "category": "skills",
+      "title": "Api Tester",
+      "description": "Use this skill when the user wants to test an API, validate endpoints, check response schemas, run API test suites, or do load testing.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/api-tester",
+      "verified": true
+    },
+    {
+      "id": "skill-code-review",
+      "slug": "code-review",
+      "category": "skills",
+      "title": "Code Review",
+      "description": "Use this skill when the user wants to review code, audit a pull request, check code quality, find bugs, or get feedback on implementation.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/code-review",
+      "verified": true
+    },
+    {
+      "id": "skill-container-manager",
+      "slug": "container-manager",
+      "category": "skills",
+      "title": "Container Manager",
+      "description": "Use this skill when the user wants to manage Docker containers, build images, inspect logs, handle Docker Compose, or work with container orchestration.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/container-manager",
+      "verified": true
+    },
+    {
+      "id": "skill-database-migrator",
+      "slug": "database-migrator",
+      "category": "skills",
+      "title": "Database Migrator",
+      "description": "Use this skill when the user wants to run database migrations, manage schema changes, use alembic, upgrade or downgrade a database schema, or track schema versions.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/database-migrator",
+      "verified": true
+    },
+    {
+      "id": "skill-doc-generator",
+      "slug": "doc-generator",
+      "category": "skills",
+      "title": "Doc Generator",
+      "description": "Use this skill when the user wants to generate documentation, write docstrings, create API docs, build a README, or produce HTML/PDF documentation from code.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/doc-generator",
+      "verified": true
+    },
+    {
+      "id": "skill-git-workflow",
+      "slug": "git-workflow",
+      "category": "skills",
+      "title": "Git Workflow",
+      "description": "Use this skill when the user wants to automate git operations, manage branches, generate commit messages, handle PRs, set up git hooks, or implement a git workflow.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/git-workflow",
+      "verified": true
+    },
+    {
+      "id": "skill-pdf-reader",
+      "slug": "pdf-reader",
+      "category": "skills",
+      "title": "Pdf Reader",
+      "description": "Use this skill when the user wants to read, parse, or extract data from PDF files \u2014 text, tables, images, or metadata.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/pdf-reader",
+      "verified": true
+    },
+    {
+      "id": "skill-performance-profiler",
+      "slug": "performance-profiler",
+      "category": "skills",
+      "title": "Performance Profiler",
+      "description": "Use this skill when the user wants to profile code performance, find bottlenecks, measure execution time, analyze memory usage, or optimize slow functions.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/performance-profiler",
+      "verified": true
+    },
+    {
+      "id": "skill-secret-scanner",
+      "slug": "secret-scanner",
+      "category": "skills",
+      "title": "Secret Scanner",
+      "description": "Use this skill when the user wants to scan code for secrets, find leaked credentials, check for hardcoded API keys, audit git history for sensitive data, or set up secret detection.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/secret-scanner",
+      "verified": true
+    },
+    {
+      "id": "skill-test-runner",
+      "slug": "test-runner",
+      "category": "skills",
+      "title": "Test Runner",
+      "description": "Use this skill when the user wants to run tests, check test coverage, set up a test suite, parse test results, or integrate testing into CI/CD.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/test-runner",
+      "verified": true
+    },
+    {
+      "id": "skill-web-monitor",
+      "slug": "web-monitor",
+      "category": "skills",
+      "title": "Web Monitor",
+      "description": "Use this skill when the user wants to watch a webpage for changes, monitor a URL, detect content updates, or get notified when a site changes.",
+      "version": "1.0.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [],
+      "path": "skills/web-monitor",
+      "verified": true
+    },
     {
       "id": "agent-prowlr-analyst",
       "slug": "prowlr-analyst",
       "category": "agents",
       "title": "Prowlr Analyst",
-      "description": "Data analysis, market research, and competitive intelligence. Transforms raw data into actionable insights and structured reports. The signal in your noise.",
+      "description": "Data analyst that turns raw numbers into clear decisions. SQL, Python, dashboards, and plain-English insights.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
-        "data-analysis",
-        "market-research",
-        "competitive-intelligence",
-        "reporting"
+        "data",
+        "analytics",
+        "business-intelligence"
       ],
-      "persona_tags": [
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-analyst",
-      "manifest": "agents/prowlr-analyst/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-api-designer",
       "slug": "prowlr-api-designer",
       "category": "agents",
-      "title": "Prowlr API Designer",
-      "description": "REST and GraphQL API design specialist. Generates OpenAPI specs, SDK scaffolding, and comprehensive documentation. Your API, designed right from the start.",
+      "title": "Prowlr Api Designer",
+      "description": "API design specialist for REST, GraphQL, and gRPC \u2014 clean contracts, clear versioning, and APIs developers love.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
-        "api-design",
+        "api",
+        "design",
         "rest",
         "graphql",
-        "openapi",
-        "sdk"
+        "openapi"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-api-designer",
-      "manifest": "agents/prowlr-api-designer/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-architect",
       "slug": "prowlr-architect",
       "category": "agents",
       "title": "Prowlr Architect",
-      "description": "System architecture and design review agent. Analyzes codebases for structural integrity, suggests proven patterns, and reviews pull requests for architectural consistency. Your blueprint guardian.",
+      "description": "System design expert that produces battle-tested architectures, ADRs, and migration paths for complex engineering problems.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "architecture",
-        "design-patterns",
-        "code-review",
-        "system-design"
+        "design",
+        "backend",
+        "systems"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-architect",
-      "manifest": "agents/prowlr-architect/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-backend",
       "slug": "prowlr-backend",
       "category": "agents",
       "title": "Prowlr Backend",
-      "description": "API design, database optimization, microservices architecture, and authentication systems. The engine behind every great app. Built to scale, hardened to last.",
+      "description": "Senior backend engineer for APIs, databases, async systems, and production-grade Python/Node/Go services.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "backend",
-        "api-design",
-        "database",
-        "microservices",
-        "authentication"
+        "python",
+        "nodejs",
+        "go",
+        "api"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-backend",
-      "manifest": "agents/prowlr-backend/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-data-engineer",
       "slug": "prowlr-data-engineer",
       "category": "agents",
       "title": "Prowlr Data Engineer",
-      "description": "ETL pipelines, data modeling, SQL optimization, and warehouse design. Turns your data chaos into structured gold. Always watching your data flow.",
+      "description": "Data pipeline engineer for ETL/ELT, streaming, warehouses, and the infrastructure that keeps data flowing reliably.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
@@ -124,73 +252,57 @@
       "tags": [
         "data-engineering",
         "etl",
-        "sql",
-        "data-modeling",
-        "data-warehouse"
+        "pipelines",
+        "kafka",
+        "airflow"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-data-engineer",
-      "manifest": "agents/prowlr-data-engineer/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-debugger",
       "slug": "prowlr-debugger",
       "category": "agents",
       "title": "Prowlr Debugger",
-      "description": "Debugging specialist that hunts bugs with surgical precision. Systematic root cause analysis, log parsing, error tracing, and issue reproduction. The bug stops here.",
+      "description": "Systematic bug hunter that traces errors to root causes and produces verified fixes, not guesses.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "debugging",
-        "root-cause-analysis",
-        "log-parsing",
-        "error-tracing"
+        "troubleshooting",
+        "development"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-debugger",
-      "manifest": "agents/prowlr-debugger/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-devops",
       "slug": "prowlr-devops",
       "category": "agents",
-      "title": "Prowlr DevOps",
-      "description": "CI/CD pipelines, Docker orchestration, Kubernetes deployments, and infrastructure automation. Ships your code while you sleep. Always deploying. Always reliable.",
+      "title": "Prowlr Devops",
+      "description": "DevOps engineer for CI/CD pipelines, Docker, Kubernetes, Terraform, and keeping production healthy.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "devops",
-        "ci-cd",
-        "docker",
+        "infrastructure",
         "kubernetes",
-        "infrastructure"
+        "terraform",
+        "ci-cd"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-devops",
-      "manifest": "agents/prowlr-devops/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-frontend",
       "slug": "prowlr-frontend",
       "category": "agents",
       "title": "Prowlr Frontend",
-      "description": "React, Next.js, and Vue specialist. Component architecture, responsive layouts, accessibility audits, and performance optimization. Pixel-perfect execution, every time.",
+      "description": "Frontend engineer for React, TypeScript, accessible UIs, and polished user experiences that actually ship.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
@@ -198,25 +310,19 @@
       "tags": [
         "frontend",
         "react",
-        "nextjs",
-        "vue",
-        "accessibility",
-        "performance"
+        "typescript",
+        "ui",
+        "ux"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-frontend",
-      "manifest": "agents/prowlr-frontend/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-gamedev",
       "slug": "prowlr-gamedev",
       "category": "agents",
-      "title": "Prowlr GameDev",
-      "description": "Game development specialist for Unity, Unreal, and web-based games. Game mechanics, physics, AI behavior trees, and shader programming. Level up your game development.",
+      "title": "Prowlr Gamedev",
+      "description": "Game developer for Unity, Godot, and web games \u2014 from game feel to performance to shipping.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
@@ -224,75 +330,57 @@
       "tags": [
         "gamedev",
         "unity",
-        "unreal",
-        "web-games",
-        "game-design"
+        "godot",
+        "games",
+        "shader"
       ],
-      "persona_tags": [
-        "developer",
-        "creator"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-gamedev",
-      "manifest": "agents/prowlr-gamedev/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-guard",
       "slug": "prowlr-guard",
       "category": "agents",
       "title": "Prowlr Guard",
-      "description": "Security monitoring agent that watches your infrastructure, scans for vulnerabilities, and alerts on threats. The silent sentinel of your stack.",
+      "description": "Security sentinel that audits code, infrastructure, and configurations for vulnerabilities and compliance gaps.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "security",
-        "monitoring",
-        "vulnerability-scanning",
-        "alerts"
+        "appsec",
+        "devops"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-guard",
-      "manifest": "agents/prowlr-guard/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-legal",
       "slug": "prowlr-legal",
       "category": "agents",
       "title": "Prowlr Legal",
-      "description": "Privacy policies, terms of service, GDPR compliance, and legal document drafting. Protect your business with properly structured legal documents. Always compliant.",
+      "description": "Legal assistant for privacy policies, terms of service, compliance checklists, and contract language \u2014 always recommends a lawyer for final review.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "legal",
-        "privacy",
-        "gdpr",
         "compliance",
-        "terms-of-service"
+        "privacy",
+        "contracts",
+        "gdpr"
       ],
-      "persona_tags": [
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-legal",
-      "manifest": "agents/prowlr-legal/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-mobile",
       "slug": "prowlr-mobile",
       "category": "agents",
       "title": "Prowlr Mobile",
-      "description": "Cross-platform mobile development with React Native and Flutter. Native performance, shared codebase. Build once, deploy everywhere. Always in your pocket.",
+      "description": "Mobile engineer for React Native and Flutter apps \u2014 performant, native-feeling, and ready for both stores.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
@@ -301,152 +389,112 @@
         "mobile",
         "react-native",
         "flutter",
-        "cross-platform",
         "ios",
         "android"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-mobile",
-      "manifest": "agents/prowlr-mobile/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-pm",
       "slug": "prowlr-pm",
       "category": "agents",
-      "title": "Prowlr PM",
-      "description": "Project management agent that keeps your team on track. Sprint planning, task decomposition, milestone tracking, and standup report generation. Ships on time, every time.",
+      "title": "Prowlr Pm",
+      "description": "Product manager that translates user needs into clear requirements, prioritized backlogs, and executable specs.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
-        "project-management",
-        "sprint-planning",
-        "task-management",
-        "agile"
+        "product",
+        "management",
+        "requirements",
+        "strategy"
       ],
-      "persona_tags": [
-        "business",
-        "developer",
-        "freelancer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-pm",
-      "manifest": "agents/prowlr-pm/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-sales",
       "slug": "prowlr-sales",
       "category": "agents",
       "title": "Prowlr Sales",
-      "description": "Cold outreach, follow-up sequences, proposal generation, and lead research. CRM-ready automation that turns prospects into customers. Always closing.",
+      "description": "Sales assistant that drafts outreach, qualifies leads, prepares proposals, and helps close deals without being pushy.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "sales",
+        "business-development",
         "outreach",
-        "proposals",
-        "lead-generation",
-        "crm"
+        "proposals"
       ],
-      "persona_tags": [
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-sales",
-      "manifest": "agents/prowlr-sales/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-scout",
       "slug": "prowlr-scout",
       "category": "agents",
       "title": "Prowlr Scout",
-      "description": "Research agent that hunts down information across the web, summarizes findings, and delivers structured reports. Tireless. Thorough. Never sleeps.",
+      "description": "Research hunter that tracks down information across the web, verifies sources, and delivers structured intel reports.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "research",
-        "web-search",
-        "summarization",
-        "reports"
+        "intelligence",
+        "web"
       ],
-      "persona_tags": [
-        "developer",
-        "business",
-        "everyone"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-scout",
-      "manifest": "agents/prowlr-scout/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-security",
       "slug": "prowlr-security",
       "category": "agents",
       "title": "Prowlr Security",
-      "description": "Security auditor and penetration testing guide. OWASP compliance checks, dependency scanning, secret detection, and vulnerability assessment. The lock on your digital door.",
+      "description": "Application security engineer for secure-by-design implementation, threat modeling, and code-level security fixes.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
         "security",
-        "owasp",
-        "penetration-testing",
-        "dependency-scanning",
-        "secret-detection"
+        "appsec",
+        "devsecops",
+        "sast"
       ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-security",
-      "manifest": "agents/prowlr-security/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-support",
       "slug": "prowlr-support",
       "category": "agents",
       "title": "Prowlr Support",
-      "description": "Customer support automation that never sleeps. Ticket triage, FAQ generation, troubleshooting guides, and escalation management. Always watching your support queue.",
+      "description": "Customer support agent that resolves issues with empathy, precision, and a bias toward the customer actually being helped.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
-        "customer-support",
-        "ticket-triage",
-        "faq",
-        "troubleshooting",
-        "automation"
+        "support",
+        "customer-success",
+        "help-desk",
+        "communication"
       ],
-      "persona_tags": [
-        "business"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-support",
-      "manifest": "agents/prowlr-support/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-tutor",
       "slug": "prowlr-tutor",
       "category": "agents",
       "title": "Prowlr Tutor",
-      "description": "Adaptive learning assistant that meets you where you are. Explains concepts at your level, creates exercises, tracks progress, and adjusts difficulty. Patient, tireless, always ready to teach.",
+      "description": "Patient technical tutor that meets learners where they are and builds genuine understanding, not just working code.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
@@ -454,1086 +502,467 @@
       "tags": [
         "education",
         "learning",
-        "tutoring",
-        "exercises",
-        "adaptive"
+        "mentoring",
+        "teaching"
       ],
-      "persona_tags": [
-        "student",
-        "everyone"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-tutor",
-      "manifest": "agents/prowlr-tutor/manifest.json"
+      "verified": true
     },
     {
       "id": "agent-prowlr-writer",
       "slug": "prowlr-writer",
       "category": "agents",
       "title": "Prowlr Writer",
-      "description": "Content creation powerhouse. Blog posts, documentation, SEO-optimized copy, and technical writing. Words that work as hard as you do. Never misses a deadline.",
+      "description": "Technical writer for documentation, READMEs, API references, tutorials, and developer content that people actually read.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
       "tags": [
-        "content-creation",
-        "writing",
-        "seo",
         "documentation",
-        "copywriting"
+        "writing",
+        "developer-experience",
+        "content"
       ],
-      "persona_tags": [
-        "creator",
-        "freelancer",
-        "business"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-writer",
-      "manifest": "agents/prowlr-writer/manifest.json"
-    },
-    {
-      "id": "client-followup",
-      "slug": "client-followup",
-      "category": "consumer",
-      "title": "Client Follow-Up",
-      "description": "Never lose a deal or damage a relationship because you forgot to follow up. Tracks every client interaction and sends timely, personalized follow-ups so you stay top-of-mind without a full CRM.",
-      "version": "1.0.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "crm",
-        "follow-up",
-        "clients",
-        "sales",
-        "relationships",
-        "email",
-        "automation",
-        "pipeline"
-      ],
-      "persona_tags": [
-        "freelancer",
-        "business"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/client-followup",
-      "manifest": "consumer/client-followup/manifest.json"
-    },
-    {
-      "id": "competitor-watch",
-      "slug": "competitor-watch",
-      "category": "consumer",
-      "title": "Competitor Watch",
-      "description": "Monitors competitor websites, pricing pages, job listings, and social accounts for meaningful changes — then sends you a plain-English summary of what changed and why it matters.",
-      "version": "1.0.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "competitive-intelligence",
-        "monitoring",
-        "pricing",
-        "market-research",
-        "alerts",
-        "business-strategy"
-      ],
-      "persona_tags": [
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/competitor-watch",
-      "manifest": "consumer/competitor-watch/manifest.json"
-    },
-    {
-      "id": "content-scheduler",
-      "slug": "content-scheduler",
-      "category": "consumer",
-      "title": "Content Scheduler",
-      "description": "Plan, write, and schedule social media posts across Twitter/X, Instagram, LinkedIn, and more from one place. Suggests optimal posting times based on your audience engagement patterns.",
-      "version": "1.0.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "social-media",
-        "scheduling",
-        "content",
-        "marketing",
-        "twitter",
-        "instagram",
-        "linkedin",
-        "automation"
-      ],
-      "persona_tags": [
-        "creator",
-        "business"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/content-scheduler",
-      "manifest": "consumer/content-scheduler/manifest.json"
-    },
-    {
-      "id": "homework-helper",
-      "slug": "homework-helper",
-      "category": "consumer",
-      "title": "Homework Helper",
-      "description": "A patient, always-available tutor that walks kids through homework step by step — building real understanding instead of just giving answers. Works from third-grade math to college chemistry.",
-      "version": "1.1.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "homework",
-        "education",
-        "math",
-        "writing",
-        "tutoring",
-        "study",
-        "kids"
-      ],
-      "persona_tags": [
-        "parent",
-        "student"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/homework-helper",
-      "manifest": "consumer/homework-helper/manifest.json"
-    },
-    {
-      "id": "invoice-chaser",
-      "slug": "invoice-chaser",
-      "category": "consumer",
-      "title": "Invoice Chaser",
-      "description": "Tracks every outstanding invoice, sends polite escalating follow-ups on your behalf, and gives you a weekly cash-flow summary so you stop losing money to forgotten receivables.",
-      "version": "1.1.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "invoicing",
-        "payments",
-        "accounts-receivable",
-        "follow-up",
-        "email",
-        "finance",
-        "freelance"
-      ],
-      "persona_tags": [
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/invoice-chaser",
-      "manifest": "consumer/invoice-chaser/manifest.json"
-    },
-    {
-      "id": "meal-planner",
-      "slug": "meal-planner",
-      "category": "consumer",
-      "title": "Meal Planner",
-      "description": "Get a full week of meals with a consolidated grocery list, personalized to your family's size, dietary needs, budget, and cooking skill. Reuses ingredients across meals to cut waste and cost.",
-      "version": "1.1.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "meals",
-        "cooking",
-        "grocery",
-        "family",
-        "budget",
-        "recipes",
-        "health",
-        "meal-prep"
-      ],
-      "persona_tags": [
-        "parent",
-        "explorer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/meal-planner",
-      "manifest": "consumer/meal-planner/manifest.json"
-    },
-    {
-      "id": "morning-briefing",
-      "slug": "morning-briefing",
-      "category": "consumer",
-      "title": "Morning Briefing",
-      "description": "Wake up to a personalized daily summary covering your calendar, unread emails, local weather, and top news stories. Delivered to your preferred channel before you even pour your coffee.",
-      "version": "1.2.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "morning-routine",
-        "email",
-        "calendar",
-        "weather",
-        "news",
-        "daily-digest",
-        "productivity"
-      ],
-      "persona_tags": [
-        "parent",
-        "business",
-        "explorer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/morning-briefing",
-      "manifest": "consumer/morning-briefing/manifest.json"
-    },
-    {
-      "id": "site-monitor",
-      "slug": "site-monitor",
-      "category": "consumer",
-      "title": "Site Monitor",
-      "description": "Monitors your websites for downtime, slow response times, SSL certificate expiry, and content changes. Alerts you within seconds of an issue so you fix it before your users even notice.",
-      "version": "1.0.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "uptime",
-        "monitoring",
-        "website",
-        "ssl",
-        "performance",
-        "devops",
-        "alerts",
-        "downtime"
-      ],
-      "persona_tags": [
-        "developer",
-        "business"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/site-monitor",
-      "manifest": "consumer/site-monitor/manifest.json"
-    },
-    {
-      "id": "smart-reminder",
-      "slug": "smart-reminder",
-      "category": "consumer",
-      "title": "Smart Reminder",
-      "description": "Tell it what you need to remember in plain language and it figures out exactly when and how to remind you. Adapts to your schedule, follows up if you don't act, and never lets important things slip th",
-      "version": "1.1.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "reminders",
-        "tasks",
-        "memory",
-        "scheduling",
-        "notifications",
-        "productivity",
-        "context-aware"
-      ],
-      "persona_tags": [
-        "parent",
-        "business",
-        "student",
-        "creator",
-        "freelancer",
-        "developer",
-        "explorer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/smart-reminder",
-      "manifest": "consumer/smart-reminder/manifest.json"
-    },
-    {
-      "id": "study-planner",
-      "slug": "study-planner",
-      "category": "consumer",
-      "title": "Study Planner",
-      "description": "Turn a pile of exams and deadlines into a realistic, day-by-day study schedule that uses spaced repetition and adapts when life gets in the way. No more 2 AM cram sessions.",
-      "version": "1.1.0",
-      "author": "ProwlrBot Team",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "study",
-        "planning",
-        "exams",
-        "school",
-        "time-management",
-        "education",
-        "spaced-repetition"
-      ],
-      "persona_tags": [
-        "student"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "consumer/study-planner",
-      "manifest": "consumer/study-planner/manifest.json"
-    },
-    {
-      "id": "mcp-prowlr-hub",
-      "slug": "prowlr-hub",
-      "category": "mcp-servers",
-      "title": "ProwlrHub MCP Server",
-      "description": "Multi-agent coordination via MCP. Mission board, file locking, real-time events, shared context. The nervous system of your agent pack.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "mcp",
-        "coordination",
-        "war-room",
-        "multi-agent"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "mcp-servers/prowlr-hub",
-      "manifest": "mcp-servers/prowlr-hub/manifest.json"
-    },
-    {
-      "id": "mcp-prowlr-tools",
-      "slug": "prowlr-tools",
-      "category": "mcp-servers",
-      "title": "ProwlrTools MCP Server",
-      "description": "Essential agent tools via MCP — file operations, shell execution, browser automation, and screenshot capture. The hands of your agents.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "mcp",
-        "tools",
-        "file-io",
-        "shell",
-        "browser"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "mcp-servers/prowlr-tools",
-      "manifest": "mcp-servers/prowlr-tools/manifest.json"
-    },
-    {
-      "id": "prompt-business-analyst",
-      "slug": "business-analyst",
-      "category": "prompts",
-      "title": "Business Analyst",
-      "description": "Prompt pack for business analysis — SWOT, competitive matrices, market sizing, and executive summaries. Think MBA without the debt.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "business",
-        "analysis",
-        "strategy",
-        "reports"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/business-analyst",
-      "manifest": "prompts/business-analyst/manifest.json"
-    },
-    {
-      "id": "prompt-code-assistant",
-      "slug": "code-assistant",
-      "category": "prompts",
-      "title": "Code Assistant",
-      "description": "Prompt pack for coding — refactoring, debugging, documentation, test generation, and architecture review. Your pair programmer that never takes breaks.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "coding",
-        "debugging",
-        "documentation",
-        "testing"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/code-assistant",
-      "manifest": "prompts/code-assistant/manifest.json"
-    },
-    {
-      "id": "prompt-code-migration",
-      "slug": "code-migration",
-      "category": "prompts",
-      "title": "Code Migration",
-      "description": "Language and framework migration playbooks. Python 2 to 3, React class to hooks, monolith to microservices, and more. Migrate without breaking everything.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "migration",
-        "refactoring",
-        "framework",
-        "language",
-        "modernization"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/code-migration",
-      "manifest": "prompts/code-migration/manifest.json"
-    },
-    {
-      "id": "prompt-content-calendar",
-      "slug": "content-calendar",
-      "category": "prompts",
-      "title": "Content Calendar",
-      "description": "Social media content planning, scheduling templates, and engagement analysis prompts. Plan a month of content in minutes. Consistent posting, maximum reach.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "content",
-        "social-media",
-        "planning",
-        "scheduling",
-        "engagement"
-      ],
-      "persona_tags": [
-        "creator",
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/content-calendar",
-      "manifest": "prompts/content-calendar/manifest.json"
-    },
-    {
-      "id": "prompt-incident-responder",
-      "slug": "incident-responder",
-      "category": "prompts",
-      "title": "Incident Responder",
-      "description": "Production incident response playbook prompts. Structured triage, communication templates, root cause analysis, and post-mortem frameworks. Stay calm under fire.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "incident-response",
-        "production",
-        "triage",
-        "post-mortem",
-        "on-call"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/incident-responder",
-      "manifest": "prompts/incident-responder/manifest.json"
-    },
-    {
-      "id": "prompt-interview-prep",
-      "slug": "interview-prep",
-      "category": "prompts",
-      "title": "Interview Prep",
-      "description": "Technical interview preparation covering system design, algorithms, behavioral questions, and mock interviews. Practice with an AI that adapts to your target company and role.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "interview",
-        "system-design",
-        "algorithms",
-        "behavioral",
-        "career"
-      ],
-      "persona_tags": [
-        "developer",
-        "student"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/interview-prep",
-      "manifest": "prompts/interview-prep/manifest.json"
-    },
-    {
-      "id": "prompt-startup-advisor",
-      "slug": "startup-advisor",
-      "category": "prompts",
-      "title": "Startup Advisor",
-      "description": "Business plan frameworks, pitch deck structures, market analysis templates, and funding strategy prompts. From idea to Series A, guided every step.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "startup",
-        "business-plan",
-        "pitch-deck",
-        "funding",
-        "market-analysis"
-      ],
-      "persona_tags": [
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "prompts/startup-advisor",
-      "manifest": "prompts/startup-advisor/manifest.json"
-    },
-    {
-      "id": "skill-api-tester",
-      "slug": "api-tester",
-      "category": "skills",
-      "title": "API Tester",
-      "description": "API endpoint testing, load testing, and response validation. Generates test suites from OpenAPI specs, validates schemas, and catches regressions before they ship.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "api-testing",
-        "load-testing",
-        "validation",
-        "openapi",
-        "regression"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/api-tester",
-      "manifest": "skills/api-tester/manifest.json"
-    },
-    {
-      "id": "skill-code-review",
-      "slug": "code-review",
-      "category": "skills",
-      "title": "Code Review",
-      "description": "Automated code review with style checks, security scanning, and best practice suggestions. Supports Python, JavaScript, TypeScript, Go, and Rust.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "code-review",
-        "linting",
-        "security",
-        "best-practices"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/code-review",
-      "manifest": "skills/code-review/manifest.json"
-    },
-    {
-      "id": "skill-container-manager",
-      "slug": "container-manager",
-      "category": "skills",
-      "title": "Container Manager",
-      "description": "Docker Compose generation, Kubernetes manifest creation, and container health monitoring. Orchestrate your containers with precision. Always running, always healthy.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "docker",
-        "kubernetes",
-        "containers",
-        "orchestration",
-        "health-monitoring"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/container-manager",
-      "manifest": "skills/container-manager/manifest.json"
-    },
-    {
-      "id": "skill-database-migrator",
-      "slug": "database-migrator",
-      "category": "skills",
-      "title": "Database Migrator",
-      "description": "Schema migration planning, data transformation scripts, and rollback strategies. Migrate with confidence. Every change reversible, every step verified.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "database",
-        "migration",
-        "schema",
-        "rollback",
-        "data-transformation"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/database-migrator",
-      "manifest": "skills/database-migrator/manifest.json"
-    },
-    {
-      "id": "skill-doc-generator",
-      "slug": "doc-generator",
-      "category": "skills",
-      "title": "Doc Generator",
-      "description": "Auto-generate API documentation, README files, and architecture diagrams from your codebase. Never write docs from scratch again. Always up to date.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "documentation",
-        "api-docs",
-        "readme",
-        "diagrams",
-        "auto-generation"
-      ],
-      "persona_tags": [
-        "developer",
-        "everyone"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/doc-generator",
-      "manifest": "skills/doc-generator/manifest.json"
-    },
-    {
-      "id": "skill-git-workflow",
-      "slug": "git-workflow",
-      "category": "skills",
-      "title": "Git Workflow",
-      "description": "Branch management, PR creation, merge conflict resolution, and changelog generation. Streamlines your entire git workflow from branch to release.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "git",
-        "workflow",
-        "pull-requests",
-        "changelog",
-        "branching"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/git-workflow",
-      "manifest": "skills/git-workflow/manifest.json"
-    },
-    {
-      "id": "skill-pdf-reader",
-      "slug": "pdf-reader",
-      "category": "skills",
-      "title": "PDF Reader",
-      "description": "Extract text, tables, and images from PDF documents. Handles encrypted PDFs, OCR for scanned pages, and multi-language content.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "pdf",
-        "document",
-        "extraction",
-        "ocr"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/pdf-reader",
-      "manifest": "skills/pdf-reader/manifest.json"
-    },
-    {
-      "id": "skill-performance-profiler",
-      "slug": "performance-profiler",
-      "category": "skills",
-      "title": "Performance Profiler",
-      "description": "CPU and memory profiling, bottleneck detection, and optimization suggestions. Find what's slow, understand why, and fix it. Every millisecond counts.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "performance",
-        "profiling",
-        "optimization",
-        "bottleneck",
-        "memory"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/performance-profiler",
-      "manifest": "skills/performance-profiler/manifest.json"
-    },
-    {
-      "id": "skill-secret-scanner",
-      "slug": "secret-scanner",
-      "category": "skills",
-      "title": "Secret Scanner",
-      "description": "Detect leaked credentials, API keys, tokens, and secrets in code and git history. Scan before you ship. Because one leaked key can cost everything.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "security",
-        "secrets",
-        "credentials",
-        "scanning",
-        "git-history"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/secret-scanner",
-      "manifest": "skills/secret-scanner/manifest.json"
-    },
-    {
-      "id": "skill-test-runner",
-      "slug": "test-runner",
-      "category": "skills",
-      "title": "Test Runner",
-      "description": "Comprehensive test suite runner with coverage reports. Supports Python (pytest), JavaScript (jest/vitest), Rust (cargo test), and Go (go test). Run, analyze, report.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "testing",
-        "coverage",
-        "pytest",
-        "jest",
-        "ci"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/test-runner",
-      "manifest": "skills/test-runner/manifest.json"
-    },
-    {
-      "id": "skills-web-monitor",
-      "slug": "web-monitor",
-      "category": "skills",
-      "title": "Web Monitor",
-      "description": "Watch any webpage for changes and get notified instantly. Tracks content diffs, sends alerts via webhook, Discord, or Telegram. Never miss an update again.",
-      "version": "1.0.0",
-      "author": "prowlrbot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "monitoring",
-        "web",
-        "alerts",
-        "automation"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "skills/web-monitor",
-      "manifest": "skills/web-monitor/manifest.json"
-    },
-    {
-      "id": "theme-arctic-frost",
-      "slug": "arctic-frost",
-      "category": "themes",
-      "title": "Arctic Frost",
-      "description": "Cool blue-white minimalist theme. Clean lines, generous whitespace, and icy accents. Maximum readability, minimum distraction. Crystal clear focus.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "light",
-        "minimalist",
-        "blue",
-        "clean",
-        "frost"
-      ],
-      "persona_tags": [
-        "everyone"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "themes/arctic-frost",
-      "manifest": "themes/arctic-frost/manifest.json"
-    },
-    {
-      "id": "theme-dark-prowler",
-      "slug": "dark-prowler",
-      "category": "themes",
-      "title": "Dark Prowler",
-      "description": "Sleek dark theme with cyan accents and subtle glow effects. For agents who hunt at night. Default dark theme for ProwlrBot console.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "theme",
-        "dark",
-        "cyan",
-        "default"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "themes/dark-prowler",
-      "manifest": "themes/dark-prowler/manifest.json"
-    },
-    {
-      "id": "theme-light-sentinel",
-      "slug": "light-sentinel",
-      "category": "themes",
-      "title": "Light Sentinel",
-      "description": "Clean light theme with deep blue accents and crisp contrast. For agents who guard the daylight. Default light theme for ProwlrBot console.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "theme",
-        "light",
-        "blue",
-        "default"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "themes/light-sentinel",
-      "manifest": "themes/light-sentinel/manifest.json"
-    },
-    {
-      "id": "theme-midnight-hacker",
-      "slug": "midnight-hacker",
-      "category": "themes",
-      "title": "Midnight Hacker",
-      "description": "Deep black background with neon green accents. Matrix-inspired terminal aesthetics for the developer who lives in the command line. Code in the dark.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "dark",
-        "hacker",
-        "matrix",
-        "neon",
-        "terminal"
-      ],
-      "persona_tags": [
-        "developer",
-        "everyone"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "themes/midnight-hacker",
-      "manifest": "themes/midnight-hacker/manifest.json"
-    },
-    {
-      "id": "theme-sunset-horizon",
-      "slug": "sunset-horizon",
-      "category": "themes",
-      "title": "Sunset Horizon",
-      "description": "Warm gradient theme with orange and purple tones. Easy on the eyes during long sessions, beautiful enough to show off. Where productivity meets aesthetics.",
-      "version": "1.0.0",
-      "author": "ProwlrBot",
-      "pricing_model": "free",
-      "license": "Apache-2.0",
-      "tags": [
-        "warm",
-        "gradient",
-        "orange",
-        "purple",
-        "aesthetic"
-      ],
-      "persona_tags": [
-        "creator",
-        "everyone"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
-      "path": "themes/sunset-horizon",
-      "manifest": "themes/sunset-horizon/manifest.json"
+      "verified": true
     },
     {
       "id": "workflow-content-publish",
       "slug": "content-publish",
       "category": "workflows",
-      "title": "Content Publish Pipeline",
-      "description": "Full content lifecycle from draft to distribution. Write, review, SEO optimize, publish, and promote across social channels. Content that reaches its audience.",
+      "title": "Content Publish",
+      "description": "Content publishing pipeline \u2014 draft review, SEO check, image processing, cross-post to multiple channels, and analytics setup.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
-      "tags": [
-        "content",
-        "publishing",
-        "seo",
-        "social-media",
-        "distribution"
-      ],
-      "persona_tags": [
-        "creator",
-        "business",
-        "freelancer"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
+      "tags": [],
       "path": "workflows/content-publish",
-      "manifest": "workflows/content-publish/manifest.json"
+      "verified": true
     },
     {
       "id": "workflow-daily-standup",
       "slug": "daily-standup",
       "category": "workflows",
       "title": "Daily Standup",
-      "description": "Automated daily status aggregation across all your agents. What got done, what's blocked, what's next — delivered to your channel every morning.",
+      "description": "Automated daily standup \u2014 collects git activity, JIRA updates, and blockers, posts a structured summary to Slack.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
-      "tags": [
-        "standup",
-        "status",
-        "daily",
-        "reporting"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
+      "tags": [],
       "path": "workflows/daily-standup",
-      "manifest": "workflows/daily-standup/manifest.json"
+      "verified": true
     },
     {
       "id": "workflow-deploy-review",
       "slug": "deploy-review",
       "category": "workflows",
-      "title": "Deploy Review Pipeline",
-      "description": "Automated code review to deployment pipeline. Lint, test, review, approve, deploy — one trigger, zero babysitting. Ship faster, break less.",
+      "title": "Deploy Review",
+      "description": "Pre-deploy checklist \u2014 runs security scan, smoke tests, migration check, and produces a go/no-go recommendation before production deploys.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
-      "tags": [
-        "ci-cd",
-        "deployment",
-        "code-review",
-        "automation"
-      ],
-      "persona_tags": [],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
+      "tags": [],
       "path": "workflows/deploy-review",
-      "manifest": "workflows/deploy-review/manifest.json"
+      "verified": true
     },
     {
       "id": "workflow-incident-response",
       "slug": "incident-response",
       "category": "workflows",
-      "title": "Incident Response Workflow",
-      "description": "End-to-end incident management. Detect, alert, diagnose, fix, and generate post-mortems. From first alert to resolution, fully orchestrated.",
+      "title": "Incident Response",
+      "description": "Structured incident response workflow \u2014 detect, triage, communicate, resolve, post-mortem.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
-      "tags": [
-        "incident",
-        "response",
-        "alerting",
-        "diagnosis",
-        "post-mortem"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "advanced",
-      "min_prowlrbot_version": "0.1.0",
+      "tags": [],
       "path": "workflows/incident-response",
-      "manifest": "workflows/incident-response/manifest.json"
+      "verified": true
     },
     {
       "id": "workflow-onboarding",
       "slug": "onboarding",
       "category": "workflows",
-      "title": "Repo Onboarding",
-      "description": "New repository setup workflow. Initialize project, configure dependencies, set up CI/CD, generate docs, and create your first PR. From zero to shipping in minutes.",
+      "title": "Onboarding",
+      "description": "New employee/contributor onboarding \u2014 environment setup validation, access provisioning checklist, and first-week orientation.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
-      "tags": [
-        "onboarding",
-        "setup",
-        "ci-cd",
-        "documentation",
-        "first-pr"
-      ],
-      "persona_tags": [
-        "developer",
-        "student"
-      ],
-      "difficulty": "beginner",
-      "min_prowlrbot_version": "0.1.0",
+      "tags": [],
       "path": "workflows/onboarding",
-      "manifest": "workflows/onboarding/manifest.json"
+      "verified": true
     },
     {
       "id": "workflow-pr-review-pipeline",
       "slug": "pr-review-pipeline",
       "category": "workflows",
-      "title": "PR Review Pipeline",
-      "description": "Automated pull request review pipeline. Lint, test, security scan, code review, and approval in one seamless flow. Every PR reviewed thoroughly, every time.",
+      "title": "Pr Review Pipeline",
+      "description": "Automated pull request review pipeline \u2014 security scan, code quality check, and test coverage report before merge.",
       "version": "1.0.0",
       "author": "ProwlrBot",
       "pricing_model": "free",
       "license": "Apache-2.0",
-      "tags": [
-        "pr-review",
-        "ci-cd",
-        "automation",
-        "code-quality",
-        "pipeline"
-      ],
-      "persona_tags": [
-        "developer"
-      ],
-      "difficulty": "intermediate",
-      "min_prowlrbot_version": "0.1.0",
+      "tags": [],
       "path": "workflows/pr-review-pipeline",
-      "manifest": "workflows/pr-review-pipeline/manifest.json"
+      "verified": true
+    },
+    {
+      "id": "ext-anthropic-computer-use",
+      "slug": "computer-use",
+      "category": "skills",
+      "title": "Computer Use",
+      "description": "Give Claude control of a computer \u2014 click, type, browse, run commands. Adapted from the Anthropic computer-use-demo quickstart.",
+      "version": "1.0.0",
+      "author": "Anthropic",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "computer-use",
+        "automation",
+        "desktop",
+        "browser"
+      ],
+      "path": "external/anthropic-official/computer-use",
+      "registry": "anthropic-official",
+      "source": "https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo",
+      "verified": true,
+      "risk_level": "medium"
+    },
+    {
+      "id": "ext-anthropic-customer-support-agent",
+      "slug": "customer-support-agent",
+      "category": "skills",
+      "title": "Customer Support Agent",
+      "description": "Multi-turn customer support agent with tool use, knowledge base lookup, and escalation logic. From Anthropic Cookbook.",
+      "version": "1.0.0",
+      "author": "Anthropic",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "support",
+        "agents",
+        "tool-use",
+        "multi-turn"
+      ],
+      "path": "external/anthropic-official/customer-support-agent",
+      "registry": "anthropic-official",
+      "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents/customer_support",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-anthropic-pdf-analysis",
+      "slug": "pdf-analysis",
+      "category": "skills",
+      "title": "PDF Analysis",
+      "description": "Analyze PDFs directly with Claude's native PDF support \u2014 extract text, summarize, answer questions, and compare documents.",
+      "version": "1.0.0",
+      "author": "Anthropic",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "pdf",
+        "documents",
+        "multimodal",
+        "extraction"
+      ],
+      "path": "external/anthropic-official/pdf-analysis",
+      "registry": "anthropic-official",
+      "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/multimodal/pdf_support",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-anthropic-rag-pipeline",
+      "slug": "rag-pipeline",
+      "category": "skills",
+      "title": "RAG Pipeline",
+      "description": "Retrieval-Augmented Generation pipeline with vector search. Chunk, embed, store, and query your documents with Claude.",
+      "version": "1.0.0",
+      "author": "Anthropic",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "rag",
+        "embeddings",
+        "vector-search",
+        "documents"
+      ],
+      "path": "external/anthropic-official/rag-pipeline",
+      "registry": "anthropic-official",
+      "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/third_party/Pinecone",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-anthropic-structured-outputs",
+      "slug": "structured-outputs",
+      "category": "skills",
+      "title": "Structured Outputs",
+      "description": "Force Claude to return valid JSON matching a schema using tool use or prefilling. Works for data extraction, classification, and form filling.",
+      "version": "1.0.0",
+      "author": "Anthropic",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "json",
+        "structured-output",
+        "extraction",
+        "classification"
+      ],
+      "path": "external/anthropic-official/structured-outputs",
+      "registry": "anthropic-official",
+      "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/json_mode",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-anthropic-tool-use-orchestration",
+      "slug": "tool-use-orchestration",
+      "category": "skills",
+      "title": "Tool Use Orchestration",
+      "description": "Patterns for multi-tool orchestration, parallel tool execution, and agentic loops with Claude's tool use API.",
+      "version": "1.0.0",
+      "author": "Anthropic",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "tool-use",
+        "agents",
+        "orchestration",
+        "function-calling"
+      ],
+      "path": "external/anthropic-official/tool-use-orchestration",
+      "registry": "anthropic-official",
+      "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/tool_use",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-goose-code-review-bot",
+      "slug": "code-review-bot",
+      "category": "skills",
+      "title": "Code Review Bot",
+      "description": "Automated code review that posts line-level GitHub PR comments with security findings, style issues, and improvement suggestions. From Block's Goose recipes.",
+      "version": "1.0.0",
+      "author": "Block (formerly Square)",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "code-review",
+        "github",
+        "pr",
+        "automation"
+      ],
+      "path": "external/goose-recipes/code-review-bot",
+      "registry": "goose-recipes",
+      "source": "https://github.com/block/goose/tree/main/docs/recipes",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-goose-github-issue-triage",
+      "slug": "github-issue-triage",
+      "category": "skills",
+      "title": "GitHub Issue Triage",
+      "description": "Automatically triage incoming GitHub issues \u2014 classify by type, assign labels, route to teams, and draft responses. From Block's Goose recipes.",
+      "version": "1.0.0",
+      "author": "Block (formerly Square)",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "github",
+        "triage",
+        "automation",
+        "issues"
+      ],
+      "path": "external/goose-recipes/github-issue-triage",
+      "registry": "goose-recipes",
+      "source": "https://github.com/block/goose/tree/main/docs/recipes",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-goose-jira-sync",
+      "slug": "jira-sync",
+      "category": "skills",
+      "title": "Jira Sync",
+      "description": "Sync GitHub issues/PRs with Jira tickets, auto-create tickets from commits, and generate sprint summaries. From Block's Goose recipes.",
+      "version": "1.0.0",
+      "author": "Block (formerly Square)",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "jira",
+        "github",
+        "project-management",
+        "sync"
+      ],
+      "path": "external/goose-recipes/jira-sync",
+      "registry": "goose-recipes",
+      "source": "https://github.com/block/goose/tree/main/docs/recipes",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-goose-slack-notifier",
+      "slug": "slack-notifier",
+      "category": "skills",
+      "title": "Slack Notifier",
+      "description": "Send rich Slack notifications with Block Kit \u2014 alerts, reports, approvals, and interactive messages. From Block's Goose recipes.",
+      "version": "1.0.0",
+      "author": "Block (formerly Square)",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "slack",
+        "notifications",
+        "messaging",
+        "alerts"
+      ],
+      "path": "external/goose-recipes/slack-notifier",
+      "registry": "goose-recipes",
+      "source": "https://github.com/block/goose/tree/main/docs/recipes",
+      "verified": true,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-goose-web-scraper",
+      "slug": "web-scraper",
+      "category": "skills",
+      "title": "Web Scraper",
+      "description": "Intelligent web scraper using Playwright + Claude to extract structured data from any website, handling dynamic content and pagination.",
+      "version": "1.0.0",
+      "author": "Block (formerly Square)",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "scraping",
+        "playwright",
+        "web",
+        "extraction"
+      ],
+      "path": "external/goose-recipes/web-scraper",
+      "registry": "goose-recipes",
+      "source": "https://github.com/block/goose/tree/main/docs/recipes",
+      "verified": true,
+      "risk_level": "low"
+    },
+    {
+      "id": "ext-community-cron-scheduler",
+      "slug": "cron-scheduler",
+      "category": "skills",
+      "title": "Cron Scheduler",
+      "description": "Schedule and manage recurring tasks with natural language \u2014 'every Monday at 9am' becomes a cron expression, with APScheduler integration.",
+      "version": "1.0.0",
+      "author": "prowlr-community",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "cron",
+        "scheduling",
+        "automation",
+        "tasks"
+      ],
+      "path": "external/community/cron-scheduler",
+      "registry": "community",
+      "source": "community",
+      "verified": false,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-community-data-visualizer",
+      "slug": "data-visualizer",
+      "category": "skills",
+      "title": "Data Visualizer",
+      "description": "Generate charts and dashboards from data using matplotlib, plotly, and pandas. Outputs PNG, HTML, or SVG visualizations.",
+      "version": "1.0.0",
+      "author": "prowlr-community",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "charts",
+        "visualization",
+        "data",
+        "plotly",
+        "matplotlib"
+      ],
+      "path": "external/community/data-visualizer",
+      "registry": "community",
+      "source": "community",
+      "verified": false,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-community-email-drafter",
+      "slug": "email-drafter",
+      "category": "skills",
+      "title": "Email Drafter",
+      "description": "Draft professional emails in any tone \u2014 cold outreach, follow-ups, escalations, announcements, and replies \u2014 with tone matching and subject line variants.",
+      "version": "1.0.0",
+      "author": "prowlr-community",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "email",
+        "writing",
+        "communication",
+        "outreach"
+      ],
+      "path": "external/community/email-drafter",
+      "registry": "community",
+      "source": "community",
+      "verified": false,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-community-log-analyzer",
+      "slug": "log-analyzer",
+      "category": "skills",
+      "title": "Log Analyzer",
+      "description": "Parse and analyze application logs \u2014 find errors, detect anomalies, build timelines, and summarize incidents from structured or unstructured log files.",
+      "version": "1.0.0",
+      "author": "prowlr-community",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "logs",
+        "observability",
+        "debugging",
+        "monitoring"
+      ],
+      "path": "external/community/log-analyzer",
+      "registry": "community",
+      "source": "community",
+      "verified": false,
+      "risk_level": "clean"
+    },
+    {
+      "id": "ext-community-meeting-summarizer",
+      "slug": "meeting-summarizer",
+      "category": "skills",
+      "title": "Meeting Summarizer",
+      "description": "Transcribe audio recordings and generate structured meeting summaries with action items, decisions, and follow-up assignments.",
+      "version": "1.0.0",
+      "author": "prowlr-community",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "meetings",
+        "transcription",
+        "summarization",
+        "action-items"
+      ],
+      "path": "external/community/meeting-summarizer",
+      "registry": "community",
+      "source": "community",
+      "verified": false,
+      "risk_level": "clean"
     }
   ]
 }

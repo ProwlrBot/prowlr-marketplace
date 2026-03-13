@@ -1,0 +1,110 @@
+name: content-publish
+version: 1.0.0
+description: Content publishing pipeline — draft review, SEO check, image processing, cross-post to multiple channels, and analytics setup.
+triggers:
+  - type: manual
+    label: "Publish Content"
+    inputs:
+      - name: content_file
+        type: file
+        label: "Content file (markdown)"
+      - name: publish_to
+        type: multiselect
+        options: [blog, twitter, linkedin, newsletter, discord]
+      - name: scheduled_at
+        type: datetime
+        label: "Publish time (leave blank for immediate)"
+
+agents:
+  - id: writer
+    ref: prowlr-writer
+    role: editor
+  - id: scout
+    ref: prowlr-scout
+    role: seo-researcher
+
+steps:
+  - id: read-content
+    name: Read content file
+    action: read_file
+    path: "${content_file}"
+    output_var: raw_content
+
+  - id: editorial-review
+    name: Editorial review
+    agent: writer
+    input: |
+      Review this content for publication. Check:
+      1. Clarity and readability
+      2. Technical accuracy (flag anything that looks wrong)
+      3. Tone consistency with technical developer audience
+      4. Missing sections or abrupt endings
+      5. Call to action clarity
+
+      Content:
+      ${raw_content}
+    output_var: editorial_notes
+
+  - id: seo-check
+    name: SEO keyword research
+    agent: scout
+    input: |
+      Research the top 5 keywords this content should target.
+      Topic: ${CONTENT_TITLE}
+      Audience: developers, DevOps engineers, AI builders.
+      Check search volume vs. competition and suggest one primary, two secondary keywords.
+    output_var: seo_recommendations
+
+  - id: human-review
+    name: Human review gate
+    action: approval_gate
+    message: |
+      Editorial review complete.
+
+      **Editorial notes:**
+      ${editorial_notes}
+
+      **SEO recommendations:**
+      ${seo_recommendations}
+
+      Approve to proceed with publishing, or request changes.
+
+  - id: format-for-channels
+    name: Format for each channel
+    agent: writer
+    input: |
+      Take this content and produce versions for each target channel: ${publish_to}
+      - Blog: full markdown, with meta description and title tag
+      - Twitter/X: thread of ≤5 tweets, each ≤280 chars
+      - LinkedIn: professional tone, 3 paragraphs, hashtags
+      - Newsletter: email-friendly, personalized opener
+      - Discord: casual, with code blocks preserved
+
+      Content:
+      ${raw_content}
+    output_var: formatted_versions
+
+  - id: publish
+    name: Publish to channels
+    action: publish_content
+    channels: "${publish_to}"
+    content: "${formatted_versions}"
+    scheduled_at: "${scheduled_at}"
+    output_var: publish_results
+
+  - id: setup-analytics
+    name: Set up analytics tracking
+    action: analytics_tag
+    content_id: "${publish_results.content_id}"
+    utm_campaign: "${CAMPAIGN_NAME:-organic}"
+    track_events: [view, scroll_50pct, scroll_100pct, cta_click]
+
+notifications:
+  on_publish:
+    channel: slack
+    room: "#marketing"
+    message: "📣 Content published: ${CONTENT_TITLE} → ${publish_to}"
+  on_failure:
+    channel: slack
+    room: "#marketing"
+    message: "❌ Content publish failed for: ${CONTENT_TITLE}"

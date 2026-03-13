@@ -1,0 +1,100 @@
+name: deploy-review
+version: 1.0.0
+description: Pre-deploy checklist — runs security scan, smoke tests, migration check, and produces a go/no-go recommendation before production deploys.
+triggers:
+  - type: webhook
+    event: deployment.created
+    filter: "environment == 'production'"
+  - type: manual
+    label: "Run Deploy Review"
+
+agents:
+  - id: guard
+    ref: prowlr-guard
+    role: security-reviewer
+  - id: devops
+    ref: prowlr-devops
+    role: deploy-reviewer
+
+steps:
+  - id: get-changes
+    name: Get changes since last deploy
+    action: shell
+    command: "git log ${LAST_DEPLOY_SHA}..HEAD --oneline"
+    output_var: changelog
+
+  - id: check-migrations
+    name: Check pending migrations
+    action: shell
+    command: "alembic current && alembic heads"
+    output_var: migration_status
+    continue_on_failure: true
+
+  - id: security-check
+    name: Run security scan on changed files
+    agent: guard
+    input: |
+      Review these changes for security issues before production deploy.
+      Focus on: new endpoints, auth changes, dependency updates, config changes.
+
+      Changes:
+      ${changelog}
+    output_var: security_assessment
+    fail_on: severity=CRITICAL
+
+  - id: smoke-tests
+    name: Run smoke tests against staging
+    action: shell
+    command: "pytest tests/smoke/ -v --base-url=${STAGING_URL}"
+    output_var: smoke_results
+    continue_on_failure: true
+
+  - id: go-nogo
+    name: Generate go/no-go recommendation
+    agent: devops
+    input: |
+      Produce a deploy go/no-go recommendation based on these signals.
+      Be explicit: GO or NO-GO, then list reasons.
+
+      Changes: ${changelog}
+      Pending migrations: ${migration_status}
+      Security assessment: ${security_assessment}
+      Smoke test results: ${smoke_results}
+    output_var: recommendation
+
+  - id: human-approval
+    name: Require human approval for production
+    action: approval_gate
+    message: |
+      Deploy review complete.
+
+      ${recommendation}
+
+      Approve to proceed with production deploy.
+    approvers: "${DEPLOY_APPROVERS}"
+
+  - id: deploy
+    name: Execute deploy
+    action: shell
+    command: "${DEPLOY_COMMAND}"
+    requires: human-approval
+
+  - id: post-deploy-check
+    name: Post-deploy health check
+    action: shell
+    command: "sleep 30 && curl -f ${HEALTH_CHECK_URL}"
+    output_var: health_status
+
+notifications:
+  on_no_go:
+    channel: slack
+    room: "#deployments"
+    message: "🚫 Deploy blocked for ${SERVICE}: ${recommendation}"
+  on_deploy_success:
+    channel: slack
+    room: "#deployments"
+    message: "✅ ${SERVICE} deployed successfully to production"
+  on_deploy_failure:
+    channel: slack
+    room: "#deployments"
+    message: "❌ ${SERVICE} deploy FAILED — rollback may be needed"

@@ -1,0 +1,106 @@
+name: onboarding
+version: 1.0.0
+description: New employee/contributor onboarding — environment setup validation, access provisioning checklist, and first-week orientation.
+triggers:
+  - type: manual
+    label: "Start Onboarding"
+    inputs:
+      - name: new_member_name
+        type: string
+        label: "New member name"
+      - name: new_member_email
+        type: string
+        label: "Email address"
+      - name: role
+        type: select
+        options: [engineer, designer, pm, support, contractor]
+
+agents:
+  - id: tutor
+    ref: prowlr-tutor
+    role: orientation-guide
+  - id: support
+    ref: prowlr-support
+    role: onboarding-coordinator
+
+steps:
+  - id: send-welcome
+    name: Send welcome message
+    agent: support
+    input: |
+      Write a warm, human welcome message for ${new_member_name} joining as ${role}.
+      Mention: their manager will be in touch, here's what the first week looks like,
+      and who to contact with questions. Keep it to 3 short paragraphs.
+    action: send_email
+    to: ${new_member_email}
+    output_var: welcome_sent
+
+  - id: provision-access
+    name: Provision system access
+    action: parallel
+    steps:
+      - action: github_add_member
+        org: "${GITHUB_ORG}"
+        team: "${role}-team"
+        username: "${GITHUB_USERNAME}"
+
+      - action: slack_invite
+        email: "${new_member_email}"
+        channels: ["#general", "#team-${role}", "#announcements"]
+
+      - action: create_jira_account
+        email: "${new_member_email}"
+        project: "${JIRA_PROJECT}"
+
+  - id: env-setup-guide
+    name: Send environment setup guide
+    agent: tutor
+    input: |
+      Write a step-by-step environment setup guide for a new ${role} joining the team.
+      Include: required tools to install, repo clone instructions, how to run the app locally,
+      how to run tests, and where to find documentation.
+      Assume they are competent but unfamiliar with our specific setup.
+    action: send_email
+    to: ${new_member_email}
+    subject: "Getting your dev environment set up"
+
+  - id: checklist-day-one
+    name: Create day-one checklist
+    action: create_issue
+    title: "Onboarding checklist: ${new_member_name}"
+    body: |
+      ## Week 1 Onboarding Checklist
+
+      ### Day 1
+      - [ ] Environment setup complete (run `pytest` successfully)
+      - [ ] Met with manager (30 min intro call)
+      - [ ] Joined all Slack channels
+      - [ ] Read CLAUDE.md and architecture docs
+      - [ ] First PR: fix a docs typo or add a test
+
+      ### Week 1
+      - [ ] Completed first assigned ticket
+      - [ ] Pair programming session with team member
+      - [ ] Code review received and acted on
+      - [ ] 1:1 with manager scheduled
+
+      ### End of Week 1
+      - [ ] Retrospective: what's clear, what's confusing?
+
+  - id: schedule-check-in
+    name: Schedule week-1 check-in
+    action: calendar_event
+    title: "Onboarding check-in: ${new_member_name}"
+    when: "+7d 10:00"
+    attendees: ["${new_member_email}", "${MANAGER_EMAIL}"]
+    description: "Week 1 check-in — how is onboarding going? Any blockers?"
+
+notifications:
+  on_start:
+    channel: slack
+    room: "#team-${role}"
+    message: "Welcome ${new_member_name} to the team! 🎉 Onboarding workflow started."
+  on_complete:
+    channel: slack
+    room: "#hr-ops"
+    message: "Onboarding complete for ${new_member_name}"

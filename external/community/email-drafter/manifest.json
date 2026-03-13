@@ -1,0 +1,13 @@
+{
+  "id": "email-drafter",
+  "registry": "community",
+  "source": "community",
+  "name": "Email Drafter",
+  "description": "Draft professional emails in any tone — cold outreach, follow-ups, escalations, announcements, and replies — with tone matching and subject line variants.",
+  "version": "1.0.0",
+  "tags": ["email", "writing", "communication", "outreach"],
+  "license": "MIT",
+  "author": "prowlr-community",
+  "verified": false,
+  "risk_level": "clean"
+}

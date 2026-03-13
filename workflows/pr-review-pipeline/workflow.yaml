@@ -1,0 +1,79 @@
+name: pr-review-pipeline
+version: 1.0.0
+description: Automated pull request review pipeline — security scan, code quality check, and test coverage report before merge.
+triggers:
+  - type: webhook
+    event: pull_request.opened
+  - type: webhook
+    event: pull_request.synchronize
+  - type: manual
+    label: "Run PR Review"
+
+agents:
+  - id: guard
+    ref: prowlr-guard
+    role: security-reviewer
+  - id: debugger
+    ref: prowlr-debugger
+    role: code-reviewer
+
+steps:
+  - id: fetch-diff
+    name: Fetch PR diff
+    action: shell
+    command: "gh pr diff ${PR_NUMBER} --patch"
+    output_var: pr_diff
+
+  - id: security-scan
+    name: Security audit
+    agent: guard
+    input: |
+      Review this PR diff for security issues. Check OWASP Top 10.
+      Focus on: injection, auth, CORS, secrets, input validation.
+      Diff:
+      ${pr_diff}
+    output_var: security_findings
+    fail_on: severity=CRITICAL
+
+  - id: code-review
+    name: Code quality review
+    agent: debugger
+    input: |
+      Review this PR diff for bugs, logic errors, and code quality issues.
+      Diff:
+      ${pr_diff}
+    output_var: code_findings
+
+  - id: run-tests
+    name: Run test suite
+    action: shell
+    command: "pytest --tb=short -q --junit-xml=/tmp/pr_tests.xml"
+    output_var: test_output
+    continue_on_failure: true
+
+  - id: post-comment
+    name: Post review comment
+    action: github_comment
+    pr: ${PR_NUMBER}
+    body: |
+      ## Prowlr PR Review
+
+      ### Security Findings
+      ${security_findings}
+
+      ### Code Review
+      ${code_findings}
+
+      ### Test Results
+      ${test_output}
+
+      ---
+      *Reviewed by ProwlrBot automated pipeline*
+
+notifications:
+  on_critical_finding:
+    channel: slack
+    message: "CRITICAL security finding in PR #${PR_NUMBER} — review required"
+  on_test_failure:
+    channel: slack
+    message: "Tests failing in PR #${PR_NUMBER}"

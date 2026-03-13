@@ -1,0 +1,13 @@
+{
+  "id": "tool-use-orchestration",
+  "registry": "anthropic-official",
+  "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/tool_use",
+  "name": "Tool Use Orchestration",
+  "description": "Patterns for multi-tool orchestration, parallel tool execution, and agentic loops with Claude's tool use API.",
+  "version": "1.0.0",
+  "tags": ["tool-use", "agents", "orchestration", "function-calling"],
+  "license": "MIT",
+  "author": "Anthropic",
+  "verified": true,
+  "risk_level": "clean"
+}

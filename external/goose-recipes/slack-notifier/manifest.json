@@ -1,0 +1,13 @@
+{
+  "id": "slack-notifier",
+  "registry": "goose-recipes",
+  "source": "https://github.com/block/goose/tree/main/docs/recipes",
+  "name": "Slack Notifier",
+  "description": "Send rich Slack notifications with Block Kit — alerts, reports, approvals, and interactive messages. From Block's Goose recipes.",
+  "version": "1.0.0",
+  "tags": ["slack", "notifications", "messaging", "alerts"],
+  "license": "Apache-2.0",
+  "author": "Block (formerly Square)",
+  "verified": true,
+  "risk_level": "clean"
+}

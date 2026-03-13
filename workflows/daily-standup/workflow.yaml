@@ -1,0 +1,67 @@
+name: daily-standup
+version: 1.0.0
+description: Automated daily standup — collects git activity, JIRA updates, and blockers, posts a structured summary to Slack.
+triggers:
+  - type: cron
+    schedule: "0 9 * * 1-5"  # 9am Mon-Fri
+    timezone: "America/New_York"
+
+agents:
+  - id: analyst
+    ref: prowlr-analyst
+    role: summarizer
+
+steps:
+  - id: collect-commits
+    name: Collect recent commits
+    action: shell
+    command: |
+      git log --since="24 hours ago" --pretty=format:"%an: %s" --all
+    output_var: recent_commits
+
+  - id: collect-prs
+    name: Collect open PRs
+    action: shell
+    command: "gh pr list --json title,author,reviewDecision,url"
+    output_var: open_prs
+
+  - id: collect-issues
+    name: Collect in-progress issues
+    action: shell
+    command: "gh issue list --label 'in-progress' --json title,assignees,url"
+    output_var: in_progress_issues
+
+  - id: summarize
+    name: Generate standup summary
+    agent: analyst
+    input: |
+      Generate a brief daily standup summary from this data.
+      Format: What got done, What's in progress, Any blockers visible from the data.
+      Keep it scannable — bullet points, no more than 15 lines total.
+
+      Commits (last 24h):
+      ${recent_commits}
+
+      Open PRs:
+      ${open_prs}
+
+      In-progress issues:
+      ${in_progress_issues}
+    output_var: standup_summary
+
+  - id: post-standup
+    name: Post to Slack
+    action: slack_message
+    channel: "${STANDUP_CHANNEL:-#standup}"
+    message: |
+      *Daily Standup — ${TODAY}*
+
+      ${standup_summary}
+
+      _Posted by ProwlrBot — reply in thread with blockers_
+
+notifications:
+  on_failure:
+    channel: slack
+    room: "#standup"
+    message: "Standup bot failed to run today — check ProwlrBot logs"

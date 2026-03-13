@@ -1,0 +1,13 @@
+{
+  "id": "code-review-bot",
+  "registry": "goose-recipes",
+  "source": "https://github.com/block/goose/tree/main/docs/recipes",
+  "name": "Code Review Bot",
+  "description": "Automated code review that posts line-level GitHub PR comments with security findings, style issues, and improvement suggestions. From Block's Goose recipes.",
+  "version": "1.0.0",
+  "tags": ["code-review", "github", "pr", "automation"],
+  "license": "Apache-2.0",
+  "author": "Block (formerly Square)",
+  "verified": true,
+  "risk_level": "clean"
+}

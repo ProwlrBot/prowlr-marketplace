@@ -1,0 +1,13 @@
+{
+  "id": "cron-scheduler",
+  "registry": "community",
+  "source": "community",
+  "name": "Cron Scheduler",
+  "description": "Schedule and manage recurring tasks with natural language — 'every Monday at 9am' becomes a cron expression, with APScheduler integration.",
+  "version": "1.0.0",
+  "tags": ["cron", "scheduling", "automation", "tasks"],
+  "license": "MIT",
+  "author": "prowlr-community",
+  "verified": false,
+  "risk_level": "clean"
+}

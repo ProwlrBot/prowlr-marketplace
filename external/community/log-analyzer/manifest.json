@@ -1,0 +1,13 @@
+{
+  "id": "log-analyzer",
+  "registry": "community",
+  "source": "community",
+  "name": "Log Analyzer",
+  "description": "Parse and analyze application logs — find errors, detect anomalies, build timelines, and summarize incidents from structured or unstructured log files.",
+  "version": "1.0.0",
+  "tags": ["logs", "observability", "debugging", "monitoring"],
+  "license": "MIT",
+  "author": "prowlr-community",
+  "verified": false,
+  "risk_level": "clean"
+}

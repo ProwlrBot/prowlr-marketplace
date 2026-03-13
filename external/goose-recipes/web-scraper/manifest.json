@@ -1,0 +1,13 @@
+{
+  "id": "web-scraper",
+  "registry": "goose-recipes",
+  "source": "https://github.com/block/goose/tree/main/docs/recipes",
+  "name": "Web Scraper",
+  "description": "Intelligent web scraper using Playwright + Claude to extract structured data from any website, handling dynamic content and pagination.",
+  "version": "1.0.0",
+  "tags": ["scraping", "playwright", "web", "extraction"],
+  "license": "Apache-2.0",
+  "author": "Block (formerly Square)",
+  "verified": true,
+  "risk_level": "low"
+}

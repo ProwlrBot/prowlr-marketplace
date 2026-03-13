@@ -23,7 +23,7 @@ _PRIVATE_NETS = [
 ]
 
 _HEX_RE = re.compile(r"^0x[0-9a-fA-F]+$")
-_OCT_RE = re.compile(r"^0[0-7]+(\.[0-9]+)*$")
+_OCT_RE = re.compile(r"^0[0-7]+$")
 _DEC_RE = re.compile(r"^\d+$")
 
 
@@ -35,17 +35,38 @@ def _block(reason: str) -> None:
 def _parse_encoded_ip(host: str) -> str | None:
     """Return dotted-decimal string if host is hex/octal/decimal encoded IP."""
     host = host.strip("[]")
+
+    # Single-component hex: 0x7f000001
     if _HEX_RE.match(host):
         val = int(host, 16)
         return str(ipaddress.IPv4Address(val))
-    if _OCT_RE.match(host.split(".")[0]) and "." not in host:
-        val = int(host, 8)
-        return str(ipaddress.IPv4Address(val))
+
+    # Dotted-octal: 0177.0.0.1 — each component may be octal
+    if "." in host:
+        parts = host.split(".")
+        if len(parts) == 4 and all(_OCT_RE.match(p) for p in parts):
+            try:
+                octets = [int(p, 8) for p in parts]
+                return ".".join(str(o) for o in octets)
+            except ValueError:
+                pass
+        return None  # dotted but not dotted-octal — leave to DNS
+
+    # Single-component octal: 0177777 (no dots)
+    if _OCT_RE.match(host):
+        try:
+            val = int(host, 8)
+            return str(ipaddress.IPv4Address(val))
+        except (ValueError, ipaddress.AddressValueError):
+            pass
+
+    # Single-component decimal: 2130706433
     if _DEC_RE.match(host):
         try:
             return str(ipaddress.IPv4Address(int(host)))
         except (ValueError, ipaddress.AddressValueError):
             pass
+
     return None
 
 

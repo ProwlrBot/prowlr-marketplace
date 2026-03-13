@@ -51,5 +51,6 @@
       "type": "integer",
       "default": 30
     }
-  }
+  },
+  "name": "Container Manager"
 }

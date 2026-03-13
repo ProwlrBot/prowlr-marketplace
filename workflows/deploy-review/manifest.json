@@ -1,15 +1,31 @@
 {
   "id": "workflow-deploy-review",
   "title": "Deploy Review Pipeline",
-  "description": "Automated code review to deployment pipeline. Lint, test, review, approve, deploy — one trigger, zero babysitting. Ship faster, break less.",
+  "description": "Automated code review to deployment pipeline. Lint, test, review, approve, deploy \u2014 one trigger, zero babysitting. Ship faster, break less.",
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "workflows",
-  "tags": ["ci-cd", "deployment", "code-review", "automation"],
+  "tags": [
+    "ci-cd",
+    "deployment",
+    "code-review",
+    "automation"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "steps": ["lint", "test", "code-review", "approval", "deploy"],
-  "triggers": ["push", "pull_request", "manual"]
+  "steps": [
+    "lint",
+    "test",
+    "code-review",
+    "approval",
+    "deploy"
+  ],
+  "triggers": [
+    "push",
+    "pull_request",
+    "manual"
+  ],
+  "name": "Deploy Review"
 }

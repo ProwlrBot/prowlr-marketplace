@@ -5,7 +5,12 @@
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "themes",
-  "tags": ["theme", "light", "blue", "default"],
+  "tags": [
+    "theme",
+    "light",
+    "blue",
+    "default"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
@@ -16,5 +21,6 @@
     "surface": "#FFFFFF",
     "text": "#212121",
     "accent": "#0288D1"
-  }
+  },
+  "name": "Light Sentinel"
 }

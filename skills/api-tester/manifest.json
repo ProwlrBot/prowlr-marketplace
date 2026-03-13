@@ -40,5 +40,6 @@
       "type": "integer",
       "default": 30
     }
-  }
+  },
+  "name": "Api Tester"
 }

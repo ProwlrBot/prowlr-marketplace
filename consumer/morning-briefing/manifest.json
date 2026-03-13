@@ -7,8 +7,20 @@
   "category": "workflows",
   "difficulty": "beginner",
   "setup_time_minutes": 5,
-  "persona_tags": ["parent", "business", "explorer"],
-  "tags": ["morning-routine", "email", "calendar", "weather", "news", "daily-digest", "productivity"],
+  "persona_tags": [
+    "parent",
+    "business",
+    "explorer"
+  ],
+  "tags": [
+    "morning-routine",
+    "email",
+    "calendar",
+    "weather",
+    "news",
+    "daily-digest",
+    "productivity"
+  ],
   "skill_scan": {
     "automation": 9,
     "ease": 9,
@@ -21,7 +33,17 @@
     "after": "One concise briefing waiting in your inbox or chat at 6:30 AM sharp",
     "time_saved": "20 min/day"
   },
-  "works_with": ["Google Calendar", "Outlook", "Gmail", "Apple Mail", "OpenWeatherMap", "NewsAPI", "Slack", "Telegram", "Discord"],
+  "works_with": [
+    "Google Calendar",
+    "Outlook",
+    "Gmail",
+    "Apple Mail",
+    "OpenWeatherMap",
+    "NewsAPI",
+    "Slack",
+    "Telegram",
+    "Discord"
+  ],
   "user_stories": [
     {
       "quote": "I used to open five apps before breakfast. Now I glance at one message and I know exactly what my day looks like.",
@@ -40,12 +62,28 @@
     }
   ],
   "setup_steps": [
-    { "step": 1, "instruction": "Connect your email account (Gmail or Outlook) through the integrations panel." },
-    { "step": 2, "instruction": "Link your calendar so the briefing can pull today's events." },
-    { "step": 3, "instruction": "Set your location for weather forecasts (city name or zip code)." },
-    { "step": 4, "instruction": "Pick your news topics — business, tech, local, world, or custom keywords." },
-    { "step": 5, "instruction": "Choose delivery time and channel (email, Slack, Telegram, or Discord)." }
+    {
+      "step": 1,
+      "instruction": "Connect your email account (Gmail or Outlook) through the integrations panel."
+    },
+    {
+      "step": 2,
+      "instruction": "Link your calendar so the briefing can pull today's events."
+    },
+    {
+      "step": 3,
+      "instruction": "Set your location for weather forecasts (city name or zip code)."
+    },
+    {
+      "step": 4,
+      "instruction": "Pick your news topics \u2014 business, tech, local, world, or custom keywords."
+    },
+    {
+      "step": 5,
+      "instruction": "Choose delivery time and channel (email, Slack, Telegram, or Discord)."
+    }
   ],
   "hero_animation": "sunrise-inbox-cascade",
-  "demo_url": ""
+  "demo_url": "",
+  "license": "Apache-2.0"
 }

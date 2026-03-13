@@ -7,8 +7,20 @@
   "category": "workflows",
   "difficulty": "intermediate",
   "setup_time_minutes": 10,
-  "persona_tags": ["creator", "business"],
-  "tags": ["social-media", "scheduling", "content", "marketing", "twitter", "instagram", "linkedin", "automation"],
+  "persona_tags": [
+    "creator",
+    "business"
+  ],
+  "tags": [
+    "social-media",
+    "scheduling",
+    "content",
+    "marketing",
+    "twitter",
+    "instagram",
+    "linkedin",
+    "automation"
+  ],
   "skill_scan": {
     "automation": 9,
     "ease": 7,
@@ -21,7 +33,16 @@
     "after": "A full week of posts queued across all platforms in one 30-minute Sunday session, publishing at the times your audience is most active",
     "time_saved": "6 hrs/week"
   },
-  "works_with": ["Twitter/X", "Instagram", "LinkedIn", "Facebook", "Threads", "Bluesky", "Buffer", "Google Sheets"],
+  "works_with": [
+    "Twitter/X",
+    "Instagram",
+    "LinkedIn",
+    "Facebook",
+    "Threads",
+    "Bluesky",
+    "Buffer",
+    "Google Sheets"
+  ],
   "user_stories": [
     {
       "quote": "I used to spend an hour a day just posting to social. Now I batch a whole week in 30 minutes on Sunday and my engagement actually went up 40%.",
@@ -40,12 +61,28 @@
     }
   ],
   "setup_steps": [
-    { "step": 1, "instruction": "Connect your social media accounts (Twitter/X, Instagram, LinkedIn, etc.) through OAuth." },
-    { "step": 2, "instruction": "Set your content categories — promotional, educational, behind-the-scenes, engagement, etc." },
-    { "step": 3, "instruction": "Choose a posting frequency for each platform (e.g., 1x/day on Twitter, 3x/week on LinkedIn)." },
-    { "step": 4, "instruction": "Enable smart scheduling to let the agent pick optimal posting times based on your audience data." },
-    { "step": 5, "instruction": "Optionally connect a content source (blog RSS, Google Sheets, Notion) to auto-generate promotional posts." }
+    {
+      "step": 1,
+      "instruction": "Connect your social media accounts (Twitter/X, Instagram, LinkedIn, etc.) through OAuth."
+    },
+    {
+      "step": 2,
+      "instruction": "Set your content categories \u2014 promotional, educational, behind-the-scenes, engagement, etc."
+    },
+    {
+      "step": 3,
+      "instruction": "Choose a posting frequency for each platform (e.g., 1x/day on Twitter, 3x/week on LinkedIn)."
+    },
+    {
+      "step": 4,
+      "instruction": "Enable smart scheduling to let the agent pick optimal posting times based on your audience data."
+    },
+    {
+      "step": 5,
+      "instruction": "Optionally connect a content source (blog RSS, Google Sheets, Notion) to auto-generate promotional posts."
+    }
   ],
   "hero_animation": "calendar-post-queue",
-  "demo_url": ""
+  "demo_url": "",
+  "license": "Apache-2.0"
 }

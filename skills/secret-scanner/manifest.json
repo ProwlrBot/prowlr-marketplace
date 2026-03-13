@@ -46,5 +46,6 @@
       "type": "array",
       "default": []
     }
-  }
+  },
+  "name": "Secret Scanner"
 }

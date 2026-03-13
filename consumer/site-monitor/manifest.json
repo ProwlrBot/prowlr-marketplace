@@ -7,8 +7,20 @@
   "category": "skills",
   "difficulty": "intermediate",
   "setup_time_minutes": 5,
-  "persona_tags": ["developer", "business"],
-  "tags": ["uptime", "monitoring", "website", "ssl", "performance", "devops", "alerts", "downtime"],
+  "persona_tags": [
+    "developer",
+    "business"
+  ],
+  "tags": [
+    "uptime",
+    "monitoring",
+    "website",
+    "ssl",
+    "performance",
+    "devops",
+    "alerts",
+    "downtime"
+  ],
   "skill_scan": {
     "automation": 10,
     "ease": 8,
@@ -21,10 +33,18 @@
     "after": "Instant alerts within 30 seconds of downtime, automatic SSL expiry warnings 30 days out, and weekly performance reports showing response time trends",
     "time_saved": "2 hrs/week plus prevented revenue loss"
   },
-  "works_with": ["Any public website", "Slack", "Discord", "PagerDuty", "Email", "Telegram", "Webhooks"],
+  "works_with": [
+    "Any public website",
+    "Slack",
+    "Discord",
+    "PagerDuty",
+    "Email",
+    "Telegram",
+    "Webhooks"
+  ],
   "user_stories": [
     {
-      "quote": "My e-commerce site went down at 2 AM on Black Friday. I got the alert at 2:01 AM, had it fixed by 2:15. Without this I wouldn't have known until morning — that's $10K in lost sales.",
+      "quote": "My e-commerce site went down at 2 AM on Black Friday. I got the alert at 2:01 AM, had it fixed by 2:15. Without this I wouldn't have known until morning \u2014 that's $10K in lost sales.",
       "name": "Craig W.",
       "role": "E-commerce store owner"
     },
@@ -40,12 +60,28 @@
     }
   ],
   "setup_steps": [
-    { "step": 1, "instruction": "Add the URLs you want to monitor (homepage, API endpoints, key pages)." },
-    { "step": 2, "instruction": "Set check frequency — every 1 minute, 5 minutes, or 15 minutes per URL." },
-    { "step": 3, "instruction": "Configure alert channels: email, Slack, Discord, PagerDuty, Telegram, or webhook." },
-    { "step": 4, "instruction": "Enable SSL certificate monitoring to get warnings 30, 14, and 7 days before expiry." },
-    { "step": 5, "instruction": "Optionally set performance thresholds — get alerted if response time exceeds your target (e.g., 2 seconds)." }
+    {
+      "step": 1,
+      "instruction": "Add the URLs you want to monitor (homepage, API endpoints, key pages)."
+    },
+    {
+      "step": 2,
+      "instruction": "Set check frequency \u2014 every 1 minute, 5 minutes, or 15 minutes per URL."
+    },
+    {
+      "step": 3,
+      "instruction": "Configure alert channels: email, Slack, Discord, PagerDuty, Telegram, or webhook."
+    },
+    {
+      "step": 4,
+      "instruction": "Enable SSL certificate monitoring to get warnings 30, 14, and 7 days before expiry."
+    },
+    {
+      "step": 5,
+      "instruction": "Optionally set performance thresholds \u2014 get alerted if response time exceeds your target (e.g., 2 seconds)."
+    }
   ],
   "hero_animation": "uptime-heartbeat-grid",
-  "demo_url": ""
+  "demo_url": "",
+  "license": "Apache-2.0"
 }

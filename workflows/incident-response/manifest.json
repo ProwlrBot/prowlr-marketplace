@@ -43,5 +43,6 @@
       "type": "integer",
       "default": 15
     }
-  }
+  },
+  "name": "Incident Response"
 }

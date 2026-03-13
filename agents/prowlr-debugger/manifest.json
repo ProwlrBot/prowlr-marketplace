@@ -45,5 +45,6 @@
       "type": "boolean",
       "default": true
     }
-  }
+  },
+  "name": "Prowlr Debugger"
 }

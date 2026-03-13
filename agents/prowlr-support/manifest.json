@@ -52,5 +52,6 @@
       "type": "integer",
       "default": 3
     }
-  }
+  },
+  "name": "Prowlr Support"
 }

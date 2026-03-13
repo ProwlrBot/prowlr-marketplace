@@ -57,5 +57,6 @@
         "self-hosted"
       ]
     }
-  }
+  },
+  "name": "Prowlr Devops"
 }

@@ -57,5 +57,6 @@
         "critical"
       ]
     }
-  }
+  },
+  "name": "Prowlr Security"
 }

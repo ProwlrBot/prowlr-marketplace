@@ -5,14 +5,39 @@
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "skills",
-  "tags": ["code-review", "linting", "security", "best-practices"],
+  "tags": [
+    "code-review",
+    "linting",
+    "security",
+    "best-practices"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "capabilities": ["static-analysis", "security-scan", "style-check", "suggestion-generation"],
+  "capabilities": [
+    "static-analysis",
+    "security-scan",
+    "style-check",
+    "suggestion-generation"
+  ],
   "config_schema": {
-    "languages": { "type": "array", "default": ["python", "javascript"] },
-    "severity_threshold": { "type": "string", "default": "warning", "enum": ["info", "warning", "error"] }
-  }
+    "languages": {
+      "type": "array",
+      "default": [
+        "python",
+        "javascript"
+      ]
+    },
+    "severity_threshold": {
+      "type": "string",
+      "default": "warning",
+      "enum": [
+        "info",
+        "warning",
+        "error"
+      ]
+    }
+  },
+  "name": "Code Review"
 }

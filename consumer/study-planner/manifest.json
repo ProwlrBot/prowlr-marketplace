@@ -7,8 +7,18 @@
   "category": "agents",
   "difficulty": "beginner",
   "setup_time_minutes": 3,
-  "persona_tags": ["student"],
-  "tags": ["study", "planning", "exams", "school", "time-management", "education", "spaced-repetition"],
+  "persona_tags": [
+    "student"
+  ],
+  "tags": [
+    "study",
+    "planning",
+    "exams",
+    "school",
+    "time-management",
+    "education",
+    "spaced-repetition"
+  ],
   "skill_scan": {
     "automation": 7,
     "ease": 10,
@@ -21,7 +31,13 @@
     "after": "A clear daily schedule that spaces out study sessions across the week, with built-in breaks, so you walk into exams prepared and rested",
     "time_saved": "5 hrs/week"
   },
-  "works_with": ["Google Calendar", "Apple Calendar", "Notion", "Google Classroom", "Todoist"],
+  "works_with": [
+    "Google Calendar",
+    "Apple Calendar",
+    "Notion",
+    "Google Classroom",
+    "Todoist"
+  ],
   "user_stories": [
     {
       "quote": "I went from a 2.8 GPA to a 3.4 in one semester just because I actually had a plan instead of winging it every week.",
@@ -40,11 +56,24 @@
     }
   ],
   "setup_steps": [
-    { "step": 1, "instruction": "Add your upcoming exams and assignment due dates (type them in or connect Google Classroom)." },
-    { "step": 2, "instruction": "Tell the planner your available study hours per day and preferred time blocks." },
-    { "step": 3, "instruction": "Choose a study style: short Pomodoro bursts (25 min), longer focused sessions (1 hr), or a mix." },
-    { "step": 4, "instruction": "Connect your calendar so the plan syncs with your existing schedule and avoids conflicts." }
+    {
+      "step": 1,
+      "instruction": "Add your upcoming exams and assignment due dates (type them in or connect Google Classroom)."
+    },
+    {
+      "step": 2,
+      "instruction": "Tell the planner your available study hours per day and preferred time blocks."
+    },
+    {
+      "step": 3,
+      "instruction": "Choose a study style: short Pomodoro bursts (25 min), longer focused sessions (1 hr), or a mix."
+    },
+    {
+      "step": 4,
+      "instruction": "Connect your calendar so the plan syncs with your existing schedule and avoids conflicts."
+    }
   ],
   "hero_animation": "calendar-fill-animation",
-  "demo_url": ""
+  "demo_url": "",
+  "license": "Apache-2.0"
 }

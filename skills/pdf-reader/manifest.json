@@ -5,14 +5,31 @@
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "skills",
-  "tags": ["pdf", "document", "extraction", "ocr"],
+  "tags": [
+    "pdf",
+    "document",
+    "extraction",
+    "ocr"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "capabilities": ["text-extraction", "table-extraction", "image-extraction", "ocr"],
+  "capabilities": [
+    "text-extraction",
+    "table-extraction",
+    "image-extraction",
+    "ocr"
+  ],
   "config_schema": {
-    "ocr_enabled": { "type": "boolean", "default": false },
-    "max_pages": { "type": "integer", "default": 100 }
-  }
+    "ocr_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "max_pages": {
+      "type": "integer",
+      "default": 100
+    }
+  },
+  "name": "Pdf Reader"
 }

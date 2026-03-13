@@ -48,5 +48,6 @@
       "type": "boolean",
       "default": true
     }
-  }
+  },
+  "name": "Test Runner"
 }

@@ -5,7 +5,14 @@
   "author": "prowlrbot",
   "version": "1.0.0",
   "category": "skills",
-  "tags": ["monitoring", "web", "alerts", "automation"],
+  "tags": [
+    "monitoring",
+    "web",
+    "alerts",
+    "automation"
+  ],
   "pricing_model": "free",
-  "price": 0
+  "price": 0,
+  "license": "Apache-2.0",
+  "name": "Web Monitor"
 }

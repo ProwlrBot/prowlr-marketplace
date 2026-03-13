@@ -60,5 +60,6 @@
         "WCAG-AAA"
       ]
     }
-  }
+  },
+  "name": "Prowlr Frontend"
 }

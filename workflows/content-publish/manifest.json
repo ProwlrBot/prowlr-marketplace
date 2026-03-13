@@ -46,5 +46,6 @@
       "type": "boolean",
       "default": true
     }
-  }
+  },
+  "name": "Content Publish"
 }

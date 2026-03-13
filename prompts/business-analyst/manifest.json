@@ -1,14 +1,26 @@
 {
   "id": "prompt-business-analyst",
   "title": "Business Analyst",
-  "description": "Prompt pack for business analysis — SWOT, competitive matrices, market sizing, and executive summaries. Think MBA without the debt.",
+  "description": "Prompt pack for business analysis \u2014 SWOT, competitive matrices, market sizing, and executive summaries. Think MBA without the debt.",
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "prompts",
-  "tags": ["business", "analysis", "strategy", "reports"],
+  "tags": [
+    "business",
+    "analysis",
+    "strategy",
+    "reports"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
   "min_prowlrbot_version": "0.1.0",
-  "prompts": ["swot-analysis", "competitive-matrix", "market-sizing", "executive-summary", "stakeholder-brief"]
+  "prompts": [
+    "swot-analysis",
+    "competitive-matrix",
+    "market-sizing",
+    "executive-summary",
+    "stakeholder-brief"
+  ],
+  "name": "Business Analyst"
 }

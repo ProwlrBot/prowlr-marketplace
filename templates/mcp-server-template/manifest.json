@@ -5,10 +5,16 @@
   "author": "your-github-username",
   "category": "mcp-servers",
   "license": "Apache-2.0",
-  "tags": ["tag1", "tag2"],
+  "tags": [
+    "tag1",
+    "tag2"
+  ],
   "install": {
     "command": "python3",
-    "args": ["-m", "my_package.server"],
+    "args": [
+      "-m",
+      "my_package.server"
+    ],
     "env": {
       "PYTHONPATH": "./src"
     }
@@ -22,5 +28,6 @@
   "requirements": {
     "python": ">=3.10",
     "packages": []
-  }
+  },
+  "id": "mcp-server-template"
 }

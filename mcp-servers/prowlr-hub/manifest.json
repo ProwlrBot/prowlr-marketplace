@@ -5,11 +5,29 @@
   "version": "1.0.0",
   "author": "ProwlrBot",
   "category": "mcp-servers",
-  "tags": ["mcp", "coordination", "war-room", "multi-agent"],
+  "tags": [
+    "mcp",
+    "coordination",
+    "war-room",
+    "multi-agent"
+  ],
   "pricing_model": "free",
   "license": "Apache-2.0",
   "repository": "https://github.com/ProwlrBot/prowlrbot",
   "min_prowlrbot_version": "0.1.0",
-  "transport": ["stdio", "http"],
-  "tools": ["claim_task", "complete_task", "lock_file", "unlock_file", "share_finding", "broadcast_status", "check_conflicts", "get_agents"]
+  "transport": [
+    "stdio",
+    "http"
+  ],
+  "tools": [
+    "claim_task",
+    "complete_task",
+    "lock_file",
+    "unlock_file",
+    "share_finding",
+    "broadcast_status",
+    "check_conflicts",
+    "get_agents"
+  ],
+  "name": "Prowlr Hub"
 }

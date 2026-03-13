@@ -7,8 +7,20 @@
   "category": "agents",
   "difficulty": "intermediate",
   "setup_time_minutes": 8,
-  "persona_tags": ["freelancer", "business"],
-  "tags": ["crm", "follow-up", "clients", "sales", "relationships", "email", "automation", "pipeline"],
+  "persona_tags": [
+    "freelancer",
+    "business"
+  ],
+  "tags": [
+    "crm",
+    "follow-up",
+    "clients",
+    "sales",
+    "relationships",
+    "email",
+    "automation",
+    "pipeline"
+  ],
   "skill_scan": {
     "automation": 9,
     "ease": 7,
@@ -21,7 +33,15 @@
     "after": "Every client relationship tracked with automatic follow-ups, context-rich reminders, and a pipeline view showing exactly who needs attention today",
     "time_saved": "5 hrs/week"
   },
-  "works_with": ["Gmail", "Outlook", "Google Contacts", "Calendly", "Slack", "LinkedIn", "Notion"],
+  "works_with": [
+    "Gmail",
+    "Outlook",
+    "Google Contacts",
+    "Calendly",
+    "Slack",
+    "LinkedIn",
+    "Notion"
+  ],
   "user_stories": [
     {
       "quote": "I'm a freelance photographer and I follow up with every couple 3 months after their wedding. This automates those check-ins and I've gotten 8 referrals from it.",
@@ -40,12 +60,28 @@
     }
   ],
   "setup_steps": [
-    { "step": 1, "instruction": "Connect your email account (Gmail or Outlook) so the agent can track client conversations." },
-    { "step": 2, "instruction": "Import your client list or let the agent build one from your recent email history." },
-    { "step": 3, "instruction": "Set default follow-up intervals — e.g., 3 days after a proposal, 1 week after a meeting, monthly for existing clients." },
-    { "step": 4, "instruction": "Choose whether follow-ups should be auto-sent or queued as drafts for your review." },
-    { "step": 5, "instruction": "Customize the follow-up tone and style so messages sound like you, not a robot." }
+    {
+      "step": 1,
+      "instruction": "Connect your email account (Gmail or Outlook) so the agent can track client conversations."
+    },
+    {
+      "step": 2,
+      "instruction": "Import your client list or let the agent build one from your recent email history."
+    },
+    {
+      "step": 3,
+      "instruction": "Set default follow-up intervals \u2014 e.g., 3 days after a proposal, 1 week after a meeting, monthly for existing clients."
+    },
+    {
+      "step": 4,
+      "instruction": "Choose whether follow-ups should be auto-sent or queued as drafts for your review."
+    },
+    {
+      "step": 5,
+      "instruction": "Customize the follow-up tone and style so messages sound like you, not a robot."
+    }
   ],
   "hero_animation": "relationship-timeline-pulse",
-  "demo_url": ""
+  "demo_url": "",
+  "license": "Apache-2.0"
 }

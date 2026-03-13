@@ -2,13 +2,24 @@
   "id": "homework-helper",
   "name": "Homework Helper",
   "version": "1.1.0",
-  "description": "A patient, always-available tutor that walks kids through homework step by step — building real understanding instead of just giving answers. Works from third-grade math to college chemistry.",
+  "description": "A patient, always-available tutor that walks kids through homework step by step \u2014 building real understanding instead of just giving answers. Works from third-grade math to college chemistry.",
   "author": "ProwlrBot Team",
   "category": "agents",
   "difficulty": "beginner",
   "setup_time_minutes": 3,
-  "persona_tags": ["parent", "student"],
-  "tags": ["homework", "education", "math", "writing", "tutoring", "study", "kids"],
+  "persona_tags": [
+    "parent",
+    "student"
+  ],
+  "tags": [
+    "homework",
+    "education",
+    "math",
+    "writing",
+    "tutoring",
+    "study",
+    "kids"
+  ],
   "skill_scan": {
     "automation": 6,
     "ease": 10,
@@ -21,7 +32,13 @@
     "after": "Kids ask the helper, get step-by-step explanations at their level, and finish homework independently in 20 minutes",
     "time_saved": "3 hrs/week"
   },
-  "works_with": ["Google Docs", "PDF uploads", "Photo capture", "Khan Academy", "Google Classroom"],
+  "works_with": [
+    "Google Docs",
+    "PDF uploads",
+    "Photo capture",
+    "Khan Academy",
+    "Google Classroom"
+  ],
   "user_stories": [
     {
       "quote": "My daughter went from crying over fractions to explaining them to her little brother. This thing meets her exactly where she is.",
@@ -40,11 +57,24 @@
     }
   ],
   "setup_steps": [
-    { "step": 1, "instruction": "Select the student's grade level — elementary, middle school, high school, or college." },
-    { "step": 2, "instruction": "Choose primary subjects (math, science, reading/writing, history, or all)." },
-    { "step": 3, "instruction": "Pick an explanation style: simple with examples, step-by-step with practice problems, or concise hints." },
-    { "step": 4, "instruction": "Optionally connect Google Classroom to pull assignments automatically." }
+    {
+      "step": 1,
+      "instruction": "Select the student's grade level \u2014 elementary, middle school, high school, or college."
+    },
+    {
+      "step": 2,
+      "instruction": "Choose primary subjects (math, science, reading/writing, history, or all)."
+    },
+    {
+      "step": 3,
+      "instruction": "Pick an explanation style: simple with examples, step-by-step with practice problems, or concise hints."
+    },
+    {
+      "step": 4,
+      "instruction": "Optionally connect Google Classroom to pull assignments automatically."
+    }
   ],
   "hero_animation": "chalkboard-step-through",
-  "demo_url": ""
+  "demo_url": "",
+  "license": "Apache-2.0"
 }

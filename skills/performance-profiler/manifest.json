@@ -47,5 +47,6 @@
       "type": "boolean",
       "default": true
     }
-  }
+  },
+  "name": "Performance Profiler"
 }

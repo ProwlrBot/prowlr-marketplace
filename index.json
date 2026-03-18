@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generated_at": "2026-03-18T02:26:36.403153+00:00",
+  "generated_at": "2026-03-18T15:02:47.416597+00:00",
   "total": 76,
   "categories": {
     "agents": 23,
@@ -33,8 +33,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-analyst",
-      "manifest": "agents\\prowlr-analyst/manifest.json"
+      "path": "agents/prowlr-analyst",
+      "manifest": "agents/prowlr-analyst/manifest.json"
     },
     {
       "id": "agent-prowlr-api-designer",
@@ -58,8 +58,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-api-designer",
-      "manifest": "agents\\prowlr-api-designer/manifest.json"
+      "path": "agents/prowlr-api-designer",
+      "manifest": "agents/prowlr-api-designer/manifest.json"
     },
     {
       "id": "agent-prowlr-architect",
@@ -82,8 +82,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-architect",
-      "manifest": "agents\\prowlr-architect/manifest.json"
+      "path": "agents/prowlr-architect",
+      "manifest": "agents/prowlr-architect/manifest.json"
     },
     {
       "id": "agent-prowlr-backend",
@@ -107,8 +107,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-backend",
-      "manifest": "agents\\prowlr-backend/manifest.json"
+      "path": "agents/prowlr-backend",
+      "manifest": "agents/prowlr-backend/manifest.json"
     },
     {
       "id": "agent-prowlr-data-engineer",
@@ -132,8 +132,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-data-engineer",
-      "manifest": "agents\\prowlr-data-engineer/manifest.json"
+      "path": "agents/prowlr-data-engineer",
+      "manifest": "agents/prowlr-data-engineer/manifest.json"
     },
     {
       "id": "agent-prowlr-debugger",
@@ -156,8 +156,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-debugger",
-      "manifest": "agents\\prowlr-debugger/manifest.json"
+      "path": "agents/prowlr-debugger",
+      "manifest": "agents/prowlr-debugger/manifest.json"
     },
     {
       "id": "agent-prowlr-devops",
@@ -181,8 +181,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-devops",
-      "manifest": "agents\\prowlr-devops/manifest.json"
+      "path": "agents/prowlr-devops",
+      "manifest": "agents/prowlr-devops/manifest.json"
     },
     {
       "id": "agent-prowlr-frontend",
@@ -207,8 +207,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-frontend",
-      "manifest": "agents\\prowlr-frontend/manifest.json"
+      "path": "agents/prowlr-frontend",
+      "manifest": "agents/prowlr-frontend/manifest.json"
     },
     {
       "id": "agent-prowlr-gamedev",
@@ -233,8 +233,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-gamedev",
-      "manifest": "agents\\prowlr-gamedev/manifest.json"
+      "path": "agents/prowlr-gamedev",
+      "manifest": "agents/prowlr-gamedev/manifest.json"
     },
     {
       "id": "agent-prowlr-guard",
@@ -257,8 +257,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-guard",
-      "manifest": "agents\\prowlr-guard/manifest.json"
+      "path": "agents/prowlr-guard",
+      "manifest": "agents/prowlr-guard/manifest.json"
     },
     {
       "id": "agent-prowlr-legal",
@@ -283,8 +283,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-legal",
-      "manifest": "agents\\prowlr-legal/manifest.json"
+      "path": "agents/prowlr-legal",
+      "manifest": "agents/prowlr-legal/manifest.json"
     },
     {
       "id": "agent-prowlr-mobile",
@@ -309,8 +309,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-mobile",
-      "manifest": "agents\\prowlr-mobile/manifest.json"
+      "path": "agents/prowlr-mobile",
+      "manifest": "agents/prowlr-mobile/manifest.json"
     },
     {
       "id": "agent-prowlr-pm",
@@ -335,8 +335,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-pm",
-      "manifest": "agents\\prowlr-pm/manifest.json"
+      "path": "agents/prowlr-pm",
+      "manifest": "agents/prowlr-pm/manifest.json"
     },
     {
       "id": "agent-prowlr-sales",
@@ -361,8 +361,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-sales",
-      "manifest": "agents\\prowlr-sales/manifest.json"
+      "path": "agents/prowlr-sales",
+      "manifest": "agents/prowlr-sales/manifest.json"
     },
     {
       "id": "agent-prowlr-scout",
@@ -387,8 +387,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-scout",
-      "manifest": "agents\\prowlr-scout/manifest.json"
+      "path": "agents/prowlr-scout",
+      "manifest": "agents/prowlr-scout/manifest.json"
     },
     {
       "id": "agent-prowlr-security",
@@ -412,8 +412,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-security",
-      "manifest": "agents\\prowlr-security/manifest.json"
+      "path": "agents/prowlr-security",
+      "manifest": "agents/prowlr-security/manifest.json"
     },
     {
       "id": "agent-prowlr-support",
@@ -437,8 +437,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-support",
-      "manifest": "agents\\prowlr-support/manifest.json"
+      "path": "agents/prowlr-support",
+      "manifest": "agents/prowlr-support/manifest.json"
     },
     {
       "id": "agent-prowlr-tutor",
@@ -463,8 +463,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-tutor",
-      "manifest": "agents\\prowlr-tutor/manifest.json"
+      "path": "agents/prowlr-tutor",
+      "manifest": "agents/prowlr-tutor/manifest.json"
     },
     {
       "id": "agent-prowlr-writer",
@@ -490,8 +490,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "agents\\prowlr-writer",
-      "manifest": "agents\\prowlr-writer/manifest.json"
+      "path": "agents/prowlr-writer",
+      "manifest": "agents/prowlr-writer/manifest.json"
     },
     {
       "id": "client-followup",
@@ -519,8 +519,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\client-followup",
-      "manifest": "consumer\\client-followup/manifest.json"
+      "path": "consumer/client-followup",
+      "manifest": "consumer/client-followup/manifest.json"
     },
     {
       "id": "competitor-watch",
@@ -546,8 +546,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\competitor-watch",
-      "manifest": "consumer\\competitor-watch/manifest.json"
+      "path": "consumer/competitor-watch",
+      "manifest": "consumer/competitor-watch/manifest.json"
     },
     {
       "id": "content-scheduler",
@@ -575,8 +575,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\content-scheduler",
-      "manifest": "consumer\\content-scheduler/manifest.json"
+      "path": "consumer/content-scheduler",
+      "manifest": "consumer/content-scheduler/manifest.json"
     },
     {
       "id": "homework-helper",
@@ -603,8 +603,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\homework-helper",
-      "manifest": "consumer\\homework-helper/manifest.json"
+      "path": "consumer/homework-helper",
+      "manifest": "consumer/homework-helper/manifest.json"
     },
     {
       "id": "invoice-chaser",
@@ -631,8 +631,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\invoice-chaser",
-      "manifest": "consumer\\invoice-chaser/manifest.json"
+      "path": "consumer/invoice-chaser",
+      "manifest": "consumer/invoice-chaser/manifest.json"
     },
     {
       "id": "meal-planner",
@@ -660,8 +660,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\meal-planner",
-      "manifest": "consumer\\meal-planner/manifest.json"
+      "path": "consumer/meal-planner",
+      "manifest": "consumer/meal-planner/manifest.json"
     },
     {
       "id": "morning-briefing",
@@ -689,8 +689,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\morning-briefing",
-      "manifest": "consumer\\morning-briefing/manifest.json"
+      "path": "consumer/morning-briefing",
+      "manifest": "consumer/morning-briefing/manifest.json"
     },
     {
       "id": "site-monitor",
@@ -718,8 +718,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\site-monitor",
-      "manifest": "consumer\\site-monitor/manifest.json"
+      "path": "consumer/site-monitor",
+      "manifest": "consumer/site-monitor/manifest.json"
     },
     {
       "id": "smart-reminder",
@@ -751,8 +751,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\smart-reminder",
-      "manifest": "consumer\\smart-reminder/manifest.json"
+      "path": "consumer/smart-reminder",
+      "manifest": "consumer/smart-reminder/manifest.json"
     },
     {
       "id": "study-planner",
@@ -778,8 +778,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "consumer\\study-planner",
-      "manifest": "consumer\\study-planner/manifest.json"
+      "path": "consumer/study-planner",
+      "manifest": "consumer/study-planner/manifest.json"
     },
     {
       "id": "computer-use",
@@ -800,8 +800,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\anthropic-official\\computer-use",
-      "manifest": "external\\anthropic-official\\computer-use/manifest.json",
+      "path": "external/anthropic-official/computer-use",
+      "manifest": "external/anthropic-official/computer-use/manifest.json",
       "registry": "anthropic-official",
       "source": "https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo",
       "verified": true,
@@ -826,8 +826,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\anthropic-official\\customer-support-agent",
-      "manifest": "external\\anthropic-official\\customer-support-agent/manifest.json",
+      "path": "external/anthropic-official/customer-support-agent",
+      "manifest": "external/anthropic-official/customer-support-agent/manifest.json",
       "registry": "anthropic-official",
       "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents/customer_support",
       "verified": true,
@@ -852,8 +852,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\anthropic-official\\pdf-analysis",
-      "manifest": "external\\anthropic-official\\pdf-analysis/manifest.json",
+      "path": "external/anthropic-official/pdf-analysis",
+      "manifest": "external/anthropic-official/pdf-analysis/manifest.json",
       "registry": "anthropic-official",
       "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/multimodal/pdf_support",
       "verified": true,
@@ -878,8 +878,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\anthropic-official\\rag-pipeline",
-      "manifest": "external\\anthropic-official\\rag-pipeline/manifest.json",
+      "path": "external/anthropic-official/rag-pipeline",
+      "manifest": "external/anthropic-official/rag-pipeline/manifest.json",
       "registry": "anthropic-official",
       "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/third_party/Pinecone",
       "verified": true,
@@ -904,8 +904,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\anthropic-official\\structured-outputs",
-      "manifest": "external\\anthropic-official\\structured-outputs/manifest.json",
+      "path": "external/anthropic-official/structured-outputs",
+      "manifest": "external/anthropic-official/structured-outputs/manifest.json",
       "registry": "anthropic-official",
       "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/json_mode",
       "verified": true,
@@ -930,8 +930,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\anthropic-official\\tool-use-orchestration",
-      "manifest": "external\\anthropic-official\\tool-use-orchestration/manifest.json",
+      "path": "external/anthropic-official/tool-use-orchestration",
+      "manifest": "external/anthropic-official/tool-use-orchestration/manifest.json",
       "registry": "anthropic-official",
       "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/tool_use",
       "verified": true,
@@ -956,8 +956,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\community\\cron-scheduler",
-      "manifest": "external\\community\\cron-scheduler/manifest.json",
+      "path": "external/community/cron-scheduler",
+      "manifest": "external/community/cron-scheduler/manifest.json",
       "registry": "community",
       "source": "community",
       "verified": false,
@@ -983,8 +983,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\community\\data-visualizer",
-      "manifest": "external\\community\\data-visualizer/manifest.json",
+      "path": "external/community/data-visualizer",
+      "manifest": "external/community/data-visualizer/manifest.json",
       "registry": "community",
       "source": "community",
       "verified": false,
@@ -1009,8 +1009,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\community\\email-drafter",
-      "manifest": "external\\community\\email-drafter/manifest.json",
+      "path": "external/community/email-drafter",
+      "manifest": "external/community/email-drafter/manifest.json",
       "registry": "community",
       "source": "community",
       "verified": false,
@@ -1035,8 +1035,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\community\\log-analyzer",
-      "manifest": "external\\community\\log-analyzer/manifest.json",
+      "path": "external/community/log-analyzer",
+      "manifest": "external/community/log-analyzer/manifest.json",
       "registry": "community",
       "source": "community",
       "verified": false,
@@ -1061,8 +1061,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\community\\meeting-summarizer",
-      "manifest": "external\\community\\meeting-summarizer/manifest.json",
+      "path": "external/community/meeting-summarizer",
+      "manifest": "external/community/meeting-summarizer/manifest.json",
       "registry": "community",
       "source": "community",
       "verified": false,
@@ -1087,8 +1087,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\goose-recipes\\code-review-bot",
-      "manifest": "external\\goose-recipes\\code-review-bot/manifest.json",
+      "path": "external/goose-recipes/code-review-bot",
+      "manifest": "external/goose-recipes/code-review-bot/manifest.json",
       "registry": "goose-recipes",
       "source": "https://github.com/block/goose/tree/main/docs/recipes",
       "verified": true,
@@ -1113,8 +1113,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\goose-recipes\\github-issue-triage",
-      "manifest": "external\\goose-recipes\\github-issue-triage/manifest.json",
+      "path": "external/goose-recipes/github-issue-triage",
+      "manifest": "external/goose-recipes/github-issue-triage/manifest.json",
       "registry": "goose-recipes",
       "source": "https://github.com/block/goose/tree/main/docs/recipes",
       "verified": true,
@@ -1139,8 +1139,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\goose-recipes\\jira-sync",
-      "manifest": "external\\goose-recipes\\jira-sync/manifest.json",
+      "path": "external/goose-recipes/jira-sync",
+      "manifest": "external/goose-recipes/jira-sync/manifest.json",
       "registry": "goose-recipes",
       "source": "https://github.com/block/goose/tree/main/docs/recipes",
       "verified": true,
@@ -1165,8 +1165,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\goose-recipes\\slack-notifier",
-      "manifest": "external\\goose-recipes\\slack-notifier/manifest.json",
+      "path": "external/goose-recipes/slack-notifier",
+      "manifest": "external/goose-recipes/slack-notifier/manifest.json",
       "registry": "goose-recipes",
       "source": "https://github.com/block/goose/tree/main/docs/recipes",
       "verified": true,
@@ -1191,8 +1191,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "external\\goose-recipes\\web-scraper",
-      "manifest": "external\\goose-recipes\\web-scraper/manifest.json",
+      "path": "external/goose-recipes/web-scraper",
+      "manifest": "external/goose-recipes/web-scraper/manifest.json",
       "registry": "goose-recipes",
       "source": "https://github.com/block/goose/tree/main/docs/recipes",
       "verified": true,
@@ -1217,8 +1217,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "mcp-servers\\prowlr-hub",
-      "manifest": "mcp-servers\\prowlr-hub/manifest.json"
+      "path": "mcp-servers/prowlr-hub",
+      "manifest": "mcp-servers/prowlr-hub/manifest.json"
     },
     {
       "id": "mcp-prowlr-tools",
@@ -1240,8 +1240,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "mcp-servers\\prowlr-tools",
-      "manifest": "mcp-servers\\prowlr-tools/manifest.json"
+      "path": "mcp-servers/prowlr-tools",
+      "manifest": "mcp-servers/prowlr-tools/manifest.json"
     },
     {
       "id": "prompt-business-analyst",
@@ -1262,8 +1262,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\business-analyst",
-      "manifest": "prompts\\business-analyst/manifest.json"
+      "path": "prompts/business-analyst",
+      "manifest": "prompts/business-analyst/manifest.json"
     },
     {
       "id": "prompt-code-assistant",
@@ -1284,8 +1284,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\code-assistant",
-      "manifest": "prompts\\code-assistant/manifest.json"
+      "path": "prompts/code-assistant",
+      "manifest": "prompts/code-assistant/manifest.json"
     },
     {
       "id": "prompt-code-migration",
@@ -1309,8 +1309,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\code-migration",
-      "manifest": "prompts\\code-migration/manifest.json"
+      "path": "prompts/code-migration",
+      "manifest": "prompts/code-migration/manifest.json"
     },
     {
       "id": "prompt-content-calendar",
@@ -1336,8 +1336,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\content-calendar",
-      "manifest": "prompts\\content-calendar/manifest.json"
+      "path": "prompts/content-calendar",
+      "manifest": "prompts/content-calendar/manifest.json"
     },
     {
       "id": "prompt-incident-responder",
@@ -1361,8 +1361,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\incident-responder",
-      "manifest": "prompts\\incident-responder/manifest.json"
+      "path": "prompts/incident-responder",
+      "manifest": "prompts/incident-responder/manifest.json"
     },
     {
       "id": "prompt-interview-prep",
@@ -1387,8 +1387,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\interview-prep",
-      "manifest": "prompts\\interview-prep/manifest.json"
+      "path": "prompts/interview-prep",
+      "manifest": "prompts/interview-prep/manifest.json"
     },
     {
       "id": "prompt-startup-advisor",
@@ -1413,8 +1413,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "prompts\\startup-advisor",
-      "manifest": "prompts\\startup-advisor/manifest.json"
+      "path": "prompts/startup-advisor",
+      "manifest": "prompts/startup-advisor/manifest.json"
     },
     {
       "id": "skill-api-tester",
@@ -1438,8 +1438,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\api-tester",
-      "manifest": "skills\\api-tester/manifest.json"
+      "path": "skills/api-tester",
+      "manifest": "skills/api-tester/manifest.json"
     },
     {
       "id": "skill-code-review",
@@ -1460,8 +1460,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\code-review",
-      "manifest": "skills\\code-review/manifest.json"
+      "path": "skills/code-review",
+      "manifest": "skills/code-review/manifest.json"
     },
     {
       "id": "skill-container-manager",
@@ -1485,8 +1485,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\container-manager",
-      "manifest": "skills\\container-manager/manifest.json"
+      "path": "skills/container-manager",
+      "manifest": "skills/container-manager/manifest.json"
     },
     {
       "id": "skill-database-migrator",
@@ -1510,8 +1510,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\database-migrator",
-      "manifest": "skills\\database-migrator/manifest.json"
+      "path": "skills/database-migrator",
+      "manifest": "skills/database-migrator/manifest.json"
     },
     {
       "id": "skill-doc-generator",
@@ -1536,8 +1536,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\doc-generator",
-      "manifest": "skills\\doc-generator/manifest.json"
+      "path": "skills/doc-generator",
+      "manifest": "skills/doc-generator/manifest.json"
     },
     {
       "id": "skill-git-workflow",
@@ -1561,8 +1561,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\git-workflow",
-      "manifest": "skills\\git-workflow/manifest.json"
+      "path": "skills/git-workflow",
+      "manifest": "skills/git-workflow/manifest.json"
     },
     {
       "id": "skill-pdf-reader",
@@ -1583,8 +1583,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\pdf-reader",
-      "manifest": "skills\\pdf-reader/manifest.json"
+      "path": "skills/pdf-reader",
+      "manifest": "skills/pdf-reader/manifest.json"
     },
     {
       "id": "skill-performance-profiler",
@@ -1608,8 +1608,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\performance-profiler",
-      "manifest": "skills\\performance-profiler/manifest.json"
+      "path": "skills/performance-profiler",
+      "manifest": "skills/performance-profiler/manifest.json"
     },
     {
       "id": "skill-secret-scanner",
@@ -1633,8 +1633,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\secret-scanner",
-      "manifest": "skills\\secret-scanner/manifest.json"
+      "path": "skills/secret-scanner",
+      "manifest": "skills/secret-scanner/manifest.json"
     },
     {
       "id": "skill-test-runner",
@@ -1658,8 +1658,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\test-runner",
-      "manifest": "skills\\test-runner/manifest.json"
+      "path": "skills/test-runner",
+      "manifest": "skills/test-runner/manifest.json"
     },
     {
       "id": "skills-web-monitor",
@@ -1680,8 +1680,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "skills\\web-monitor",
-      "manifest": "skills\\web-monitor/manifest.json"
+      "path": "skills/web-monitor",
+      "manifest": "skills/web-monitor/manifest.json"
     },
     {
       "id": "theme-arctic-frost",
@@ -1705,8 +1705,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "themes\\arctic-frost",
-      "manifest": "themes\\arctic-frost/manifest.json"
+      "path": "themes/arctic-frost",
+      "manifest": "themes/arctic-frost/manifest.json"
     },
     {
       "id": "theme-dark-prowler",
@@ -1727,8 +1727,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "themes\\dark-prowler",
-      "manifest": "themes\\dark-prowler/manifest.json"
+      "path": "themes/dark-prowler",
+      "manifest": "themes/dark-prowler/manifest.json"
     },
     {
       "id": "theme-light-sentinel",
@@ -1749,8 +1749,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "themes\\light-sentinel",
-      "manifest": "themes\\light-sentinel/manifest.json"
+      "path": "themes/light-sentinel",
+      "manifest": "themes/light-sentinel/manifest.json"
     },
     {
       "id": "theme-midnight-hacker",
@@ -1775,8 +1775,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "themes\\midnight-hacker",
-      "manifest": "themes\\midnight-hacker/manifest.json"
+      "path": "themes/midnight-hacker",
+      "manifest": "themes/midnight-hacker/manifest.json"
     },
     {
       "id": "theme-sunset-horizon",
@@ -1801,8 +1801,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "themes\\sunset-horizon",
-      "manifest": "themes\\sunset-horizon/manifest.json"
+      "path": "themes/sunset-horizon",
+      "manifest": "themes/sunset-horizon/manifest.json"
     },
     {
       "id": "workflow-content-publish",
@@ -1828,8 +1828,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "workflows\\content-publish",
-      "manifest": "workflows\\content-publish/manifest.json"
+      "path": "workflows/content-publish",
+      "manifest": "workflows/content-publish/manifest.json"
     },
     {
       "id": "workflow-daily-standup",
@@ -1850,8 +1850,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "workflows\\daily-standup",
-      "manifest": "workflows\\daily-standup/manifest.json"
+      "path": "workflows/daily-standup",
+      "manifest": "workflows/daily-standup/manifest.json"
     },
     {
       "id": "workflow-deploy-review",
@@ -1872,8 +1872,8 @@
       "persona_tags": [],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "workflows\\deploy-review",
-      "manifest": "workflows\\deploy-review/manifest.json"
+      "path": "workflows/deploy-review",
+      "manifest": "workflows/deploy-review/manifest.json"
     },
     {
       "id": "workflow-incident-response",
@@ -1897,8 +1897,8 @@
       ],
       "difficulty": "advanced",
       "min_prowlrbot_version": "0.1.0",
-      "path": "workflows\\incident-response",
-      "manifest": "workflows\\incident-response/manifest.json"
+      "path": "workflows/incident-response",
+      "manifest": "workflows/incident-response/manifest.json"
     },
     {
       "id": "workflow-onboarding",
@@ -1923,8 +1923,8 @@
       ],
       "difficulty": "beginner",
       "min_prowlrbot_version": "0.1.0",
-      "path": "workflows\\onboarding",
-      "manifest": "workflows\\onboarding/manifest.json"
+      "path": "workflows/onboarding",
+      "manifest": "workflows/onboarding/manifest.json"
     },
     {
       "id": "workflow-pr-review-pipeline",
@@ -1948,8 +1948,8 @@
       ],
       "difficulty": "intermediate",
       "min_prowlrbot_version": "0.1.0",
-      "path": "workflows\\pr-review-pipeline",
-      "manifest": "workflows\\pr-review-pipeline/manifest.json"
+      "path": "workflows/pr-review-pipeline",
+      "manifest": "workflows/pr-review-pipeline/manifest.json"
     }
   ]
 }

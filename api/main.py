@@ -11,8 +11,11 @@ from slowapi.util import get_remote_address
 
 from api.config import INDEX_PATH, DB_PATH, CORS_ORIGINS, RATE_LIMIT
 from api.db import init_db
+from api.signing import init_signing_db
+from api.auth import init_auth_db
+from api.payments import init_payments_db
 from api.search import SearchEngine
-from api.routers import listings, categories, stats
+from api.routers import listings, categories, stats, reviews, trust, signing, payments, dashboard
 
 limiter = Limiter(key_func=get_remote_address, default_limits=[RATE_LIMIT])
 
@@ -49,6 +52,9 @@ def create_app(
     app.state.db_path = database_path
 
     init_db(database_path)
+    init_signing_db(database_path)
+    init_auth_db(database_path)
+    init_payments_db(database_path)
 
     app.add_middleware(
         CORSMiddleware,
@@ -63,6 +69,11 @@ def create_app(
     app.include_router(listings.router, prefix="/v1")
     app.include_router(categories.router, prefix="/v1")
     app.include_router(stats.router, prefix="/v1")
+    app.include_router(reviews.router, prefix="/v1")
+    app.include_router(trust.router, prefix="/v1")
+    app.include_router(signing.router, prefix="/v1")
+    app.include_router(payments.router, prefix="/v1")
+    app.include_router(dashboard.router, prefix="/v1")
 
     return app
 

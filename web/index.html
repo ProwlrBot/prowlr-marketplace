@@ -924,7 +924,510 @@
     }
 
     /* =========================================================
-       14. FOOTER
+       14a. RATINGS & REVIEWS
+       ========================================================= */
+    .star-rating {
+      display: inline-flex;
+      gap: 1px;
+      color: #d97706;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .star-rating .star-empty { color: var(--card-border); }
+
+    .card-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px 0;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-rating .rating-count { font-size: 0.7rem; }
+
+    .review-summary {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .review-big-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 80px;
+    }
+    .review-big-num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .review-big-stars { font-size: 1.1rem; }
+    .review-big-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .review-distribution {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .dist-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .dist-label { width: 14px; text-align: right; }
+    .dist-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--scan-track);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .dist-fill {
+      height: 100%;
+      background: #d97706;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    .dist-count { width: 20px; }
+
+    .review-form {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .review-form h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .review-form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .review-form-row label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .review-form-row input,
+    .review-form-row textarea {
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 8px 10px;
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      background: var(--card-bg);
+      color: var(--text);
+      resize: vertical;
+    }
+    .review-form-row input:focus,
+    .review-form-row textarea:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: -1px;
+    }
+    .star-picker {
+      display: flex;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .star-picker .star-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--card-border);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      transition: color 0.1s;
+    }
+    .star-picker .star-btn.active { color: #d97706; }
+    .star-picker .star-btn:hover { color: #f59e0b; }
+    .review-submit-btn {
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #ffffff;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .review-submit-btn:hover { opacity: 0.85; }
+    .review-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .review-msg {
+      font-size: 0.8rem;
+      margin-top: 8px;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+    .review-msg.success {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+    .review-msg.error {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    [data-theme="dark"] .review-msg.success {
+      background: #052e16;
+      color: #4ade80;
+    }
+    [data-theme="dark"] .review-msg.error {
+      background: #450a0a;
+      color: #fca5a5;
+    }
+
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .review-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .review-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .review-card-author {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .review-card-date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .review-card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 4px 0;
+    }
+    .review-card-body {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .review-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .review-page-btn {
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: inherit;
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .review-page-btn:hover { background: var(--btn-hover-bg); }
+    .review-page-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* =========================================================
+       14b. DOWNLOAD STATS
+       ========================================================= */
+    .card-downloads {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 14px 0;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .card-downloads .dl-icon {
+      font-size: 0.78rem;
+      line-height: 1;
+    }
+    .detail-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .stat-card {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    @media (max-width: 480px) {
+      .detail-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================================
+       14c. GALLERY & LIGHTBOX
+       ========================================================= */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+    }
+    .gallery-thumb {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      aspect-ratio: 16 / 10;
+      background: var(--input-bg);
+    }
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .gallery-thumb:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-thumb-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .lightbox-overlay.active { opacity: 1; }
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-content img {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-caption {
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      text-align: center;
+      max-width: 600px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -36px;
+      right: 0;
+      background: none;
+      border: none;
+      color: #e2e8f0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+    }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-prev { left: -60px; }
+    .lightbox-next { right: -60px; }
+    @media (max-width: 768px) {
+      .lightbox-prev { left: 4px; }
+      .lightbox-next { right: 4px; }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+    }
+
+    /* =========================================================
+       14e. TRUST BADGES & SIGNING
+       ========================================================= */
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .trust-badge[data-level="excellent"] {
+      background: #dcfce7; color: #16a34a;
+    }
+    .trust-badge[data-level="good"] {
+      background: #dbeafe; color: #2563eb;
+    }
+    .trust-badge[data-level="fair"] {
+      background: #fef9c3; color: #92400e;
+    }
+    .trust-badge[data-level="low"] {
+      background: #fee2e2; color: #dc2626;
+    }
+    .trust-badge[data-level="minimal"] {
+      background: var(--input-bg); color: var(--text-muted);
+    }
+    [data-theme="dark"] .trust-badge[data-level="excellent"] {
+      background: #052e16; color: #4ade80;
+    }
+    [data-theme="dark"] .trust-badge[data-level="good"] {
+      background: #1e3a5f; color: #60a5fa;
+    }
+    [data-theme="dark"] .trust-badge[data-level="fair"] {
+      background: #422006; color: #fde68a;
+    }
+    [data-theme="dark"] .trust-badge[data-level="low"] {
+      background: #450a0a; color: #fca5a5;
+    }
+
+    .trust-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .trust-score-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .trust-total {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .trust-total-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .trust-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .trust-bar-label {
+      width: 90px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .trust-bar {
+      flex: 1;
+      height: 10px;
+      background: var(--scan-track);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .trust-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.3s ease;
+    }
+    .trust-bar-fill[data-cat="security"]   { background: #16a34a; }
+    .trust-bar-fill[data-cat="community"]  { background: #d97706; }
+    .trust-bar-fill[data-cat="popularity"] { background: #2563eb; }
+    .trust-bar-fill[data-cat="author"]     { background: #7c3aed; }
+    .trust-bar-fill[data-cat="freshness"]  { background: #0891b2; }
+    .trust-bar-fill[data-cat="metadata"]   { background: #64748b; }
+    .trust-bar-value {
+      width: 35px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .signing-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .signing-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .signing-verified { color: #16a34a; }
+    .signing-unsigned { color: var(--text-muted); }
+    .signing-revoked  { color: #dc2626; }
+
+    /* =========================================================
+       14f. FOOTER
        ========================================================= */
     footer {
       background: var(--footer-bg);
@@ -1235,6 +1738,12 @@
     shieldText.textContent = shieldLabel;
     shield.appendChild(shieldIcon);
     shield.appendChild(shieldText);
+    // Trust badge (populated async)
+    var trustBadge = document.createElement('span');
+    trustBadge.className = 'trust-badge hidden';
+    trustBadge.id = 'card-trust-' + listing.id;
+    topLeft.appendChild(trustBadge);
+
     topRow.appendChild(topLeft);
     topRow.appendChild(shield);
     card.appendChild(topRow);
@@ -1284,6 +1793,18 @@
     pricing.textContent = pricingClass === 'free' ? 'Free' : listing.pricing_model;
     meta.appendChild(pricing);
     card.appendChild(meta);
+
+    // Rating row (populated async)
+    var ratingRow = document.createElement('div');
+    ratingRow.className = 'card-rating';
+    ratingRow.id = 'card-rating-' + listing.id;
+    card.appendChild(ratingRow);
+
+    // Download count row (populated async)
+    var dlRow = document.createElement('div');
+    dlRow.className = 'card-downloads';
+    dlRow.id = 'card-dl-' + listing.id;
+    card.appendChild(dlRow);
 
     // Reserved slots (hidden)
     var featured = document.createElement('div');
@@ -1848,6 +2369,22 @@
 
     elDetail.innerHTML = html;
 
+    // 24. Gallery section (F12)
+    var galleryEl = buildGallerySection(manifest, indexEntry.path);
+    if (galleryEl) elDetail.appendChild(galleryEl);
+
+    // 25. Trust Score section (F15)
+    elDetail.appendChild(buildTrustSection(id));
+
+    // 26. Signature Verification section (F16)
+    elDetail.appendChild(buildSigningSection(id));
+
+    // 27. Download Statistics section (F11)
+    elDetail.appendChild(buildStatsSection(id));
+
+    // 28. Ratings & Reviews section
+    elDetail.appendChild(buildReviewSection(id));
+
     // Attach copy button via addEventListener (no inline onclick)
     var copyBtn = elDetail.querySelector('.detail-copy-btn');
     if (copyBtn) {
@@ -1934,6 +2471,625 @@
   }
 
   window.addEventListener('hashchange', parseHash);
+
+  // --- Ratings & Reviews helpers ---
+
+  var API_BASE = '/v1';
+
+  function starsHtml(avg, size) {
+    var s = '';
+    for (var i = 1; i <= 5; i++) {
+      if (avg >= i - 0.25) {
+        s += '<span class="star-full">\u2605</span>';
+      } else if (avg >= i - 0.75) {
+        s += '<span class="star-full">\u2605</span>';
+      } else {
+        s += '<span class="star-empty">\u2606</span>';
+      }
+    }
+    return s;
+  }
+
+  function loadCardRatings() {
+    fetch(API_BASE + '/ratings/all')
+      .then(function (r) { return r.ok ? r.json() : { ratings: {} }; })
+      .then(function (data) {
+        var ratings = data.ratings || data;
+        Object.keys(ratings).forEach(function (lid) {
+          var el = document.getElementById('card-rating-' + lid);
+          if (!el) return;
+          var info = ratings[lid];
+          if (!info || !info.total_reviews) return;
+          el.innerHTML = '<span class="star-rating">' + starsHtml(info.average_rating) + '</span>'
+            + '<span class="rating-count">' + info.average_rating.toFixed(1) + ' (' + info.total_reviews + ')</span>';
+        });
+      })
+      .catch(function () {});
+  }
+
+  // Override renderGrid to also load ratings
+  var _origRenderGrid = renderGrid;
+  renderGrid = function () {
+    _origRenderGrid();
+    loadCardRatings();
+  };
+
+  function buildReviewSection(listingId) {
+    var container = document.createElement('div');
+    container.className = 'detail-section';
+    container.id = 'reviews-section';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = 'Ratings & Reviews';
+    container.appendChild(h2);
+
+    // Summary placeholder
+    var summaryEl = document.createElement('div');
+    summaryEl.id = 'review-summary';
+    container.appendChild(summaryEl);
+
+    // Review form
+    var form = document.createElement('div');
+    form.className = 'review-form';
+    form.innerHTML = '<h3>Write a Review</h3>'
+      + '<div class="review-form-row"><label>Rating</label><div class="star-picker" id="star-picker"></div></div>'
+      + '<div class="review-form-row"><label for="review-name">Display Name</label><input type="text" id="review-name" maxlength="50" placeholder="Anonymous"></div>'
+      + '<div class="review-form-row"><label for="review-title">Title (optional)</label><input type="text" id="review-title" maxlength="100" placeholder="Summarize your experience"></div>'
+      + '<div class="review-form-row"><label for="review-body">Review (optional)</label><textarea id="review-body" rows="3" maxlength="2000" placeholder="Share your experience..."></textarea></div>'
+      + '<button class="review-submit-btn" id="review-submit" disabled>Submit Review</button>'
+      + '<div id="review-msg"></div>';
+    container.appendChild(form);
+
+    // Reviews list placeholder
+    var listEl = document.createElement('div');
+    listEl.id = 'review-list';
+    container.appendChild(listEl);
+
+    // Initialize after appending to DOM
+    setTimeout(function () {
+      initStarPicker(listingId);
+      loadRatingSummary(listingId);
+      loadReviews(listingId, 1);
+    }, 0);
+
+    return container;
+  }
+
+  var _selectedRating = 0;
+
+  function initStarPicker(listingId) {
+    var picker = document.getElementById('star-picker');
+    if (!picker) return;
+    _selectedRating = 0;
+    for (var i = 1; i <= 5; i++) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'star-btn';
+      btn.setAttribute('data-value', i);
+      btn.textContent = '\u2606';
+      btn.setAttribute('aria-label', i + ' star' + (i > 1 ? 's' : ''));
+      (function (val) {
+        btn.addEventListener('click', function () {
+          _selectedRating = val;
+          updateStarPicker();
+          var submitBtn = document.getElementById('review-submit');
+          if (submitBtn) submitBtn.disabled = false;
+        });
+      })(i);
+      picker.appendChild(btn);
+    }
+
+    var submitBtn = document.getElementById('review-submit');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function () {
+        submitReview(listingId);
+      });
+    }
+  }
+
+  function updateStarPicker() {
+    var picker = document.getElementById('star-picker');
+    if (!picker) return;
+    var btns = picker.querySelectorAll('.star-btn');
+    for (var i = 0; i < btns.length; i++) {
+      var val = parseInt(btns[i].getAttribute('data-value'), 10);
+      if (val <= _selectedRating) {
+        btns[i].classList.add('active');
+        btns[i].textContent = '\u2605';
+      } else {
+        btns[i].classList.remove('active');
+        btns[i].textContent = '\u2606';
+      }
+    }
+  }
+
+  function submitReview(listingId) {
+    var submitBtn = document.getElementById('review-submit');
+    var msgEl = document.getElementById('review-msg');
+    if (!_selectedRating) return;
+
+    var payload = {
+      rating: _selectedRating,
+      display_name: (document.getElementById('review-name').value || '').trim() || 'Anonymous',
+      title: (document.getElementById('review-title').value || '').trim(),
+      body: (document.getElementById('review-body').value || '').trim()
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    fetch(API_BASE + '/listings/' + encodeURIComponent(listingId) + '/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function (r) {
+      if (!r.ok) return r.json().then(function (d) { throw new Error(d.detail || 'Failed'); });
+      return r.json();
+    })
+    .then(function (data) {
+      var isUpdate = data.updated;
+      msgEl.className = 'review-msg success';
+      msgEl.textContent = isUpdate ? 'Your review has been updated!' : 'Review submitted successfully!';
+      submitBtn.textContent = 'Submit Review';
+      submitBtn.disabled = false;
+      // Refresh
+      loadRatingSummary(listingId);
+      loadReviews(listingId, 1);
+    })
+    .catch(function (err) {
+      msgEl.className = 'review-msg error';
+      msgEl.textContent = err.message || 'Failed to submit review';
+      submitBtn.textContent = 'Submit Review';
+      submitBtn.disabled = false;
+    });
+  }
+
+  function loadRatingSummary(listingId) {
+    var el = document.getElementById('review-summary');
+    if (!el) return;
+    fetch(API_BASE + '/listings/' + encodeURIComponent(listingId) + '/rating')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.total_reviews) {
+          el.innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted)">No reviews yet. Be the first!</p>';
+          return;
+        }
+        var avg = data.average_rating;
+        var total = data.total_reviews;
+        var dist = data.distribution || {};
+        var html = '<div class="review-summary">';
+        html += '<div class="review-big-score">';
+        html += '<span class="review-big-num">' + avg.toFixed(1) + '</span>';
+        html += '<span class="star-rating review-big-stars">' + starsHtml(avg) + '</span>';
+        html += '<span class="review-big-count">' + total + ' review' + (total !== 1 ? 's' : '') + '</span>';
+        html += '</div>';
+        html += '<div class="review-distribution">';
+        for (var i = 5; i >= 1; i--) {
+          var count = dist[i] || dist[String(i)] || 0;
+          var pct = total > 0 ? Math.round((count / total) * 100) : 0;
+          html += '<div class="dist-row">';
+          html += '<span class="dist-label">' + i + '</span>';
+          html += '<span class="star-rating" style="font-size:0.7rem">\u2605</span>';
+          html += '<div class="dist-bar"><div class="dist-fill" style="width:' + pct + '%"></div></div>';
+          html += '<span class="dist-count">' + count + '</span>';
+          html += '</div>';
+        }
+        html += '</div>';
+        html += '</div>';
+        el.innerHTML = html;
+      })
+      .catch(function () {});
+  }
+
+  function loadReviews(listingId, page) {
+    var el = document.getElementById('review-list');
+    if (!el) return;
+    fetch(API_BASE + '/listings/' + encodeURIComponent(listingId) + '/reviews?page=' + page + '&per_page=5')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.reviews || data.reviews.length === 0) {
+          el.innerHTML = '';
+          return;
+        }
+        var html = '<div class="review-list">';
+        data.reviews.forEach(function (rev) {
+          html += '<div class="review-card">';
+          html += '<div class="review-card-header">';
+          html += '<span class="review-card-author">' + esc(rev.display_name) + '</span>';
+          var d = rev.created_at ? new Date(rev.created_at) : null;
+          var dateStr = d ? d.toLocaleDateString() : '';
+          html += '<span class="review-card-date">' + dateStr + '</span>';
+          html += '</div>';
+          html += '<div class="star-rating" style="margin-bottom:4px">' + starsHtml(rev.rating) + '</div>';
+          if (rev.title) html += '<div class="review-card-title">' + esc(rev.title) + '</div>';
+          if (rev.body) html += '<div class="review-card-body">' + esc(rev.body) + '</div>';
+          html += '</div>';
+        });
+        html += '</div>';
+        // Pagination
+        if (data.pages > 1) {
+          html += '<div class="review-pagination">';
+          html += '<button class="review-page-btn" id="rev-prev"' + (page <= 1 ? ' disabled' : '') + '>&laquo; Prev</button>';
+          html += '<span style="font-size:0.78rem;color:var(--text-muted);padding:5px">Page ' + page + ' of ' + data.pages + '</span>';
+          html += '<button class="review-page-btn" id="rev-next"' + (page >= data.pages ? ' disabled' : '') + '>Next &raquo;</button>';
+          html += '</div>';
+        }
+        el.innerHTML = html;
+        // Attach pagination
+        var prevBtn = document.getElementById('rev-prev');
+        var nextBtn = document.getElementById('rev-next');
+        if (prevBtn && page > 1) prevBtn.addEventListener('click', function () { loadReviews(listingId, page - 1); });
+        if (nextBtn && page < data.pages) nextBtn.addEventListener('click', function () { loadReviews(listingId, page + 1); });
+      })
+      .catch(function () {});
+  }
+
+  // --- Download Analytics (F11) ---
+
+  function loadCardDownloads() {
+    // Reuse the stats endpoint per-listing is too chatty; instead we'll
+    // show download counts only when they exist. For cards, we piggyback
+    // on a lightweight approach: fetch stats for visible listings.
+    // We batch via a simple loop (SQLite is fast for reads).
+    var ids = state.filtered.map(function (l) { return l.id; });
+    ids.forEach(function (lid) {
+      var el = document.getElementById('card-dl-' + lid);
+      if (!el) return;
+      fetch(API_BASE + '/listings/' + encodeURIComponent(lid) + '/stats')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || data.total_downloads === 0) return;
+          el.innerHTML = '<span class="dl-icon">\u2B07</span> '
+            + formatNumber(data.total_downloads) + ' download' + (data.total_downloads !== 1 ? 's' : '');
+        })
+        .catch(function () {});
+    });
+  }
+
+  function formatNumber(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+    return String(n);
+  }
+
+  // Extend renderGrid to also load download counts
+  var _origRenderGrid2 = renderGrid;
+  renderGrid = function () {
+    _origRenderGrid2();
+    loadCardDownloads();
+  };
+
+  function buildStatsSection(listingId) {
+    var container = document.createElement('div');
+    container.className = 'detail-section';
+    container.id = 'stats-section';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = 'Download Statistics';
+    container.appendChild(h2);
+
+    var grid = document.createElement('div');
+    grid.className = 'detail-stats';
+    grid.innerHTML = '<div class="stat-card"><div class="stat-value" id="stat-total">-</div><div class="stat-label">Total Downloads</div></div>'
+      + '<div class="stat-card"><div class="stat-value" id="stat-7d">-</div><div class="stat-label">Last 7 Days</div></div>'
+      + '<div class="stat-card"><div class="stat-value" id="stat-30d">-</div><div class="stat-label">Last 30 Days</div></div>';
+    container.appendChild(grid);
+
+    setTimeout(function () {
+      fetch(API_BASE + '/listings/' + encodeURIComponent(listingId) + '/stats')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data) return;
+          var totalEl = document.getElementById('stat-total');
+          var d7El = document.getElementById('stat-7d');
+          var d30El = document.getElementById('stat-30d');
+          if (totalEl) totalEl.textContent = formatNumber(data.total_downloads);
+          if (d7El) d7El.textContent = formatNumber(data.downloads_last_7_days);
+          if (d30El) d30El.textContent = formatNumber(data.downloads_last_30_days);
+        })
+        .catch(function () {});
+    }, 0);
+
+    return container;
+  }
+
+  // --- Gallery & Lightbox (F12) ---
+
+  function buildGallerySection(manifest, listingPath) {
+    var screenshots = manifest.screenshots;
+    if (!screenshots || !Array.isArray(screenshots) || screenshots.length === 0) return null;
+
+    var container = document.createElement('div');
+    container.className = 'detail-section';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = 'Screenshots';
+    container.appendChild(h2);
+
+    var grid = document.createElement('div');
+    grid.className = 'gallery-grid';
+
+    screenshots.forEach(function (shot, idx) {
+      var src = shot.src || '';
+      // Resolve relative paths
+      if (src && !src.match(/^https?:\/\//)) {
+        src = '../' + (listingPath ? listingPath + '/' : '') + src;
+      }
+      var thumb = document.createElement('div');
+      thumb.className = 'gallery-thumb';
+      thumb.setAttribute('role', 'button');
+      thumb.setAttribute('tabindex', '0');
+      thumb.setAttribute('aria-label', shot.alt || 'Screenshot ' + (idx + 1));
+
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = shot.alt || '';
+      img.loading = 'lazy';
+      thumb.appendChild(img);
+
+      if (shot.caption) {
+        var cap = document.createElement('div');
+        cap.className = 'gallery-thumb-caption';
+        cap.textContent = shot.caption;
+        thumb.appendChild(cap);
+      }
+
+      (function (index) {
+        thumb.addEventListener('click', function () { openLightbox(screenshots, index, listingPath); });
+        thumb.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(screenshots, index, listingPath); }
+        });
+      })(idx);
+
+      grid.appendChild(thumb);
+    });
+
+    container.appendChild(grid);
+    return container;
+  }
+
+  var _lightboxData = null;
+  var _lightboxIdx = 0;
+  var _lightboxPath = '';
+
+  function openLightbox(screenshots, idx, listingPath) {
+    _lightboxData = screenshots;
+    _lightboxIdx = idx;
+    _lightboxPath = listingPath || '';
+
+    // Remove existing overlay
+    var existing = document.getElementById('lightbox-overlay');
+    if (existing) existing.remove();
+
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.id = 'lightbox-overlay';
+
+    var content = document.createElement('div');
+    content.className = 'lightbox-content';
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'lightbox-close';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.addEventListener('click', closeLightbox);
+    content.appendChild(closeBtn);
+
+    if (screenshots.length > 1) {
+      var prevBtn = document.createElement('button');
+      prevBtn.className = 'lightbox-nav lightbox-prev';
+      prevBtn.innerHTML = '&lsaquo;';
+      prevBtn.setAttribute('aria-label', 'Previous');
+      prevBtn.addEventListener('click', function (e) { e.stopPropagation(); lightboxNav(-1); });
+      content.appendChild(prevBtn);
+
+      var nextBtn = document.createElement('button');
+      nextBtn.className = 'lightbox-nav lightbox-next';
+      nextBtn.innerHTML = '&rsaquo;';
+      nextBtn.setAttribute('aria-label', 'Next');
+      nextBtn.addEventListener('click', function (e) { e.stopPropagation(); lightboxNav(1); });
+      content.appendChild(nextBtn);
+    }
+
+    var img = document.createElement('img');
+    img.id = 'lightbox-img';
+    content.appendChild(img);
+
+    var caption = document.createElement('div');
+    caption.className = 'lightbox-caption';
+    caption.id = 'lightbox-caption';
+    content.appendChild(caption);
+
+    overlay.appendChild(content);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    document.body.appendChild(overlay);
+    updateLightbox();
+
+    // Animate in
+    requestAnimationFrame(function () { overlay.classList.add('active'); });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', lightboxKeyHandler);
+  }
+
+  function updateLightbox() {
+    var shot = _lightboxData[_lightboxIdx];
+    var src = shot.src || '';
+    if (src && !src.match(/^https?:\/\//)) {
+      src = '../' + (_lightboxPath ? _lightboxPath + '/' : '') + src;
+    }
+    var img = document.getElementById('lightbox-img');
+    var cap = document.getElementById('lightbox-caption');
+    if (img) { img.src = src; img.alt = shot.alt || ''; }
+    if (cap) { cap.textContent = shot.caption || shot.alt || ''; }
+  }
+
+  function lightboxNav(dir) {
+    _lightboxIdx = (_lightboxIdx + dir + _lightboxData.length) % _lightboxData.length;
+    updateLightbox();
+  }
+
+  function lightboxKeyHandler(e) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+  }
+
+  function closeLightbox() {
+    var overlay = document.getElementById('lightbox-overlay');
+    if (overlay) {
+      overlay.classList.remove('active');
+      setTimeout(function () { overlay.remove(); }, 200);
+    }
+    document.removeEventListener('keydown', lightboxKeyHandler);
+    _lightboxData = null;
+  }
+
+  // --- Trust Scores (F15) ---
+
+  var _trustLevelLabels = {
+    excellent: 'Excellent',
+    good: 'Good',
+    fair: 'Fair',
+    low: 'Low',
+    minimal: 'Minimal'
+  };
+
+  function loadCardTrustBadges() {
+    fetch(API_BASE + '/trust/all')
+      .then(function (r) { return r.ok ? r.json() : { trust_scores: {} }; })
+      .then(function (data) {
+        var scores = data.trust_scores || {};
+        Object.keys(scores).forEach(function (lid) {
+          var el = document.getElementById('card-trust-' + lid);
+          if (!el) return;
+          var info = scores[lid];
+          if (!info) return;
+          el.setAttribute('data-level', info.level);
+          el.textContent = Math.round(info.total_score) + ' Trust';
+          el.classList.remove('hidden');
+        });
+      })
+      .catch(function () {});
+  }
+
+  // Extend renderGrid
+  var _origRenderGrid3 = renderGrid;
+  renderGrid = function () {
+    _origRenderGrid3();
+    loadCardTrustBadges();
+  };
+
+  var _trustBarMeta = [
+    { key: 'security',   label: 'Security',   max: 25 },
+    { key: 'community',  label: 'Community',  max: 25 },
+    { key: 'popularity', label: 'Popularity', max: 15 },
+    { key: 'author',     label: 'Author',     max: 15 },
+    { key: 'freshness',  label: 'Freshness',  max: 10 },
+    { key: 'metadata',   label: 'Metadata',   max: 10 }
+  ];
+
+  function buildTrustSection(listingId) {
+    var container = document.createElement('div');
+    container.className = 'detail-section';
+    container.id = 'trust-section';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = 'Trust Score';
+    container.appendChild(h2);
+
+    var content = document.createElement('div');
+    content.className = 'trust-detail';
+    content.id = 'trust-detail-content';
+    content.innerHTML = '<p style="font-size:0.82rem;color:var(--text-muted)">Loading trust data...</p>';
+    container.appendChild(content);
+
+    setTimeout(function () {
+      fetch(API_BASE + '/listings/' + encodeURIComponent(listingId) + '/trust')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data) { content.innerHTML = '<p style="font-size:0.82rem;color:var(--text-muted)">Trust data unavailable.</p>'; return; }
+          var html = '<div class="trust-score-header">';
+          html += '<span class="trust-total">' + Math.round(data.total_score) + '</span>';
+          html += '<div>';
+          html += '<span class="trust-badge" data-level="' + esc(data.level) + '">' + esc(_trustLevelLabels[data.level] || data.level) + '</span>';
+          html += '<div class="trust-total-label">out of ' + data.max_possible + '</div>';
+          html += '</div></div>';
+
+          var bd = data.breakdown || {};
+          _trustBarMeta.forEach(function (meta) {
+            var val = bd[meta.key] || 0;
+            var pct = Math.round((val / meta.max) * 100);
+            html += '<div class="trust-bar-row">';
+            html += '<span class="trust-bar-label">' + meta.label + '</span>';
+            html += '<div class="trust-bar"><div class="trust-bar-fill" data-cat="' + meta.key + '" style="width:' + pct + '%"></div></div>';
+            html += '<span class="trust-bar-value">' + val + '/' + meta.max + '</span>';
+            html += '</div>';
+          });
+
+          content.innerHTML = html;
+        })
+        .catch(function () {
+          content.innerHTML = '<p style="font-size:0.82rem;color:var(--text-muted)">Trust data unavailable.</p>';
+        });
+    }, 0);
+
+    return container;
+  }
+
+  // --- Signing Info (F16) ---
+
+  function buildSigningSection(listingId) {
+    var container = document.createElement('div');
+    container.className = 'detail-section';
+    container.id = 'signing-section';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = 'Signature Verification';
+    container.appendChild(h2);
+
+    var content = document.createElement('div');
+    content.id = 'signing-content';
+    container.appendChild(content);
+
+    setTimeout(function () {
+      fetch(API_BASE + '/listings/' + encodeURIComponent(listingId) + '/verify')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data) { content.innerHTML = ''; return; }
+          var html = '<div class="signing-info">';
+          if (data.verified) {
+            html += '<span class="signing-icon signing-verified">\u2714</span>';
+            html += '<div>';
+            html += '<strong style="color:var(--text)">Cryptographically Signed</strong><br>';
+            html += 'Signed by ' + esc(data.author) + ' &middot; Key: <code>' + esc(data.fingerprint) + '</code>';
+            if (data.signed_at) {
+              var d = new Date(data.signed_at);
+              html += ' &middot; ' + d.toLocaleDateString();
+            }
+            html += '</div>';
+          } else if (data.status === 'tampered') {
+            html += '<span class="signing-icon signing-revoked">\u2718</span>';
+            html += '<div><strong style="color:#dc2626">Signature Mismatch</strong><br>Manifest has been modified since signing.</div>';
+          } else if (data.status === 'revoked') {
+            html += '<span class="signing-icon signing-revoked">\u2718</span>';
+            html += '<div><strong style="color:#dc2626">Key Revoked</strong><br>The signing key for this listing has been revoked.</div>';
+          } else {
+            html += '<span class="signing-icon signing-unsigned">\u2012</span>';
+            html += '<div>This listing has not been cryptographically signed.</div>';
+          }
+          html += '</div>';
+          content.innerHTML = html;
+        })
+        .catch(function () {});
+    }, 0);
+
+    return container;
+  }
 
   // --- Start ---
   loadIndex();

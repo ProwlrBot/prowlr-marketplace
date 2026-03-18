@@ -243,6 +243,20 @@
         "surface": { "type": "string" },
         "text": { "type": "string" }
       }
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "src": { "type": "string", "description": "Relative path or URL to the screenshot image." },
+          "alt": { "type": "string", "description": "Alt text describing the screenshot." },
+          "caption": { "type": "string", "description": "Optional caption displayed below the image." }
+        },
+        "required": ["src", "alt"]
+      },
+      "maxItems": 10,
+      "description": "Gallery screenshots for this listing."
     }
   },
   "allOf": [

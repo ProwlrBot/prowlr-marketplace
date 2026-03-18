@@ -38,6 +38,7 @@
       --skip-text:    #ffffff;
       --detail-section-border: #e2e8f0;
       --scan-track:   #e2e8f0;
+      --scan-fill:    #16a34a;
     }
 
     /* =========================================================
@@ -73,6 +74,7 @@
       --skip-text:    #0f172a;
       --detail-section-border: #334155;
       --scan-track:   #334155;
+      --scan-fill:    #4ade80;
     }
 
     /* =========================================================
@@ -696,6 +698,10 @@
       transition: background 0.15s;
     }
     .install-copy-btn:hover { background: rgba(255,255,255,0.2); }
+    .install-copy-btn:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.6);
+      outline-offset: 2px;
+    }
 
     /* Detail sections */
     .detail-section {
@@ -745,6 +751,7 @@
       vertical-align: top;
     }
     .config-table tr:last-child td { border-bottom: none; }
+    .config-table tbody tr:nth-child(even) td { background: var(--input-bg); }
     .config-table code {
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       font-size: 0.8rem;
@@ -790,7 +797,7 @@
     .scan-fill {
       height: 100%;
       border-radius: 4px;
-      background: #16a34a;
+      background: var(--scan-fill, #16a34a);
       transition: width 0.3s ease;
     }
 
@@ -1010,7 +1017,7 @@
     </div>
     <div class="header-right">
       <span id="listing-count"></span>
-      <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <button id="theme-toggle" type="button" aria-label="Switch to dark mode">
         <span class="icon-sun">&#9728;</span>
         <span class="icon-moon">&#9790;</span>
       </button>
@@ -1094,14 +1101,22 @@
     }
   }
 
+  function updateThemeToggleLabel() {
+    var btn = document.getElementById('theme-toggle');
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
   function toggleTheme() {
     var current = document.documentElement.getAttribute('data-theme');
     var next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('prowlr-theme', next);
+    updateThemeToggleLabel();
   }
 
   initTheme();
+  updateThemeToggleLabel();
   document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
   // --- Helpers ---
@@ -1167,45 +1182,63 @@
     var card = document.createElement('div');
     card.className = 'card';
 
-    // Top row: category pill + difficulty + verified
+    // Top row: category pill + difficulty + verified | shield
     var topRow = document.createElement('div');
     topRow.className = 'card-top';
+
+    var topLeft = document.createElement('div');
+    topLeft.className = 'card-top-left';
 
     var pill = document.createElement('span');
     pill.className = 'pill';
     pill.setAttribute('data-category', listing.category || '');
     pill.textContent = listing.category || 'unknown';
-    topRow.appendChild(pill);
+    topLeft.appendChild(pill);
 
     if (listing.difficulty) {
       var diff = document.createElement('span');
       diff.className = 'badge-difficulty';
       diff.setAttribute('data-difficulty', listing.difficulty);
       diff.textContent = listing.difficulty;
-      topRow.appendChild(diff);
+      topLeft.appendChild(diff);
     }
 
     if (listing.verified) {
       var verified = document.createElement('span');
       verified.className = 'badge-verified';
       verified.setAttribute('aria-label', 'Verified');
-      verified.textContent = '\u2713';
-      topRow.appendChild(verified);
+      verified.textContent = 'Verified';
+      topLeft.appendChild(verified);
     }
 
+    // Security shield (right side of top row)
+    var secStatus = listing.security_status || 'unscanned';
+    var shield = document.createElement('span');
+    shield.className = 'card-shield';
+    shield.setAttribute('data-status', secStatus);
+    var shieldLabel = secStatus === 'passed' ? 'CI Passed' : secStatus === 'issues' ? 'Security Issues' : 'Unscanned';
+    shield.setAttribute('aria-label', shieldLabel);
+    shield.setAttribute('title', shieldLabel);
+    shield.textContent = '\u{1F6E1}';
+    topRow.appendChild(topLeft);
+    topRow.appendChild(shield);
     card.appendChild(topRow);
+
+    // Card body wrapper
+    var body = document.createElement('div');
+    body.className = 'card-body';
 
     // Title
     var title = document.createElement('h3');
     title.className = 'card-title';
     title.textContent = getTitle(listing);
-    card.appendChild(title);
+    body.appendChild(title);
 
     // Description
     var desc = document.createElement('p');
     desc.className = 'card-desc';
     desc.textContent = listing.description || '';
-    card.appendChild(desc);
+    body.appendChild(desc);
 
     // Tags (max 3)
     var tags = (listing.tags || []).slice(0, 3);
@@ -1218,22 +1251,10 @@
         tag.textContent = t;
         tagsRow.appendChild(tag);
       });
-      card.appendChild(tagsRow);
+      body.appendChild(tagsRow);
     }
 
-    // Security shield
-    var shield = document.createElement('div');
-    shield.className = 'card-shield';
-    var secStatus = listing.security_status || 'unscanned';
-    shield.setAttribute('data-status', secStatus);
-    var shieldIcon = document.createElement('span');
-    shieldIcon.className = 'shield-icon';
-    shieldIcon.textContent = '\u{1F6E1}';
-    shield.appendChild(shieldIcon);
-    var shieldText = document.createElement('span');
-    shieldText.textContent = secStatus === 'passed' ? 'CI Passed' : secStatus === 'issues' ? 'Issues' : 'Unscanned';
-    shield.appendChild(shieldText);
-    card.appendChild(shield);
+    card.appendChild(body);
 
     // Metadata row: author, version, pricing
     var meta = document.createElement('div');
@@ -1243,8 +1264,9 @@
     authorVer.textContent = (listing.author || 'unknown') + ' \u00B7 v' + (listing.version || '?');
     meta.appendChild(authorVer);
     var pricing = document.createElement('span');
-    pricing.className = 'badge-pricing';
-    pricing.textContent = listing.pricing_model === 'free' ? 'Free' : listing.pricing_model || 'Free';
+    var pricingClass = (listing.pricing_model && listing.pricing_model !== 'free') ? 'paid' : 'free';
+    pricing.className = 'badge-pricing ' + pricingClass;
+    pricing.textContent = pricingClass === 'free' ? 'Free' : listing.pricing_model;
     meta.appendChild(pricing);
     card.appendChild(meta);
 
@@ -1418,7 +1440,7 @@
     }
 
     if (!listing) {
-      elDetail.innerHTML = '<div class="detail-error"><p>Listing not found. <a href="#/">Back to listings</a></p></div>';
+      elDetail.innerHTML = '<a href="#/" class="detail-back">&larr; Back to listings</a><div class="detail-error-notice">Listing not found.</div>';
       hide(elGrid); hide(elSpinner); hide(elEmpty);
       document.getElementById('filters').classList.add('hidden');
       show(elDetail);
@@ -1483,7 +1505,7 @@
       html += '<span class="badge-difficulty" data-difficulty="' + difficulty + '">' + difficulty + '</span>';
     }
     if (verified) {
-      html += '<span class="badge-verified" aria-label="Verified">&#x2713; Verified</span>';
+      html += '<span class="badge-verified" aria-label="Verified">Verified</span>';
     }
     html += '</div>';
 
@@ -1504,7 +1526,7 @@
     // 6. Install command box (no inline onclick)
     html += '<div class="install-box">';
     html += '<code>prowlr marketplace install ' + id + '</code>';
-    html += '<button class="btn btn-copy detail-copy-btn" aria-label="Copy install command">Copy</button>';
+    html += '<button class="install-copy-btn detail-copy-btn" aria-label="Copy install command">Copy</button>';
     html += '</div>';
 
     // 7. Description section
@@ -1622,7 +1644,8 @@
     // 14. Setup time
     if (!fetchFailed && manifest.setup_time_minutes != null) {
       html += '<div class="detail-section">';
-      html += '<p>Setup time: ~' + esc(String(manifest.setup_time_minutes)) + ' min</p>';
+      html += '<h2>Setup Time</h2>';
+      html += '<p>~' + esc(String(manifest.setup_time_minutes)) + ' minutes</p>';
       html += '</div>';
     }
 

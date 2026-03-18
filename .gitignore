@@ -1,5 +1,6 @@
 .superpowers/
 .docs/superpowers/
+.docs/specs/
 
 # Auto Claude data directory
 .auto-claude/

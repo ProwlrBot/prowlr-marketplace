@@ -1152,7 +1152,7 @@
         });
         totalListingCount = state.listings.length;
         elCount.textContent = totalListingCount + ' listing' + (totalListingCount !== 1 ? 's' : '');
-        applyFiltersAndRender();
+        parseHash();
       })
       .catch(function () {
         hide(elSpinner);
@@ -1392,8 +1392,93 @@
     }
   }());
 
-  // --- Hash routing stub (replaced in Task 6) ---
-  function syncFiltersToHash() {}
+  // --- Hash routing (Task 6) ---
+
+  function syncFiltersToHash() {
+    if (state.view === 'detail') return;
+
+    var params = [];
+    if (state.filters.search)    params.push('q='         + encodeURIComponent(state.filters.search));
+    if (state.filters.category)  params.push('category='  + encodeURIComponent(state.filters.category));
+    if (state.filters.pricing)   params.push('pricing='   + encodeURIComponent(state.filters.pricing));
+    if (state.filters.difficulty) params.push('difficulty=' + encodeURIComponent(state.filters.difficulty));
+    if (state.sort && state.sort !== 'newest') params.push('sort=' + encodeURIComponent(state.sort));
+
+    var hash = params.length ? '#/?' + params.join('&') : '#/';
+    history.replaceState(null, '', hash);
+  }
+
+  function showDetailView(id) {
+    state.view = 'detail';
+    state.currentListing = id;
+  }
+
+  function showGridView() {
+    state.view = 'grid';
+    state.currentListing = null;
+
+    hide(elDetail);
+    show(elGrid);
+    show(document.getElementById('filters'));
+
+    // Restore filter UI from state
+    elSearch.value  = state.filters.search;
+    elCat.value     = state.filters.category;
+    elPricing.value = state.filters.pricing;
+    elDiff.value    = state.filters.difficulty;
+    elSort.value    = state.sort;
+
+    applyFiltersAndRender();
+
+    var wordmark = document.querySelector('.wordmark');
+    if (wordmark) wordmark.focus();
+  }
+
+  function parseHash() {
+    var hash = window.location.hash;
+
+    // #/listing/<id>
+    var listingMatch = hash.match(/^#\/listing\/(.+)$/);
+    if (listingMatch) {
+      showDetailView(decodeURIComponent(listingMatch[1]));
+      return;
+    }
+
+    // #/category/<name>
+    var categoryMatch = hash.match(/^#\/category\/(.+)$/);
+    if (categoryMatch) {
+      var cat = decodeURIComponent(categoryMatch[1]);
+      state.filters.category = cat;
+      showGridView();
+      return;
+    }
+
+    // #/?key=val&...
+    var queryMatch = hash.match(/^#\/\?(.+)$/);
+    if (queryMatch) {
+      var pairs = queryMatch[1].split('&');
+      // Reset filters before applying hash params
+      state.filters = { category: '', search: '', pricing: '', difficulty: '' };
+      state.sort = localStorage.getItem('prowlr-sort') || 'newest';
+      pairs.forEach(function (pair) {
+        var parts = pair.split('=');
+        var key   = decodeURIComponent(parts[0]);
+        var val   = parts.length > 1 ? decodeURIComponent(parts.slice(1).join('=')) : '';
+        if (key === 'q')          state.filters.search     = val;
+        if (key === 'category')   state.filters.category   = val;
+        if (key === 'pricing')    state.filters.pricing    = val;
+        if (key === 'difficulty') state.filters.difficulty = val;
+        if (key === 'sort')       state.sort               = val;
+      });
+      showGridView();
+      return;
+    }
+
+    // Default: show grid
+    showGridView();
+  }
+
+  window.addEventListener('hashchange', parseHash);
 
   // --- Start ---
   loadIndex();

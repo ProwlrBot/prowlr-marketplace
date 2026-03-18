@@ -1104,6 +1104,64 @@
   initTheme();
   document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
+  // --- Helpers ---
+  function show(el) { el.classList.remove('hidden'); }
+  function hide(el) { el.classList.add('hidden'); }
+  function normalizePath(p) { return p ? p.replace(/\\/g, '/') : ''; }
+  function getTitle(listing) { return listing.title || listing.name || '(untitled)'; }
+  function esc(str) {
+    if (str == null) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // --- DOM refs (all defined here so every task can use them) ---
+  var elSpinner = document.getElementById('spinner');
+  var elError = document.getElementById('error');
+  var elEmpty = document.getElementById('empty');
+  var elGrid = document.getElementById('grid');
+  var elDetail = document.getElementById('detail');
+  var elCount = document.getElementById('listing-count');
+  var elRetry = document.getElementById('retry-btn');
+  var elSearch = document.getElementById('search');
+  var elCat = document.getElementById('filter-category');
+  var elPricing = document.getElementById('filter-pricing');
+  var elDiff = document.getElementById('filter-difficulty');
+  var elSort = document.getElementById('sort');
+
+  var totalListingCount = 0;
+
+  // --- Data loading ---
+  function loadIndex() {
+    hide(elError);
+    hide(elGrid);
+    hide(elDetail);
+    hide(elEmpty);
+    show(elSpinner);
+
+    fetch('../index.json')
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        hide(elSpinner);
+        state.listings = (data.listings || []).map(function (l) {
+          l.path = normalizePath(l.path);
+          l.manifest = normalizePath(l.manifest);
+          return l;
+        });
+        totalListingCount = state.listings.length;
+        elCount.textContent = totalListingCount + ' listing' + (totalListingCount !== 1 ? 's' : '');
+        applyFiltersAndRender();
+      })
+      .catch(function () {
+        hide(elSpinner);
+        show(elError);
+      });
+  }
+
+  elRetry.addEventListener('click', loadIndex);
+
 })();
   </script>
 </body>

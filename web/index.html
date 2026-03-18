@@ -1162,6 +1162,163 @@
 
   elRetry.addEventListener('click', loadIndex);
 
+  // --- Card rendering ---
+  function buildCard(listing) {
+    var card = document.createElement('div');
+    card.className = 'card';
+
+    // Top row: category pill + difficulty + verified
+    var topRow = document.createElement('div');
+    topRow.className = 'card-top';
+
+    var pill = document.createElement('span');
+    pill.className = 'pill';
+    pill.setAttribute('data-category', listing.category || '');
+    pill.textContent = listing.category || 'unknown';
+    topRow.appendChild(pill);
+
+    if (listing.difficulty) {
+      var diff = document.createElement('span');
+      diff.className = 'badge-difficulty';
+      diff.setAttribute('data-difficulty', listing.difficulty);
+      diff.textContent = listing.difficulty;
+      topRow.appendChild(diff);
+    }
+
+    if (listing.verified) {
+      var verified = document.createElement('span');
+      verified.className = 'badge-verified';
+      verified.setAttribute('aria-label', 'Verified');
+      verified.textContent = '\u2713';
+      topRow.appendChild(verified);
+    }
+
+    card.appendChild(topRow);
+
+    // Title
+    var title = document.createElement('h3');
+    title.className = 'card-title';
+    title.textContent = getTitle(listing);
+    card.appendChild(title);
+
+    // Description
+    var desc = document.createElement('p');
+    desc.className = 'card-desc';
+    desc.textContent = listing.description || '';
+    card.appendChild(desc);
+
+    // Tags (max 3)
+    var tags = (listing.tags || []).slice(0, 3);
+    if (tags.length > 0) {
+      var tagsRow = document.createElement('div');
+      tagsRow.className = 'card-tags';
+      tags.forEach(function (t) {
+        var tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = t;
+        tagsRow.appendChild(tag);
+      });
+      card.appendChild(tagsRow);
+    }
+
+    // Security shield
+    var shield = document.createElement('div');
+    shield.className = 'card-shield';
+    var secStatus = listing.security_status || 'unscanned';
+    shield.setAttribute('data-status', secStatus);
+    var shieldIcon = document.createElement('span');
+    shieldIcon.className = 'shield-icon';
+    shieldIcon.textContent = '\u{1F6E1}';
+    shield.appendChild(shieldIcon);
+    var shieldText = document.createElement('span');
+    shieldText.textContent = secStatus === 'passed' ? 'CI Passed' : secStatus === 'issues' ? 'Issues' : 'Unscanned';
+    shield.appendChild(shieldText);
+    card.appendChild(shield);
+
+    // Metadata row: author, version, pricing
+    var meta = document.createElement('div');
+    meta.className = 'card-meta';
+    var authorVer = document.createElement('span');
+    authorVer.className = 'card-author';
+    authorVer.textContent = (listing.author || 'unknown') + ' \u00B7 v' + (listing.version || '?');
+    meta.appendChild(authorVer);
+    var pricing = document.createElement('span');
+    pricing.className = 'badge-pricing';
+    pricing.textContent = listing.pricing_model === 'free' ? 'Free' : listing.pricing_model || 'Free';
+    meta.appendChild(pricing);
+    card.appendChild(meta);
+
+    // Reserved slots (hidden)
+    var featured = document.createElement('div');
+    featured.className = 'card-featured hidden';
+    card.appendChild(featured);
+    var compat = document.createElement('div');
+    compat.className = 'card-compat hidden';
+    card.appendChild(compat);
+
+    // Actions
+    var actions = document.createElement('div');
+    actions.className = 'card-actions';
+
+    var viewBtn = document.createElement('button');
+    viewBtn.className = 'btn btn-view';
+    viewBtn.textContent = 'View';
+    viewBtn.addEventListener('click', function () {
+      window.location.hash = '#/listing/' + listing.id;
+    });
+    actions.appendChild(viewBtn);
+
+    var copyBtn = document.createElement('button');
+    copyBtn.className = 'btn btn-copy';
+    copyBtn.textContent = 'Copy Install';
+    copyBtn.setAttribute('aria-label', 'Copy install command for ' + getTitle(listing));
+    copyBtn.addEventListener('click', function () {
+      var cmd = 'prowlr marketplace install ' + listing.id;
+      navigator.clipboard.writeText(cmd).then(function () {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function () { copyBtn.textContent = 'Copy Install'; }, 1800);
+      }).catch(function () {
+        copyBtn.textContent = 'Failed';
+        setTimeout(function () { copyBtn.textContent = 'Copy Install'; }, 1800);
+      });
+    });
+    actions.appendChild(copyBtn);
+
+    card.appendChild(actions);
+    return card;
+  }
+
+  // --- Grid rendering ---
+  function renderGrid() {
+    while (elGrid.firstChild) elGrid.removeChild(elGrid.firstChild);
+
+    if (state.filtered.length === 0) {
+      hide(elGrid);
+      show(elEmpty);
+      return;
+    }
+
+    hide(elEmpty);
+    show(elGrid);
+    state.filtered.forEach(function (listing) {
+      elGrid.appendChild(buildCard(listing));
+    });
+  }
+
+  // --- Stub: applyFiltersAndRender (full implementation in Task 5) ---
+  function applyFiltersAndRender() {
+    state.filtered = state.listings.slice(); // no filtering yet
+    if (state.filtered.length === totalListingCount) {
+      elCount.textContent = totalListingCount + ' listing' + (totalListingCount !== 1 ? 's' : '');
+    } else {
+      elCount.textContent = state.filtered.length + ' of ' + totalListingCount + ' listings';
+    }
+    renderGrid();
+  }
+
+  // --- Start ---
+  loadIndex();
+
 })();
   </script>
 </body>

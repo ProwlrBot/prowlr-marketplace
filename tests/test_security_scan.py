@@ -37,7 +37,7 @@ class TestSecretDetection:
         assert len(findings) > 0
 
     def test_detects_slack_token(self, tmp_path):
-        content = 'slack = "xoxb-1234567890-abcdefghijklmnopqrstuvwx"'
+        content = 'slack = "xoxb-FAKE0TOKEN0FOR0TESTING0ONLY00"'
         findings = scan_for_secrets(content, tmp_path / "test.json")
         assert len(findings) > 0
 

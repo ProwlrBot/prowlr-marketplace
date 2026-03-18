@@ -2,12 +2,19 @@
   "id": "pdf-analysis",
   "registry": "anthropic-official",
   "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/multimodal/pdf_support",
-  "name": "PDF Analysis",
   "description": "Analyze PDFs directly with Claude's native PDF support — extract text, summarize, answer questions, and compare documents.",
   "version": "1.0.0",
-  "tags": ["pdf", "documents", "multimodal", "extraction"],
+  "tags": [
+    "pdf",
+    "documents",
+    "multimodal",
+    "extraction"
+  ],
   "license": "MIT",
   "author": "Anthropic",
   "verified": true,
-  "risk_level": "clean"
+  "risk_level": "clean",
+  "title": "PDF Analysis",
+  "category": "skills",
+  "pricing_model": "free"
 }

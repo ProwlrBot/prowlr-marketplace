@@ -2,12 +2,20 @@
   "id": "data-visualizer",
   "registry": "community",
   "source": "community",
-  "name": "Data Visualizer",
   "description": "Generate charts and dashboards from data using matplotlib, plotly, and pandas. Outputs PNG, HTML, or SVG visualizations.",
   "version": "1.0.0",
-  "tags": ["charts", "visualization", "data", "plotly", "matplotlib"],
+  "tags": [
+    "charts",
+    "visualization",
+    "data",
+    "plotly",
+    "matplotlib"
+  ],
   "license": "MIT",
   "author": "prowlr-community",
   "verified": false,
-  "risk_level": "clean"
+  "risk_level": "clean",
+  "title": "Data Visualizer",
+  "category": "skills",
+  "pricing_model": "free"
 }

@@ -1,6 +1,5 @@
 {
   "id": "site-monitor",
-  "name": "Site Monitor",
   "version": "1.0.0",
   "description": "Monitors your websites for downtime, slow response times, SSL certificate expiry, and content changes. Alerts you within seconds of an issue so you fix it before your users even notice.",
   "author": "ProwlrBot Team",
@@ -44,7 +43,7 @@
   ],
   "user_stories": [
     {
-      "quote": "My e-commerce site went down at 2 AM on Black Friday. I got the alert at 2:01 AM, had it fixed by 2:15. Without this I wouldn't have known until morning \u2014 that's $10K in lost sales.",
+      "quote": "My e-commerce site went down at 2 AM on Black Friday. I got the alert at 2:01 AM, had it fixed by 2:15. Without this I wouldn't have known until morning — that's $10K in lost sales.",
       "name": "Craig W.",
       "role": "E-commerce store owner"
     },
@@ -66,7 +65,7 @@
     },
     {
       "step": 2,
-      "instruction": "Set check frequency \u2014 every 1 minute, 5 minutes, or 15 minutes per URL."
+      "instruction": "Set check frequency — every 1 minute, 5 minutes, or 15 minutes per URL."
     },
     {
       "step": 3,
@@ -78,10 +77,12 @@
     },
     {
       "step": 5,
-      "instruction": "Optionally set performance thresholds \u2014 get alerted if response time exceeds your target (e.g., 2 seconds)."
+      "instruction": "Optionally set performance thresholds — get alerted if response time exceeds your target (e.g., 2 seconds)."
     }
   ],
   "hero_animation": "uptime-heartbeat-grid",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Site Monitor",
+  "pricing_model": "free"
 }

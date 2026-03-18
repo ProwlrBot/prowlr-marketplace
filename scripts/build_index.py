@@ -17,15 +17,20 @@ REPO_ROOT = pathlib.Path(__file__).parent.parent
 INDEX_PATH = REPO_ROOT / "index.json"
 
 # Directories to exclude from the index
-EXCLUDE_DIRS = {"defaults", "templates", "scripts", "docs", ".github"}
+EXCLUDE_DIRS = {"defaults", "templates", "scripts", "docs", ".github", ".auto-claude",
+                "schemas", "tests", "gallery", "node_modules"}
+
+# Directories whose manifests derive category from the manifest data, not the dir name
+# (e.g., consumer/ contains listings categorized as "workflows" or "agents")
+CATEGORY_FROM_MANIFEST = {"consumer", "external"}
 
 
 def load_manifests() -> list[dict]:
     entries: list[dict] = []
     for manifest_path in sorted(REPO_ROOT.rglob("manifest.json")):
         parts = manifest_path.relative_to(REPO_ROOT).parts
-        # Skip excluded top-level dirs
-        if parts[0] in EXCLUDE_DIRS:
+        # Skip excluded top-level dirs and hidden dirs
+        if parts[0] in EXCLUDE_DIRS or parts[0].startswith("."):
             continue
         try:
             data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -33,9 +38,17 @@ def load_manifests() -> list[dict]:
             print(f"WARNING: could not parse {manifest_path}: {exc}", file=sys.stderr)
             continue
 
-        category = parts[0]
-        slug = parts[1] if len(parts) > 1 else manifest_path.parent.name
+        top_dir = parts[0]
+        slug = parts[-2] if len(parts) > 2 else (parts[1] if len(parts) > 1 else manifest_path.parent.name)
         rel_path = str(manifest_path.parent.relative_to(REPO_ROOT))
+
+        # Determine category: use manifest data for consumer/external dirs,
+        # otherwise use the top-level directory name.
+        # External listings without a category field default to "skills".
+        if top_dir in CATEGORY_FROM_MANIFEST:
+            category = data.get("category") or "skills"
+        else:
+            category = top_dir
 
         # Strip dynamic fields that belong in the backend, not static JSON
         # downloads and rating must NOT be hardcoded — they come from the API
@@ -56,6 +69,17 @@ def load_manifests() -> list[dict]:
             "path": rel_path,
             "manifest": f"{rel_path}/manifest.json",
         }
+
+        # Include external-specific fields when present
+        if data.get("registry"):
+            entry["registry"] = data["registry"]
+        if data.get("source"):
+            entry["source"] = data["source"]
+        if data.get("verified") is not None:
+            entry["verified"] = data["verified"]
+        if data.get("risk_level"):
+            entry["risk_level"] = data["risk_level"]
+
         entries.append(entry)
 
     return entries

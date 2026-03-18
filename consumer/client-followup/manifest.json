@@ -1,6 +1,5 @@
 {
   "id": "client-followup",
-  "name": "Client Follow-Up",
   "version": "1.0.0",
   "description": "Never lose a deal or damage a relationship because you forgot to follow up. Tracks every client interaction and sends timely, personalized follow-ups so you stay top-of-mind without a full CRM.",
   "author": "ProwlrBot Team",
@@ -70,7 +69,7 @@
     },
     {
       "step": 3,
-      "instruction": "Set default follow-up intervals \u2014 e.g., 3 days after a proposal, 1 week after a meeting, monthly for existing clients."
+      "instruction": "Set default follow-up intervals — e.g., 3 days after a proposal, 1 week after a meeting, monthly for existing clients."
     },
     {
       "step": 4,
@@ -83,5 +82,7 @@
   ],
   "hero_animation": "relationship-timeline-pulse",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Client Follow-Up",
+  "pricing_model": "free"
 }

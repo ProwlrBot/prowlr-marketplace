@@ -1,6 +1,5 @@
 {
   "id": "smart-reminder",
-  "name": "Smart Reminder",
   "version": "1.1.0",
   "description": "Tell it what you need to remember in plain language and it figures out exactly when and how to remind you. Adapts to your schedule, follows up if you don't act, and never lets important things slip through the cracks.",
   "author": "ProwlrBot Team",
@@ -66,7 +65,7 @@
   "setup_steps": [
     {
       "step": 1,
-      "instruction": "Choose where reminders should be delivered \u2014 console, email, Slack, Telegram, or phone notification."
+      "instruction": "Choose where reminders should be delivered — console, email, Slack, Telegram, or phone notification."
     },
     {
       "step": 2,
@@ -79,5 +78,7 @@
   ],
   "hero_animation": "reminder-ripple-adapt",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Smart Reminder",
+  "pricing_model": "free"
 }

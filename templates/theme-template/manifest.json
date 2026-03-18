@@ -1,0 +1,35 @@
+{
+  "id": "theme-my-theme-name",
+  "title": "My Theme Name",
+  "description": "Visual theme for the ProwlrBot console. Describe the aesthetic and mood of this theme.",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "category": "themes",
+  "tags": ["dark", "minimal"],
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/your-username/your-theme-repo",
+  "min_prowlrbot_version": "0.1.0",
+  "difficulty": "beginner",
+  "persona_tags": ["everyone"],
+  "capabilities": ["syntax-highlighting", "dark-mode"],
+  "colors": {
+    "primary": "#00E5FF",
+    "background": "#0a0a0f",
+    "surface": "#1a1a2e",
+    "text": "#e0e0e0"
+  },
+  "config_schema": {
+    "accent_color": {
+      "type": "string",
+      "default": "#00E5FF",
+      "description": "Primary accent color (hex)"
+    },
+    "font_family": {
+      "type": "string",
+      "default": "JetBrains Mono",
+      "enum": ["JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono"],
+      "description": "Console font family"
+    }
+  }
+}

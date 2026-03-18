@@ -2,12 +2,19 @@
   "id": "rag-pipeline",
   "registry": "anthropic-official",
   "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/third_party/Pinecone",
-  "name": "RAG Pipeline",
   "description": "Retrieval-Augmented Generation pipeline with vector search. Chunk, embed, store, and query your documents with Claude.",
   "version": "1.0.0",
-  "tags": ["rag", "embeddings", "vector-search", "documents"],
+  "tags": [
+    "rag",
+    "embeddings",
+    "vector-search",
+    "documents"
+  ],
   "license": "MIT",
   "author": "Anthropic",
   "verified": true,
-  "risk_level": "clean"
+  "risk_level": "clean",
+  "title": "RAG Pipeline",
+  "category": "skills",
+  "pricing_model": "free"
 }

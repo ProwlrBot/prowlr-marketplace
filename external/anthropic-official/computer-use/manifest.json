@@ -2,12 +2,19 @@
   "id": "computer-use",
   "registry": "anthropic-official",
   "source": "https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo",
-  "name": "Computer Use",
   "description": "Give Claude control of a computer — click, type, browse, run commands. Adapted from the Anthropic computer-use-demo quickstart.",
   "version": "1.0.0",
-  "tags": ["computer-use", "automation", "desktop", "browser"],
+  "tags": [
+    "computer-use",
+    "automation",
+    "desktop",
+    "browser"
+  ],
   "license": "MIT",
   "author": "Anthropic",
   "verified": true,
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "title": "Computer Use",
+  "category": "skills",
+  "pricing_model": "free"
 }

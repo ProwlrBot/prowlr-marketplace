@@ -1,8 +1,7 @@
 {
   "id": "homework-helper",
-  "name": "Homework Helper",
   "version": "1.1.0",
-  "description": "A patient, always-available tutor that walks kids through homework step by step \u2014 building real understanding instead of just giving answers. Works from third-grade math to college chemistry.",
+  "description": "A patient, always-available tutor that walks kids through homework step by step — building real understanding instead of just giving answers. Works from third-grade math to college chemistry.",
   "author": "ProwlrBot Team",
   "category": "agents",
   "difficulty": "beginner",
@@ -59,7 +58,7 @@
   "setup_steps": [
     {
       "step": 1,
-      "instruction": "Select the student's grade level \u2014 elementary, middle school, high school, or college."
+      "instruction": "Select the student's grade level — elementary, middle school, high school, or college."
     },
     {
       "step": 2,
@@ -76,5 +75,7 @@
   ],
   "hero_animation": "chalkboard-step-through",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Homework Helper",
+  "pricing_model": "free"
 }

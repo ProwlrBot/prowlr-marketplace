@@ -1,6 +1,5 @@
 {
   "id": "content-scheduler",
-  "name": "Content Scheduler",
   "version": "1.0.0",
   "description": "Plan, write, and schedule social media posts across Twitter/X, Instagram, LinkedIn, and more from one place. Suggests optimal posting times based on your audience engagement patterns.",
   "author": "ProwlrBot Team",
@@ -67,7 +66,7 @@
     },
     {
       "step": 2,
-      "instruction": "Set your content categories \u2014 promotional, educational, behind-the-scenes, engagement, etc."
+      "instruction": "Set your content categories — promotional, educational, behind-the-scenes, engagement, etc."
     },
     {
       "step": 3,
@@ -84,5 +83,7 @@
   ],
   "hero_animation": "calendar-post-queue",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Content Scheduler",
+  "pricing_model": "free"
 }

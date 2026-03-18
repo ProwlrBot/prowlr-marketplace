@@ -1,17 +1,16 @@
 {
-  "name": "my-agent-name",
+  "id": "agent-my-agent-name",
   "title": "My Agent Title",
   "description": "What this agent does and when to use it.",
   "version": "1.0.0",
   "author": "your-github-username",
+  "category": "agents",
   "tags": ["research", "automation"],
   "pricing_model": "free",
-  "price": 0.0,
+  "license": "Apache-2.0",
+  "repository": "https://github.com/your-username/your-agent-repo",
   "min_prowlrbot_version": "0.1.0",
   "provider": "anthropic",
-  "model": "claude-sonnet-4-20250514",
-  "tools": ["web_search", "file_read"],
-  "autonomy": "guided",
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/your-username/your-agent-repo"
+  "model": "claude-sonnet-4-6",
+  "autonomy": "supervised"
 }

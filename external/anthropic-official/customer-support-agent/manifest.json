@@ -2,12 +2,19 @@
   "id": "customer-support-agent",
   "registry": "anthropic-official",
   "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents/customer_support",
-  "name": "Customer Support Agent",
   "description": "Multi-turn customer support agent with tool use, knowledge base lookup, and escalation logic. From Anthropic Cookbook.",
   "version": "1.0.0",
-  "tags": ["support", "agents", "tool-use", "multi-turn"],
+  "tags": [
+    "support",
+    "agents",
+    "tool-use",
+    "multi-turn"
+  ],
   "license": "MIT",
   "author": "Anthropic",
   "verified": true,
-  "risk_level": "clean"
+  "risk_level": "clean",
+  "title": "Customer Support Agent",
+  "category": "skills",
+  "pricing_model": "free"
 }

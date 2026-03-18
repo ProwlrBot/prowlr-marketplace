@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prowlr.dev/schemas/manifest.schema.json",
+  "title": "ProwlrBot Marketplace Manifest",
+  "description": "Schema for all marketplace listing manifest.json files across all categories.",
+  "type": "object",
+  "required": ["id", "title", "description", "version", "author", "category"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+      "description": "Unique identifier for the listing (lowercase, hyphenated)."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100,
+      "description": "Human-readable display name for the listing."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000,
+      "description": "Short description of what the listing does."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+",
+      "description": "Semantic version (e.g., 1.0.0)."
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Author name or organization."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["skills", "agents", "prompts", "mcp-servers", "themes", "workflows", "specs"],
+      "description": "Listing category — must match a valid marketplace category."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "maxItems": 20,
+      "description": "Lowercase, hyphenated tags for discovery."
+    },
+    "pricing_model": {
+      "type": "string",
+      "enum": ["free", "freemium", "paid", "subscription"],
+      "default": "free",
+      "description": "Pricing model for the listing."
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier (e.g., Apache-2.0, MIT)."
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source code repository URL."
+    },
+    "min_prowlrbot_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+",
+      "description": "Minimum ProwlrBot version required."
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"],
+      "default": "intermediate",
+      "description": "Target difficulty level."
+    },
+    "persona_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "description": "Target persona tags for consumer-facing discovery (e.g., parent, freelancer, developer)."
+    },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of capabilities this listing provides."
+    },
+    "config_schema": {
+      "type": "object",
+      "description": "Configuration options exposed to users.",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "default": {},
+          "enum": { "type": "array" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "verified": {
+      "type": "boolean",
+      "description": "Whether this listing has been verified by the marketplace team."
+    },
+    "registry": {
+      "type": "string",
+      "description": "Source registry for external listings (e.g., anthropic-official, goose-recipes, community)."
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "description": "Original source URL for external listings."
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["clean", "low", "medium", "high"],
+      "description": "Security risk assessment for external listings."
+    },
+    "setup_time_minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Estimated setup time in minutes (consumer listings)."
+    },
+    "skill_scan": {
+      "type": "object",
+      "description": "Rating dimensions for consumer listings (1-10 scale).",
+      "properties": {
+        "automation": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "ease": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "privacy": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "reliability": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "personalization": { "type": "integer", "minimum": 1, "maximum": 10 }
+      },
+      "additionalProperties": false
+    },
+    "before_after": {
+      "type": "object",
+      "description": "Before/after comparison for consumer listings.",
+      "properties": {
+        "before": { "type": "string" },
+        "after": { "type": "string" },
+        "time_saved": { "type": "string" }
+      },
+      "required": ["before", "after"],
+      "additionalProperties": false
+    },
+    "works_with": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of services/tools this listing integrates with."
+    },
+    "user_stories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quote": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" }
+        },
+        "required": ["quote", "name", "role"]
+      },
+      "description": "Testimonial user stories for consumer listings."
+    },
+    "setup_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": { "type": "integer" },
+          "instruction": { "type": "string" }
+        },
+        "required": ["step", "instruction"]
+      },
+      "description": "Step-by-step setup instructions for consumer listings."
+    },
+    "hero_animation": {
+      "type": "string",
+      "description": "Animation identifier for consumer listing hero section."
+    },
+    "demo_url": {
+      "type": "string",
+      "description": "URL to a demo or preview of the listing."
+    },
+    "prompts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of prompt names in a prompt pack."
+    },
+    "prompt_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of prompts in a prompt pack."
+    },
+    "steps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of workflow step names."
+    },
+    "triggers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Events that can trigger this workflow."
+    },
+    "transport": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["stdio", "http", "sse", "websocket"]
+      },
+      "description": "Supported MCP transport protocols."
+    },
+    "tools": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "MCP tools provided by this server."
+    },
+    "resources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "MCP resources provided by this server."
+    },
+    "provider": {
+      "type": "string",
+      "description": "AI model provider for agent configurations."
+    },
+    "model": {
+      "type": "string",
+      "description": "Default AI model for agent configurations."
+    },
+    "autonomy": {
+      "type": "string",
+      "enum": ["full", "supervised", "manual"],
+      "description": "Agent autonomy level."
+    },
+    "colors": {
+      "type": "object",
+      "description": "Color definitions for themes.",
+      "properties": {
+        "primary": { "type": "string" },
+        "background": { "type": "string" },
+        "surface": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "category": { "const": "skills" } }
+      },
+      "then": {
+        "required": ["tags"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "category": { "const": "agents" } }
+      },
+      "then": {
+        "required": ["tags"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "category": { "const": "mcp-servers" } }
+      },
+      "then": {
+        "required": ["transport", "tools"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "category": { "const": "themes" } }
+      },
+      "then": {
+        "required": ["tags"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "category": { "const": "workflows" } }
+      },
+      "then": {
+        "required": ["tags"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "category": { "const": "prompts" } }
+      },
+      "then": {
+        "required": ["tags"]
+      }
+    }
+  ],
+  "additionalProperties": true
+}

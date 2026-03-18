@@ -1,0 +1,27 @@
+{
+  "id": "agent-my-agent-name",
+  "title": "My Agent Title",
+  "description": "What this agent does and when to use it. Be specific about capabilities and target audience.",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "category": "agents",
+  "tags": ["research", "automation"],
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/your-username/your-agent-repo",
+  "min_prowlrbot_version": "0.1.0",
+  "difficulty": "intermediate",
+  "persona_tags": ["developer"],
+  "capabilities": ["web-search", "file-management"],
+  "provider": "anthropic",
+  "model": "claude-sonnet-4-6",
+  "autonomy": "supervised",
+  "config_schema": {
+    "output_format": {
+      "type": "string",
+      "default": "markdown",
+      "enum": ["markdown", "json", "html"],
+      "description": "Output format for agent responses"
+    }
+  }
+}

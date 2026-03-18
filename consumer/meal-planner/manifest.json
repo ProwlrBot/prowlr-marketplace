@@ -1,6 +1,5 @@
 {
   "id": "meal-planner",
-  "name": "Meal Planner",
   "version": "1.1.0",
   "description": "Get a full week of meals with a consolidated grocery list, personalized to your family's size, dietary needs, budget, and cooking skill. Reuses ingredients across meals to cut waste and cost.",
   "author": "ProwlrBot Team",
@@ -30,7 +29,7 @@
   },
   "before_after": {
     "before": "Standing in the kitchen at 5:30 PM with no plan, ordering takeout 3 times a week at $45 a pop, throwing away forgotten groceries every Sunday",
-    "after": "A full weekly meal plan with recipes and a sorted grocery list every Sunday morning \u2014 eating better, spending $120 less per week on food",
+    "after": "A full weekly meal plan with recipes and a sorted grocery list every Sunday morning — eating better, spending $120 less per week on food",
     "time_saved": "4 hrs/week"
   },
   "works_with": [
@@ -81,5 +80,7 @@
   ],
   "hero_animation": "plate-assemble-sequence",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Meal Planner",
+  "pricing_model": "free"
 }

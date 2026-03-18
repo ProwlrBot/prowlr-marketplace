@@ -20,24 +20,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Validate JSON manifests
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate JSON syntax
         run: |
-          echo "Validating all manifest.json files..."
-          find . -name "manifest.json" -print0 | while IFS= read -r -d '' file; do
-            echo "  Checking $file"
+          echo "Validating all manifest.json files are valid JSON..."
+          find . -name "manifest.json" -not -path "./.github/*" -not -path "./.auto-claude/*" -not -path "./templates/*" -print0 | while IFS= read -r -d '' file; do
             python3 -c "import json, sys; json.load(open(sys.argv[1]))" "$file" || exit 1
           done
-          echo "All manifests valid."
+          echo "All manifests are valid JSON."
 
-      - name: Check required fields
-        run: |
-          echo "Checking required manifest fields..."
-          find . -name "manifest.json" -print0 | while IFS= read -r -d '' file; do
-            for field in id title description version author category; do
-              python3 -c "import json, sys; data=json.load(open(sys.argv[1])); assert sys.argv[2] in data, f'{sys.argv[2]} missing'" "$file" "$field" || exit 1
-            done
-          done
-          echo "All required fields present."
+      - name: Validate against JSON Schema
+        run: python3 scripts/validate_manifests.py --strict
 
       - name: Check no hardcoded placeholder data
         run: |
@@ -45,11 +40,13 @@ jobs:
           import json, pathlib, sys
           errors = []
           for p in pathlib.Path('.').rglob('manifest.json'):
-              if '.github' in p.parts:
+              if any(d in p.parts for d in ['.github', '.auto-claude', 'templates', 'defaults']):
                   continue
               data = json.loads(p.read_text())
               if data.get('rating') == 4.5:
                   errors.append(f'{p}: hardcoded rating 4.5 -- remove this field (ratings come from backend)')
+              if data.get('downloads') is not None:
+                  errors.append(f'{p}: hardcoded downloads -- remove this field (downloads come from backend)')
           if errors:
               print('Placeholder data detected:')
               for e in errors:
@@ -57,6 +54,10 @@ jobs:
               sys.exit(1)
           print('No placeholder data found.')
           "
+
+      - name: Security scan - detect secrets
+        run: |
+          python3 scripts/security_scan.py --strict
 
       - name: Check index.json is up-to-date (PRs)
         if: github.event_name == 'pull_request'
@@ -75,3 +76,19 @@ jobs:
             git commit -m "chore: regenerate index.json [skip ci]"
             git push
           fi
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install jsonschema pytest pytest-cov
+
+      - name: Run tests
+        run: pytest tests/ -v --cov=scripts --cov-report=term-missing

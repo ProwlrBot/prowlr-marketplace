@@ -1,6 +1,5 @@
 {
   "id": "invoice-chaser",
-  "name": "Invoice Chaser",
   "version": "1.1.0",
   "description": "Tracks every outstanding invoice, sends polite escalating follow-ups on your behalf, and gives you a weekly cash-flow summary so you stop losing money to forgotten receivables.",
   "author": "ProwlrBot Team",
@@ -29,7 +28,7 @@
   },
   "before_after": {
     "before": "Manually tracking 15+ invoices in a spreadsheet, writing awkward follow-up emails, discovering a $3,000 invoice is 60 days overdue",
-    "after": "Every invoice tracked automatically with escalating follow-ups \u2014 you see a clean dashboard and only step in when the agent flags a problem",
+    "after": "Every invoice tracked automatically with escalating follow-ups — you see a clean dashboard and only step in when the agent flags a problem",
     "time_saved": "4 hrs/week"
   },
   "works_with": [
@@ -65,7 +64,7 @@
     },
     {
       "step": 2,
-      "instruction": "Set your follow-up schedule \u2014 how many days after the due date to send the first, second, and final reminder."
+      "instruction": "Set your follow-up schedule — how many days after the due date to send the first, second, and final reminder."
     },
     {
       "step": 3,
@@ -82,5 +81,7 @@
   ],
   "hero_animation": "invoice-tracker-pulse",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Invoice Chaser",
+  "pricing_model": "free"
 }

@@ -1,7 +1,7 @@
 {
   "id": "prompt-my-prompt-pack",
   "title": "My Prompt Pack",
-  "description": "A collection of prompts for a specific use case.",
+  "description": "A collection of prompts for a specific use case. Describe what domain or workflow these prompts address.",
   "version": "1.0.0",
   "author": "your-github-username",
   "category": "prompts",
@@ -10,6 +10,12 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/your-username/your-prompt-repo",
   "min_prowlrbot_version": "0.1.0",
-  "prompts": ["prompt-one", "prompt-two"],
-  "prompt_count": 2
+  "difficulty": "beginner",
+  "persona_tags": ["developer"],
+  "prompts": [
+    "prompt-one",
+    "prompt-two",
+    "prompt-three"
+  ],
+  "prompt_count": 3
 }

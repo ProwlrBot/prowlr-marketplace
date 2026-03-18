@@ -2,12 +2,19 @@
   "id": "structured-outputs",
   "registry": "anthropic-official",
   "source": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/json_mode",
-  "name": "Structured Outputs",
   "description": "Force Claude to return valid JSON matching a schema using tool use or prefilling. Works for data extraction, classification, and form filling.",
   "version": "1.0.0",
-  "tags": ["json", "structured-output", "extraction", "classification"],
+  "tags": [
+    "json",
+    "structured-output",
+    "extraction",
+    "classification"
+  ],
   "license": "MIT",
   "author": "Anthropic",
   "verified": true,
-  "risk_level": "clean"
+  "risk_level": "clean",
+  "title": "Structured Outputs",
+  "category": "skills",
+  "pricing_model": "free"
 }

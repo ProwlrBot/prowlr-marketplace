@@ -1,6 +1,5 @@
 {
   "id": "morning-briefing",
-  "name": "Morning Briefing",
   "version": "1.2.0",
   "description": "Wake up to a personalized daily summary covering your calendar, unread emails, local weather, and top news stories. Delivered to your preferred channel before you even pour your coffee.",
   "author": "ProwlrBot Team",
@@ -76,7 +75,7 @@
     },
     {
       "step": 4,
-      "instruction": "Pick your news topics \u2014 business, tech, local, world, or custom keywords."
+      "instruction": "Pick your news topics — business, tech, local, world, or custom keywords."
     },
     {
       "step": 5,
@@ -85,5 +84,7 @@
   ],
   "hero_animation": "sunrise-inbox-cascade",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Morning Briefing",
+  "pricing_model": "free"
 }

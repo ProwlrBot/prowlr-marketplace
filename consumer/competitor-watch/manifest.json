@@ -1,8 +1,7 @@
 {
   "id": "competitor-watch",
-  "name": "Competitor Watch",
   "version": "1.0.0",
-  "description": "Monitors competitor websites, pricing pages, job listings, and social accounts for meaningful changes \u2014 then sends you a plain-English summary of what changed and why it matters.",
+  "description": "Monitors competitor websites, pricing pages, job listings, and social accounts for meaningful changes — then sends you a plain-English summary of what changed and why it matters.",
   "author": "ProwlrBot Team",
   "category": "skills",
   "difficulty": "intermediate",
@@ -28,7 +27,7 @@
   },
   "before_after": {
     "before": "Manually checking competitor websites every few days, missing pricing changes, and finding out about new product launches from your customers instead of ahead of time",
-    "after": "Instant alerts when competitors change pricing, launch features, post jobs, or update messaging \u2014 with a weekly digest summarizing the competitive landscape",
+    "after": "Instant alerts when competitors change pricing, launch features, post jobs, or update messaging — with a weekly digest summarizing the competitive landscape",
     "time_saved": "3 hrs/week"
   },
   "works_with": [
@@ -60,7 +59,7 @@
   "setup_steps": [
     {
       "step": 1,
-      "instruction": "Add competitor URLs you want to monitor \u2014 homepages, pricing pages, blog, careers page, etc."
+      "instruction": "Add competitor URLs you want to monitor — homepages, pricing pages, blog, careers page, etc."
     },
     {
       "step": 2,
@@ -68,7 +67,7 @@
     },
     {
       "step": 3,
-      "instruction": "Choose what types of changes to track \u2014 pricing, new features, job postings, messaging changes, or all."
+      "instruction": "Choose what types of changes to track — pricing, new features, job postings, messaging changes, or all."
     },
     {
       "step": 4,
@@ -81,5 +80,7 @@
   ],
   "hero_animation": "radar-sweep-detect",
   "demo_url": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "title": "Competitor Watch",
+  "pricing_model": "free"
 }

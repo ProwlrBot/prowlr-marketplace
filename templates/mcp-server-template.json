@@ -1,16 +1,16 @@
 {
-  "name": "my-mcp-server",
+  "id": "mcp-my-mcp-server",
   "title": "My MCP Server",
-  "description": "What tools/resources this MCP server provides.",
+  "description": "What tools and resources this MCP server provides.",
   "version": "1.0.0",
   "author": "your-github-username",
+  "category": "mcp-servers",
   "tags": ["tools", "integration"],
   "pricing_model": "free",
-  "price": 0.0,
-  "transport": "stdio",
-  "tools": [],
-  "resources": [],
-  "min_prowlrbot_version": "0.1.0",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/your-username/your-mcp-repo"
+  "repository": "https://github.com/your-username/your-mcp-repo",
+  "min_prowlrbot_version": "0.1.0",
+  "transport": ["stdio"],
+  "tools": ["my_tool"],
+  "resources": []
 }

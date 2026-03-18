@@ -2,12 +2,19 @@
   "id": "github-issue-triage",
   "registry": "goose-recipes",
   "source": "https://github.com/block/goose/tree/main/docs/recipes",
-  "name": "GitHub Issue Triage",
   "description": "Automatically triage incoming GitHub issues — classify by type, assign labels, route to teams, and draft responses. From Block's Goose recipes.",
   "version": "1.0.0",
-  "tags": ["github", "triage", "automation", "issues"],
+  "tags": [
+    "github",
+    "triage",
+    "automation",
+    "issues"
+  ],
   "license": "Apache-2.0",
   "author": "Block (formerly Square)",
   "verified": true,
-  "risk_level": "clean"
+  "risk_level": "clean",
+  "title": "GitHub Issue Triage",
+  "category": "skills",
+  "pricing_model": "free"
 }

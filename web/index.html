@@ -1070,6 +1070,41 @@
     </nav>
   </footer>
 
-  <script>/* JS added in later tasks */</script>
+  <script>
+(function () {
+  'use strict';
+
+  // --- State ---
+  var state = {
+    listings: [],
+    filtered: [],
+    filters: { category: '', search: '', pricing: '', difficulty: '' },
+    sort: 'newest',
+    view: 'grid',
+    currentListing: null
+  };
+
+  // --- Theme ---
+  function initTheme() {
+    var saved = localStorage.getItem('prowlr-theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }
+
+  function toggleTheme() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('prowlr-theme', next);
+  }
+
+  initTheme();
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+})();
+  </script>
 </body>
 </html>

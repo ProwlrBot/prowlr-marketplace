@@ -1410,7 +1410,391 @@
 
   function showDetailView(id) {
     state.view = 'detail';
-    state.currentListing = id;
+
+    // Find listing in cached data
+    var listing = null;
+    for (var i = 0; i < state.listings.length; i++) {
+      if (state.listings[i].id === id) { listing = state.listings[i]; break; }
+    }
+
+    if (!listing) {
+      elDetail.innerHTML = '<div class="detail-error"><p>Listing not found. <a href="#/">Back to listings</a></p></div>';
+      hide(elGrid); hide(elSpinner); hide(elEmpty);
+      document.getElementById('filters').classList.add('hidden');
+      show(elDetail);
+      return;
+    }
+
+    // Show loading spinner in detail area
+    hide(elGrid); hide(elEmpty);
+    document.getElementById('filters').classList.add('hidden');
+    elDetail.innerHTML = '<div id="detail-spinner"><div class="spin"></div></div>';
+    show(elDetail);
+
+    // Fetch full manifest
+    var manifestPath = listing.manifest
+      ? '../' + listing.manifest
+      : '../' + listing.path + '/manifest.json';
+
+    fetch(manifestPath)
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (manifest) {
+        state.currentListing = manifest;
+        renderDetailView(manifest, listing, false);
+      })
+      .catch(function () {
+        // Show error notice + fallback render with index data
+        renderDetailView(listing, listing, true);
+      });
+  }
+
+  function renderDetailView(manifest, indexEntry, fetchFailed) {
+    var id = esc(indexEntry.id || '');
+    var title = esc(getTitle(manifest));
+    var category = esc(manifest.category || indexEntry.category || '');
+    var difficulty = esc(manifest.difficulty || indexEntry.difficulty || '');
+    var verified = manifest.verified || indexEntry.verified;
+    var description = esc(manifest.description || indexEntry.description || '');
+    var author = esc(manifest.author || indexEntry.author || '');
+    var version = esc(manifest.version || indexEntry.version || '');
+    var license = esc(manifest.license || indexEntry.license || '');
+    var pricingModel = manifest.pricing_model || indexEntry.pricing_model || 'free';
+    var securityStatus = esc(manifest.security_status || indexEntry.security_status || 'unscanned');
+
+    var html = '';
+
+    // 1. Back link
+    html += '<a href="#/" class="detail-back">&larr; Back to listings</a>';
+
+    // 2. Error notice (if fetchFailed)
+    if (fetchFailed) {
+      html += '<div class="detail-error-notice">Could not load full listing details. Showing summary from index. <a href="#/">Back to listings</a></div>';
+    }
+
+    // 3. Top badges: category pill, difficulty badge, verified badge
+    html += '<div class="detail-badges">';
+    if (category) {
+      html += '<span class="pill" data-category="' + category + '">' + category + '</span>';
+    }
+    if (difficulty) {
+      html += '<span class="badge-difficulty" data-difficulty="' + difficulty + '">' + difficulty + '</span>';
+    }
+    if (verified) {
+      html += '<span class="badge-verified" aria-label="Verified">&#x2713; Verified</span>';
+    }
+    html += '</div>';
+
+    // 4. Title + pricing
+    var pricingClass = pricingModel === 'free' ? 'free' : 'paid';
+    var pricingLabel = pricingModel === 'free' ? 'Free' : esc(pricingModel);
+    html += '<div class="detail-header">';
+    html += '<h2 class="detail-title" tabindex="-1">' + title + ' <span class="badge-pricing ' + pricingClass + '">' + pricingLabel + '</span></h2>';
+    html += '</div>';
+
+    // 5. Author/version/license metadata line
+    html += '<div class="detail-meta">';
+    if (author) html += '<span>By ' + author + '</span>';
+    if (version) html += '<span>v' + version + '</span>';
+    if (license) html += '<span>License: ' + license + '</span>';
+    html += '</div>';
+
+    // 6. Install command box (no inline onclick)
+    html += '<div class="install-box">';
+    html += '<code>prowlr marketplace install ' + id + '</code>';
+    html += '<button class="btn btn-copy detail-copy-btn" aria-label="Copy install command">Copy</button>';
+    html += '</div>';
+
+    // 7. Description section
+    if (description) {
+      html += '<div class="detail-section">';
+      html += '<h2>Description</h2>';
+      html += '<p>' + description + '</p>';
+      html += '</div>';
+    }
+
+    // 8. Security & Capabilities (manifest only)
+    var hasSecCaps = securityStatus || (manifest.capabilities && !fetchFailed) || (manifest.min_prowlrbot_version && !fetchFailed);
+    if (hasSecCaps) {
+      html += '<div class="detail-section">';
+      html += '<h2>Security &amp; Capabilities</h2>';
+      if (securityStatus) {
+        var shieldColor = securityStatus === 'passed' ? '#16a34a' : securityStatus === 'issues' ? '#dc2626' : '#94a3b8';
+        html += '<p style="margin-bottom:10px">\uD83D\uDEE1\uFE0F Security status: <strong style="color:' + shieldColor + '">' + securityStatus + '</strong></p>';
+      }
+      if (!fetchFailed && manifest.capabilities && Array.isArray(manifest.capabilities) && manifest.capabilities.length > 0) {
+        html += '<div class="card-tags" style="margin-bottom:10px">';
+        manifest.capabilities.forEach(function (cap) {
+          html += '<span class="tag">' + esc(cap) + '</span>';
+        });
+        html += '</div>';
+      }
+      if (!fetchFailed && manifest.min_prowlrbot_version) {
+        html += '<p>Min ProwlrBot version: <code>' + esc(manifest.min_prowlrbot_version) + '</code></p>';
+      }
+      html += '</div>';
+    }
+
+    // 9. Configuration: config_schema as table
+    if (!fetchFailed && manifest.config_schema && Array.isArray(manifest.config_schema) && manifest.config_schema.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>Configuration</h2>';
+      html += '<table class="config-table">';
+      html += '<thead><tr><th>Field</th><th>Type</th><th>Default</th><th>Options</th></tr></thead>';
+      html += '<tbody>';
+      manifest.config_schema.forEach(function (field) {
+        var fieldName = esc(field.name || field.key || '');
+        var fieldType = esc(field.type || '');
+        var fieldDefault = field['default'] != null ? esc(String(field['default'])) : '';
+        var fieldOptions = '';
+        if (field.options && Array.isArray(field.options)) {
+          fieldOptions = field.options.map(function (o) { return esc(String(o)); }).join(', ');
+        }
+        html += '<tr>';
+        html += '<td><code>' + fieldName + '</code></td>';
+        html += '<td>' + fieldType + '</td>';
+        html += '<td>' + (fieldDefault ? '<code>' + fieldDefault + '</code>' : '') + '</td>';
+        html += '<td>' + fieldOptions + '</td>';
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+      html += '</div>';
+    }
+
+    // 10. Tags
+    var tags = manifest.tags || indexEntry.tags || [];
+    if (tags.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>Tags</h2>';
+      html += '<div class="card-tags">';
+      tags.forEach(function (t) {
+        html += '<span class="tag">' + esc(t) + '</span>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 11. Links: repository + license
+    var repo = manifest.repository || manifest.repo || indexEntry.repository || indexEntry.repo || '';
+    if (repo || license) {
+      html += '<div class="detail-section">';
+      html += '<h2>Links</h2>';
+      if (repo) {
+        html += '<p><a href="' + esc(repo) + '" target="_blank" rel="noopener">Repository &rarr;</a></p>';
+      }
+      if (license) {
+        html += '<p>License: ' + license + '</p>';
+      }
+      html += '</div>';
+    }
+
+    // 12. Persona tags (cross-category field)
+    var personas = manifest.personas || manifest.persona_tags || indexEntry.personas || indexEntry.persona_tags || [];
+    if (personas.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>Personas</h2>';
+      html += '<div class="card-tags">';
+      personas.forEach(function (p) {
+        html += '<span class="tag">' + esc(p) + '</span>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 13. Before/After
+    if (!fetchFailed && manifest.before_after) {
+      var ba = manifest.before_after;
+      html += '<div class="detail-section">';
+      html += '<h2>Before &amp; After</h2>';
+      html += '<div class="before-after">';
+      if (ba.before) {
+        html += '<div><h3>Before</h3><p>' + esc(ba.before) + '</p></div>';
+      }
+      if (ba.after) {
+        html += '<div><h3>After</h3><p>' + esc(ba.after) + '</p></div>';
+      }
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 14. Setup time
+    if (!fetchFailed && manifest.setup_time_minutes != null) {
+      html += '<div class="detail-section">';
+      html += '<p>Setup time: ~' + esc(String(manifest.setup_time_minutes)) + ' min</p>';
+      html += '</div>';
+    }
+
+    // 15. Works with
+    if (!fetchFailed && manifest.works_with && Array.isArray(manifest.works_with) && manifest.works_with.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>Works With</h2>';
+      html += '<div class="card-tags">';
+      manifest.works_with.forEach(function (w) {
+        html += '<span class="tag">' + esc(w) + '</span>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 16. Setup steps
+    if (!fetchFailed && manifest.setup_steps && Array.isArray(manifest.setup_steps) && manifest.setup_steps.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>Setup Steps</h2>';
+      html += '<div class="setup-steps">';
+      manifest.setup_steps.forEach(function (step, i) {
+        html += '<div class="setup-step">';
+        html += '<span class="step-num">' + (i + 1) + '</span>';
+        html += '<span class="step-text">' + esc(typeof step === 'string' ? step : (step.text || step.description || JSON.stringify(step))) + '</span>';
+        html += '</div>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 17. User stories
+    if (!fetchFailed && manifest.user_stories && Array.isArray(manifest.user_stories) && manifest.user_stories.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>User Stories</h2>';
+      html += '<div style="display:flex;flex-direction:column;gap:12px">';
+      manifest.user_stories.forEach(function (story) {
+        var storyText = typeof story === 'string' ? story : (story.text || story.story || '');
+        var attribution = typeof story === 'object' && story.author ? ' &mdash; ' + esc(story.author) : '';
+        html += '<blockquote class="user-story">' + esc(storyText) + attribution + '</blockquote>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 18. Skill scan — horizontal bar chart
+    if (!fetchFailed && manifest.skill_scan && typeof manifest.skill_scan === 'object') {
+      html += '<div class="detail-section">';
+      html += '<h2>Skill Scan</h2>';
+      html += '<div class="skill-scan">';
+      Object.keys(manifest.skill_scan).forEach(function (key) {
+        var val = manifest.skill_scan[key];
+        var pct = Math.min(100, Math.max(0, val * 10));
+        html += '<div class="scan-item">';
+        html += '<div class="scan-label"><span>' + esc(key) + '</span><span>' + esc(String(val)) + '</span></div>';
+        html += '<div class="scan-bar"><div class="scan-track"><div class="scan-fill" style="width:' + pct + '%"></div></div></div>';
+        html += '</div>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 19. MCP transport + tools
+    if (!fetchFailed && (manifest.transport || (manifest.tools && Array.isArray(manifest.tools) && manifest.tools.length > 0))) {
+      html += '<div class="detail-section">';
+      html += '<h2>MCP Details</h2>';
+      if (manifest.transport) {
+        html += '<p style="margin-bottom:8px">Transport: <strong>' + esc(manifest.transport) + '</strong></p>';
+      }
+      if (manifest.tools && manifest.tools.length > 0) {
+        html += '<p style="margin-bottom:6px"><strong>Tools</strong></p>';
+        html += '<ul>';
+        manifest.tools.forEach(function (tool) {
+          var toolName = typeof tool === 'string' ? tool : (tool.name || JSON.stringify(tool));
+          var toolDesc = typeof tool === 'object' && tool.description ? ': ' + esc(tool.description) : '';
+          html += '<li><code>' + esc(toolName) + '</code>' + toolDesc + '</li>';
+        });
+        html += '</ul>';
+      }
+      html += '</div>';
+    }
+
+    // 20. Workflow steps + triggers
+    if (!fetchFailed && (manifest.steps || manifest.triggers)) {
+      html += '<div class="detail-section">';
+      html += '<h2>Workflow</h2>';
+      if (manifest.triggers && Array.isArray(manifest.triggers) && manifest.triggers.length > 0) {
+        html += '<p style="margin-bottom:8px"><strong>Triggers:</strong> ' + manifest.triggers.map(function (t) { return esc(typeof t === 'string' ? t : (t.name || JSON.stringify(t))); }).join(', ') + '</p>';
+      }
+      if (manifest.steps && Array.isArray(manifest.steps) && manifest.steps.length > 0) {
+        html += '<ol>';
+        manifest.steps.forEach(function (step) {
+          var stepText = typeof step === 'string' ? step : (step.name || step.description || JSON.stringify(step));
+          html += '<li>' + esc(stepText) + '</li>';
+        });
+        html += '</ol>';
+      }
+      html += '</div>';
+    }
+
+    // 21. Prompts list
+    if (!fetchFailed && manifest.prompts && Array.isArray(manifest.prompts) && manifest.prompts.length > 0) {
+      html += '<div class="detail-section">';
+      html += '<h2>Prompts</h2>';
+      html += '<ul>';
+      manifest.prompts.forEach(function (prompt) {
+        var promptText = typeof prompt === 'string' ? prompt : (prompt.name || prompt.text || JSON.stringify(prompt));
+        html += '<li>' + esc(promptText) + '</li>';
+      });
+      html += '</ul>';
+      html += '</div>';
+    }
+
+    // 22. Theme colors
+    if (!fetchFailed && manifest.colors && typeof manifest.colors === 'object') {
+      html += '<div class="detail-section">';
+      html += '<h2>Theme Colors</h2>';
+      html += '<div class="color-swatches">';
+      Object.keys(manifest.colors).forEach(function (colorKey) {
+        var colorVal = manifest.colors[colorKey];
+        html += '<div class="swatch">';
+        html += '<div class="swatch-color" style="background:' + esc(colorVal) + '" title="' + esc(colorKey) + ': ' + esc(colorVal) + '"></div>';
+        html += '<span>' + esc(colorKey) + '</span>';
+        html += '<span>' + esc(colorVal) + '</span>';
+        html += '</div>';
+      });
+      html += '</div>';
+      html += '</div>';
+    }
+
+    // 23. External source/registry/risk_level
+    if (!fetchFailed && manifest.source) {
+      html += '<div class="detail-section">';
+      html += '<h2>External Source</h2>';
+      if (manifest.source.url || manifest.source.name) {
+        html += '<p>';
+        if (manifest.source.name) html += esc(manifest.source.name);
+        if (manifest.source.url) {
+          html += (manifest.source.name ? ' &mdash; ' : '') + '<a href="' + esc(manifest.source.url) + '" target="_blank" rel="noopener">' + esc(manifest.source.url) + '</a>';
+        }
+        html += '</p>';
+      }
+      if (manifest.source.registry) {
+        html += '<p>Registry: ' + esc(manifest.source.registry) + '</p>';
+      }
+      if (manifest.source.risk_level) {
+        html += '<p>Risk level: ' + esc(manifest.source.risk_level) + '</p>';
+      }
+      html += '</div>';
+    }
+
+    // hero_animation, demo_url: ignored for v1
+
+    elDetail.innerHTML = html;
+
+    // Attach copy button via addEventListener (no inline onclick)
+    var copyBtn = elDetail.querySelector('.detail-copy-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var cmd = 'prowlr marketplace install ' + (indexEntry.id || '');
+        navigator.clipboard.writeText(cmd).then(function () {
+          copyBtn.textContent = 'Copied!';
+          setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800);
+        }).catch(function () {
+          copyBtn.textContent = 'Failed';
+          setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800);
+        });
+      });
+    }
+
+    // Focus the detail title
+    var titleEl = elDetail.querySelector('.detail-title');
+    if (titleEl) titleEl.focus();
   }
 
   function showGridView() {

@@ -10,3 +10,11 @@
 .worktrees/
 .security-key
 logs/security/
+
+# API database
+api/marketplace.db
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/

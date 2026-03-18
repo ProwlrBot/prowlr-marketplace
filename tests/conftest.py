@@ -11,6 +11,22 @@ import pytest
 
 REPO_ROOT = pathlib.Path(__file__).parent.parent
 
+from fastapi.testclient import TestClient
+from api.main import create_app
+
+
+@pytest.fixture
+def api_app(tmp_path):
+    """Create a FastAPI app loaded with real index.json data."""
+    app = create_app(index_path=REPO_ROOT / "index.json", db_path=tmp_path / "test.db")
+    return app
+
+
+@pytest.fixture
+def client(api_app):
+    """TestClient for API endpoint tests."""
+    return TestClient(api_app)
+
 
 @pytest.fixture
 def repo_root():

@@ -1305,16 +1305,95 @@
     });
   }
 
-  // --- Stub: applyFiltersAndRender (full implementation in Task 5) ---
+  // --- Filtering, Sorting, Search (Task 5) ---
+
+  var _searchTimer = null;
+
   function applyFiltersAndRender() {
-    state.filtered = state.listings.slice(); // no filtering yet
+    var cat     = state.filters.category;
+    var pricing = state.filters.pricing;
+    var diff    = state.filters.difficulty;
+    var q       = state.filters.search.toLowerCase();
+
+    state.filtered = state.listings.filter(function (l) {
+      if (cat && l.category !== cat) return false;
+      if (diff && l.difficulty !== diff) return false;
+      if (pricing) {
+        var model = (l.pricing_model || 'free').toLowerCase();
+        if (pricing === 'free' && model !== 'free') return false;
+        if (pricing === 'paid' && model === 'free') return false;
+      }
+      if (q) {
+        var title = (getTitle(l)).toLowerCase();
+        var desc  = (l.description || '').toLowerCase();
+        var tags  = (l.tags || []).join(' ').toLowerCase();
+        if (title.indexOf(q) === -1 && desc.indexOf(q) === -1 && tags.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    // Sort
+    var sort = state.sort;
+    if (sort === 'az') {
+      state.filtered.sort(function (a, b) {
+        return getTitle(a).toLowerCase().localeCompare(getTitle(b).toLowerCase());
+      });
+    } else if (sort === 'category') {
+      state.filtered.sort(function (a, b) {
+        var ca = (a.category || '').toLowerCase();
+        var cb = (b.category || '').toLowerCase();
+        if (ca < cb) return -1;
+        if (ca > cb) return 1;
+        return getTitle(a).toLowerCase().localeCompare(getTitle(b).toLowerCase());
+      });
+    }
+    // 'newest' preserves index order (no sort needed)
+
+    // Update count
     if (state.filtered.length === totalListingCount) {
       elCount.textContent = totalListingCount + ' listing' + (totalListingCount !== 1 ? 's' : '');
     } else {
       elCount.textContent = state.filtered.length + ' of ' + totalListingCount + ' listings';
     }
+
+    syncFiltersToHash();
     renderGrid();
   }
+
+  function onFilterChange() {
+    state.filters.category   = elCat.value;
+    state.filters.pricing    = elPricing.value;
+    state.filters.difficulty = elDiff.value;
+    state.sort = elSort.value;
+    localStorage.setItem('prowlr-sort', state.sort);
+    applyFiltersAndRender();
+  }
+
+  function onSearchInput() {
+    if (_searchTimer) clearTimeout(_searchTimer);
+    _searchTimer = setTimeout(function () {
+      state.filters.search = elSearch.value;
+      applyFiltersAndRender();
+    }, 200);
+  }
+
+  elCat.addEventListener('change', onFilterChange);
+  elPricing.addEventListener('change', onFilterChange);
+  elDiff.addEventListener('change', onFilterChange);
+  elSort.addEventListener('change', onFilterChange);
+  elSearch.addEventListener('input', onSearchInput);
+
+  // Restore saved sort
+  (function () {
+    var savedSort = localStorage.getItem('prowlr-sort');
+    if (savedSort) {
+      state.sort = savedSort;
+      elSort.value = savedSort;
+    }
+  }());
+
+  // --- Hash routing stub (replaced in Task 6) ---
+  function syncFiltersToHash() {}
 
   // --- Start ---
   loadIndex();

@@ -460,13 +460,21 @@
 
     /* Security shield */
     .card-shield {
-      font-size: 1rem;
+      font-size: 0.75rem;
       flex-shrink: 0;
       line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
     }
     .card-shield[data-status="passed"]   { color: #16a34a; }
     .card-shield[data-status="unscanned"]{ color: #94a3b8; }
     .card-shield[data-status="issues"]   { color: #dc2626; }
+    .card-shield-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
 
     /* Card body */
     .card-body {
@@ -1216,10 +1224,17 @@
     var shield = document.createElement('span');
     shield.className = 'card-shield';
     shield.setAttribute('data-status', secStatus);
-    var shieldLabel = secStatus === 'passed' ? 'CI Passed' : secStatus === 'issues' ? 'Security Issues' : 'Unscanned';
+    var shieldLabel = secStatus === 'passed' ? 'CI Passed' : secStatus === 'issues' ? 'Issues' : 'Unscanned';
     shield.setAttribute('aria-label', shieldLabel);
     shield.setAttribute('title', shieldLabel);
-    shield.textContent = '\u{1F6E1}';
+    var shieldIcon = document.createElement('span');
+    shieldIcon.setAttribute('aria-hidden', 'true');
+    shieldIcon.textContent = '\u{1F6E1}';
+    var shieldText = document.createElement('span');
+    shieldText.className = 'card-shield-label';
+    shieldText.textContent = shieldLabel;
+    shield.appendChild(shieldIcon);
+    shield.appendChild(shieldText);
     topRow.appendChild(topLeft);
     topRow.appendChild(shield);
     card.appendChild(topRow);
@@ -1559,15 +1574,34 @@
       html += '</div>';
     }
 
-    // 9. Configuration: config_schema as table
-    if (!fetchFailed && manifest.config_schema && Array.isArray(manifest.config_schema) && manifest.config_schema.length > 0) {
+    // 9. Configuration: config_schema as table (supports both array and object forms)
+    var configSchema = !fetchFailed && manifest.config_schema ? manifest.config_schema : null;
+    var configFields = null;
+    if (configSchema) {
+      if (Array.isArray(configSchema) && configSchema.length > 0) {
+        // Array form: [{name, type, default, options}, ...]
+        configFields = configSchema.map(function (field) {
+          return { key: field.name || field.key || '', field: field };
+        });
+      } else if (!Array.isArray(configSchema) && typeof configSchema === 'object') {
+        // Object form: { fieldName: { type, default, options }, ... }
+        var schemaKeys = Object.keys(configSchema);
+        if (schemaKeys.length > 0) {
+          configFields = schemaKeys.map(function (k) {
+            return { key: k, field: configSchema[k] };
+          });
+        }
+      }
+    }
+    if (configFields) {
       html += '<div class="detail-section">';
       html += '<h2>Configuration</h2>';
       html += '<table class="config-table">';
       html += '<thead><tr><th>Field</th><th>Type</th><th>Default</th><th>Options</th></tr></thead>';
       html += '<tbody>';
-      manifest.config_schema.forEach(function (field) {
-        var fieldName = esc(field.name || field.key || '');
+      configFields.forEach(function (entry) {
+        var field = entry.field;
+        var fieldName = esc(entry.key);
         var fieldType = esc(field.type || '');
         var fieldDefault = field['default'] != null ? esc(String(field['default'])) : '';
         var fieldOptions = '';
@@ -1779,19 +1813,33 @@
     if (!fetchFailed && manifest.source) {
       html += '<div class="detail-section">';
       html += '<h2>External Source</h2>';
-      if (manifest.source.url || manifest.source.name) {
-        html += '<p>';
-        if (manifest.source.name) html += esc(manifest.source.name);
-        if (manifest.source.url) {
-          html += (manifest.source.name ? ' &mdash; ' : '') + '<a href="' + esc(manifest.source.url) + '" target="_blank" rel="noopener">' + esc(manifest.source.url) + '</a>';
+      if (typeof manifest.source === 'string') {
+        // String form: source is a plain URL or label
+        var srcStr = manifest.source;
+        if (srcStr.match(/^https?:\/\//)) {
+          html += '<p><a href="' + esc(srcStr) + '" target="_blank" rel="noopener">' + esc(srcStr) + '</a></p>';
+        } else {
+          html += '<p>' + esc(srcStr) + '</p>';
         }
-        html += '</p>';
+      } else if (manifest.source && typeof manifest.source === 'object') {
+        // Object form: { name, url }
+        if (manifest.source.url || manifest.source.name) {
+          html += '<p>';
+          if (manifest.source.name) html += esc(manifest.source.name);
+          if (manifest.source.url) {
+            html += (manifest.source.name ? ' &mdash; ' : '') + '<a href="' + esc(manifest.source.url) + '" target="_blank" rel="noopener">' + esc(manifest.source.url) + '</a>';
+          }
+          html += '</p>';
+        }
       }
-      if (manifest.source.registry) {
-        html += '<p>Registry: ' + esc(manifest.source.registry) + '</p>';
+      // registry and risk_level may be top-level fields or nested under source
+      var registry = manifest.registry || (manifest.source && typeof manifest.source === 'object' && manifest.source.registry) || '';
+      var riskLevel = manifest.risk_level || (manifest.source && typeof manifest.source === 'object' && manifest.source.risk_level) || '';
+      if (registry) {
+        html += '<p>Registry: ' + esc(registry) + '</p>';
       }
-      if (manifest.source.risk_level) {
-        html += '<p>Risk level: ' + esc(manifest.source.risk_level) + '</p>';
+      if (riskLevel) {
+        html += '<p>Risk level: ' + esc(riskLevel) + '</p>';
       }
       html += '</div>';
     }

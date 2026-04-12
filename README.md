@@ -90,17 +90,6 @@ Every listing needs a `manifest.json`:
 }
 ```
 
-## Revenue Sharing
-
-Creators earn **70%** of all credit purchases for premium listings. ProwlrBot takes 30% to keep the lights on.
-
-| Tier | Monthly | Credits | Access |
-|:-----|:--------|:--------|:-------|
-| Free | $0 | 50/mo | All free listings |
-| Starter | $5 | 500/mo | + Premium skills |
-| Pro | $15 | 2000/mo | + Premium agents, priority |
-| Team | $29 | 5000/mo | + Team features, bulk |
-
 ## The Ecosystem
 
 | Repo | Role |

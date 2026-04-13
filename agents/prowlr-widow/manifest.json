@@ -18,6 +18,6 @@
     "active": ["nuclei", "misconfig-mapper", "harbinger"],
     "intrusive": ["ffuf", "arjun", "dalfox", "nomore403", "loxs", "gato", "payloadforge"]
   },
-  "employees": ["openfang"],
+  "employees": ["openfang", "cai"],
   "name": "Prowlr Widow"
 }

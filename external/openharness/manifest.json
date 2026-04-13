@@ -1,0 +1,12 @@
+{
+  "id": "external-openharness",
+  "title": "OpenHarness (External Employee)",
+  "description": "HKUDS OpenHarness — open agent harness with built-in personal agent (Ohmo). Alternative runtime to OpenFang; agent loop + tools + memory + multi-agent in one binary.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/OpenHarness-1", "upstream": "https://github.com/HKUDS/OpenHarness",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "harness", "agent-loop", "memory"],
+  "kind": "employee", "bin": "openharness",
+  "capabilities_used": ["agent-loop", "tool-execution", "persistent-memory"],
+  "name": "OpenHarness"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "agent-prowlr-triage",
+  "title": "Prowlr Triage",
+  "description": "Pre-hunt triage. Checks scope freshness, dedupe against prowlr-recall memory, RoE constraints, and known-issue lists before NEXUS dispatches the squad.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["triage", "scope-validation", "dedup"],
+  "capabilities": ["scope-validation"],
+  "difficulty": "advanced", "persona_tags": ["security-researcher"],
+  "preferred_provider": "ollama", "preferred_model": "bounty-gemma4:latest",
+  "tools_required": {"passive": ["prowlr-recall"]},
+  "name": "Prowlr Triage"
+}

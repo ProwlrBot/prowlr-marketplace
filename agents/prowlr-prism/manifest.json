@@ -1,0 +1,17 @@
+{
+  "id": "agent-prowlr-prism",
+  "title": "Prowlr Prism",
+  "description": "LLM red-team specialist. Tests AI systems for prompt injection, data exfiltration, MCP exploitation, system prompt leakage, multi-turn crescendo. Wraps promptfoo/garak/pyrit/deepteam.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["llm-redteam", "ai-security", "prompt-injection"],
+  "capabilities": ["llm-red-team", "prompt-injection-testing", "mcp-exploitation"],
+  "difficulty": "advanced", "persona_tags": ["security-researcher"],
+  "preferred_provider": "anthropic", "preferred_model": "claude-sonnet-4-6",
+  "fallback_models": ["bounty-gemma4:latest"],
+  "tools_required": {
+    "passive": ["promptfoo", "garak", "pyrit", "deepteam"]
+  },
+  "name": "Prowlr Prism"
+}

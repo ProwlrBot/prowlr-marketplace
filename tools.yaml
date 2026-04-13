@@ -221,6 +221,38 @@ categories:
       tool_profile: passive
       kind: ai-agent
       external: external/hermes
+    - id: clawteam
+      bin: clawteam
+      tool_profile: passive
+      kind: ai-orchestrator
+      external: external/clawteam
+    - id: openharness
+      bin: openharness
+      tool_profile: passive
+      kind: ai-runtime
+      external: external/openharness
+    - id: cai
+      bin: cai
+      tool_profile: active
+      kind: ai-offensive
+      external: external/cai
+    - id: agenticseek
+      bin: agenticseek
+      tool_profile: active
+      kind: ai-browser-agent
+      external: external/agenticseek
+    - id: conquer
+      bin: conquer
+      tool_profile: passive
+      external: external/conquer
+    - id: robin
+      bin: robin
+      tool_profile: passive
+      kind: ai-osint
+      external: external/robin
+    - id: wshobson-agents
+      kind: skill-pack
+      external: external/wshobson-agents
 
   memory:
     - id: prowlr-recall

@@ -1,0 +1,12 @@
+{
+  "id": "external-agenticseek",
+  "title": "AgenticSeek (External Employee)",
+  "description": "Fully-local Manus-style autonomous agent — browses web, writes code, plans tasks. No API costs. GHOST delegates JS-heavy SPA recon to AgenticSeek when katana can't render the surface.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "GPL-3.0",
+  "repository": "https://github.com/ProwlrBot/agenticSeek", "upstream": "https://github.com/Fosowl/agenticSeek",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "local-agent", "web-browsing", "autonomous"],
+  "kind": "employee", "bin": "agenticseek",
+  "capabilities_used": ["browser-automation", "spa-rendering", "task-planning"],
+  "name": "AgenticSeek"
+}

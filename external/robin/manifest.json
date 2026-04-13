@@ -1,0 +1,13 @@
+{
+  "id": "external-robin",
+  "title": "Robin — Dark Web OSINT (External Employee)",
+  "description": "AI-powered dark web OSINT by @apurvsinghgautam. Extends GHOST/SCRY surface — searches onion services, paste sites, breach forums for target leaks.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "MIT",
+  "repository": "https://github.com/ProwlrBot/robin", "upstream": "https://github.com/apurvsinghgautam/robin",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "darkweb", "osint", "ai-powered"],
+  "kind": "employee", "bin": "robin",
+  "companion_repos": ["https://github.com/ProwlrBot/dark-web-osint-tools"],
+  "capabilities_used": ["darkweb-search", "breach-correlation", "paste-monitoring"],
+  "name": "Robin"
+}

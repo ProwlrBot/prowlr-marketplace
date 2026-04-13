@@ -1,0 +1,14 @@
+{
+  "id": "agent-prowlr-ledger",
+  "title": "Prowlr Ledger",
+  "description": "Earnings + ROI tracker. Logs submissions, payouts, time-spent per finding. Writes to Obsidian 10 - Finance/. Tells you which programs actually pay.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["finance", "roi", "tracking"],
+  "capabilities": ["earnings-tracking", "roi-analysis"],
+  "difficulty": "intermediate", "persona_tags": ["bug-bounty-hunter"],
+  "preferred_provider": "ollama", "preferred_model": "bounty-gemma4:latest",
+  "tools_required": {"passive": ["obsidian-vault"]},
+  "name": "Prowlr Ledger"
+}

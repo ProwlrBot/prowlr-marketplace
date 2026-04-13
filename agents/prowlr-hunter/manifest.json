@@ -21,7 +21,7 @@
     "active": ["httpx", "dnsx", "naabu", "katana", "nuclei"],
     "intrusive": ["ffuf", "arjun", "dalfox", "nomore403"]
   },
-  "employees": ["fabric", "claude-bug-bounty"],
+  "employees": ["fabric", "claude-bug-bounty", "wshobson-agents"],
   "config_schema": {
     "scope_mode": {"type": "string", "default": "strict", "enum": ["strict", "advisory", "off"]},
     "tool_profile": {"type": "string", "default": "passive", "enum": ["passive", "active", "intrusive"]},

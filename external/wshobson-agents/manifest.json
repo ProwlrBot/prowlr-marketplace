@@ -1,0 +1,12 @@
+{
+  "id": "external-wshobson-agents",
+  "title": "wshobson Claude Agents (External Skill Pack)",
+  "description": "wshobson's intelligent automation + multi-agent orchestration for Claude Code. Provides ~75 specialized subagents we cherry-pick from for non-bounty tasks (code review, infra, research) without rebuilding.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "MIT",
+  "repository": "https://github.com/ProwlrBot/agents", "upstream": "https://github.com/wshobson/agents",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "claude-code", "subagents", "skill-pack"],
+  "kind": "skill-pack",
+  "agents_imported": ["security-auditor", "backend-security-coder", "frontend-security-coder", "incident-responder"],
+  "name": "wshobson Agents"
+}

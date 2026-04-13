@@ -18,5 +18,6 @@
     "passive": ["subfinder", "assetfinder", "amass", "asnmap", "chaos", "waybackurls", "gau", "github-dorks", "trufflehog", "bbot"],
     "active": ["httpx", "dnsx", "naabu", "katana", "gowitness", "cdncheck"]
   },
+  "employees": ["conquer", "robin", "agenticseek"],
   "name": "Prowlr Ghost"
 }

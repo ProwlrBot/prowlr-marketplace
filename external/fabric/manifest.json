@@ -1,0 +1,18 @@
+{
+  "id": "external-fabric",
+  "title": "Fabric (External Employee)",
+  "description": "Daniel Miessler's Fabric — pattern-driven AI pipelines. Wired as a ProwlrBot 'employee' agents can call via ROAR delegate for analyze_threat_report, improve_writing, extract_wisdom, etc.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "license": "MIT",
+  "repository": "https://github.com/ProwlrBot/Fabric",
+  "upstream": "https://github.com/danielmiessler/fabric",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["external", "ai-pipeline", "pattern-library"],
+  "kind": "employee",
+  "bin": "fabric",
+  "install_hint": "go install github.com/danielmiessler/fabric@latest",
+  "patterns_used": ["analyze_threat_report", "improve_writing", "extract_wisdom", "summarize", "create_security_update"],
+  "name": "Fabric"
+}

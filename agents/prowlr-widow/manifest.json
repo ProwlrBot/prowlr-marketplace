@@ -1,0 +1,23 @@
+{
+  "id": "agent-prowlr-widow",
+  "title": "Prowlr Widow",
+  "description": "Exploitation specialist. Crafts payloads, runs nuclei + dalfox + ffuf + arjun, chains low-impact bugs into critical findings.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["exploitation", "payload-generation", "vulnerability-chaining"],
+  "capabilities": ["payload-generation", "vulnerability-scanning", "vulnerability-chaining"],
+  "difficulty": "advanced",
+  "persona_tags": ["security-researcher"],
+  "preferred_provider": "ollama",
+  "preferred_model": "bounty-gemma4:latest",
+  "tools_required": {
+    "active": ["nuclei", "misconfig-mapper", "harbinger"],
+    "intrusive": ["ffuf", "arjun", "dalfox", "nomore403", "loxs", "gato", "payloadforge"]
+  },
+  "employees": ["openfang", "cai"],
+  "name": "Prowlr Widow"
+}

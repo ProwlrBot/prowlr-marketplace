@@ -257,6 +257,47 @@
       },
       "maxItems": 10,
       "description": "Gallery screenshots for this listing."
+    },
+    "preferred_provider": {
+      "type": "string",
+      "description": "Preferred LLM provider id (e.g., ollama, anthropic, openai). Loader honors this when resolving a model."
+    },
+    "preferred_model": {
+      "type": "string",
+      "description": "Preferred model id at the preferred provider (e.g., bounty-gemma4:latest, claude-sonnet-4-6)."
+    },
+    "fallback_models": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered fallback list when preferred_model is unavailable."
+    },
+    "tools_required": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "description": "Tools required by profile. Keys: passive | active | intrusive. Values: tool ids resolved against marketplace tools.yaml."
+    },
+    "employees": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "External employee ids (under external/) this agent delegates to via ROAR."
+    },
+    "delegates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Internal agent ids this agent dispatches via ROAR delegate (orchestrators only)."
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["employee", "toolkit", "skill-pack", "ai-runtime", "ai-agent", "ai-orchestrator", "ai-offensive", "ai-osint", "ai-browser-agent"],
+      "description": "Sub-classification for external/ entries."
+    },
+    "upstream": {
+      "type": "string",
+      "format": "uri",
+      "description": "Original upstream URL when this listing is a fork."
     }
   },
   "allOf": [

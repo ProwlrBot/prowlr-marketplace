@@ -1,0 +1,12 @@
+{
+  "id": "external-conquer",
+  "title": "Conquer (External Employee — 1hehaq)",
+  "description": "Subdomain takeover detection + exploitation by @1hehaq. Extends GHOST passive recon — flags dangling CNAMEs across heroku/s3/github-pages/azure-cloudapp and generates takeover PoCs.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "MIT",
+  "repository": "https://github.com/ProwlrBot/conquer", "upstream": "https://github.com/1hehaq/conquer",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "subdomain-takeover", "1hehaq"],
+  "kind": "employee", "bin": "conquer",
+  "capabilities_used": ["subdomain-takeover-detection", "poc-generation"],
+  "name": "Conquer"
+}

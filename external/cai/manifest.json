@@ -1,0 +1,12 @@
+{
+  "id": "external-cai",
+  "title": "CAI — Cybersecurity AI (External Employee)",
+  "description": "Alias Robotics CAI — framework for AI Security. Offensive-tuned agent runtime with red-team primitives. WIDOW delegates intrusive-profile chains to CAI when payload depth exceeds local model capacity.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/cai", "upstream": "https://github.com/aliasrobotics/cai",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "offensive-ai", "red-team", "framework"],
+  "kind": "employee", "bin": "cai",
+  "capabilities_used": ["offensive-reasoning", "exploit-chaining", "red-team-automation"],
+  "name": "CAI"
+}

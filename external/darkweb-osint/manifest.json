@@ -1,0 +1,11 @@
+{
+  "id": "external-darkweb-osint",
+  "title": "Dark Web OSINT Tools (External Toolkit)",
+  "description": "Curated dark-web OSINT toolkit by @apurvsinghgautam. Companion to Robin — provides the underlying searchers, scrapers, and crawlers.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "MIT",
+  "repository": "https://github.com/ProwlrBot/dark-web-osint-tools", "upstream": "https://github.com/apurvsinghgautam/dark-web-osint-tools",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["external", "darkweb", "osint", "toolkit"],
+  "kind": "toolkit",
+  "name": "Dark Web OSINT Tools"
+}

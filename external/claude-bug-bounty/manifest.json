@@ -1,0 +1,18 @@
+{
+  "id": "external-claude-bug-bounty",
+  "title": "Claude Bug Bounty (External Employee)",
+  "description": "Claude skill pack for bug bounty workflows — chain reasoning, report polish, CVSS justification, triage replies. Used by QUILL and Hunter.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "license": "MIT",
+  "repository": "https://github.com/ProwlrBot/claude-bug-bounty",
+  "upstream": "https://github.com/shuvonsec/claude-bug-bounty",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["external", "ai-skill-pack", "claude"],
+  "kind": "employee",
+  "bin": "claude",
+  "install_hint": "Install Claude Code CLI; clone skill pack into ~/.claude/skills/",
+  "skills_used": ["report-writer", "chain-builder", "validator", "recon-ranker"],
+  "name": "Claude Bug Bounty"
+}

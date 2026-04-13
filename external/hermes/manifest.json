@@ -1,0 +1,22 @@
+{
+  "id": "external-hermes",
+  "title": "Hermes Agent (External Employee)",
+  "description": "NousResearch's Hermes Agent — self-evolving agent that grows skills over time. Wired as a ProwlrBot employee for long-horizon learning tasks: skill discovery, prompt optimization, and persistent capability growth across hunts.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/hermes-agent",
+  "upstream": "https://github.com/NousResearch/hermes-agent",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["external", "self-evolving", "skill-learning", "dspy"],
+  "kind": "employee",
+  "bin": "hermes",
+  "install_hint": "git clone https://github.com/ProwlrBot/hermes-agent && cd hermes-agent && pip install -e .",
+  "companion_repos": [
+    "https://github.com/NousResearch/hermes-agent-self-evolution",
+    "https://github.com/NousResearch/hermes-paperclip-adapter"
+  ],
+  "capabilities_used": ["skill-discovery", "prompt-optimization", "persistent-memory", "self-improvement"],
+  "name": "Hermes Agent"
+}

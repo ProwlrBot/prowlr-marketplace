@@ -1,0 +1,23 @@
+{
+  "id": "agent-prowlr-quill",
+  "title": "Prowlr Quill",
+  "description": "Report writer. Generates platform-formatted reports (H1/Bugcrowd/Intigriti/Immunefi) with impact-first writing and CVSS justification.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["reporting", "bug-bounty-report-writing"],
+  "capabilities": ["bug-bounty-report-writing"],
+  "difficulty": "advanced",
+  "persona_tags": ["security-researcher"],
+  "preferred_provider": "anthropic",
+  "preferred_model": "claude-sonnet-4-6",
+  "fallback_models": ["bounty-gemma4:latest"],
+  "employees": ["claude-bug-bounty", "fabric"],
+  "config_schema": {
+    "report_template": {"type": "string", "default": "h1", "enum": ["h1", "bugcrowd", "intigriti", "immunefi", "internal"]}
+  },
+  "name": "Prowlr Quill"
+}

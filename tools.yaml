@@ -1,0 +1,377 @@
+# ProwlrBot tool registry — single source of truth for agent tool requirements.
+# Agents reference tools by id in `tools_required`. Loader checks `bin` on PATH,
+# falls back to `install_hint` when missing. Profiles gate by `tool_profile`:
+#   passive    — zero packets to target infra (OSINT, DNS, archived)
+#   active     — alive probing, port scans, crawling
+#   intrusive  — exploitation attempts, fuzzing with payloads (auth required)
+
+version: 1
+profiles: [passive, active, intrusive]
+
+categories:
+  recon-passive:
+    - id: subfinder
+      bin: subfinder
+      tool_profile: passive
+      replaces: [assetfinder, amass-passive]
+      feeds: [httpx, dnsx]
+      install_hint: "go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
+    - id: assetfinder
+      bin: assetfinder
+      tool_profile: passive
+    - id: amass
+      bin: amass
+      tool_profile: passive
+    - id: chaos
+      bin: chaos
+      tool_profile: passive
+      requires_env: [PDCP_API_KEY]
+    - id: asnmap
+      bin: asnmap
+      tool_profile: passive
+    - id: waybackurls
+      bin: waybackurls
+      tool_profile: passive
+    - id: gau
+      bin: gau
+      tool_profile: passive
+    - id: github-dorks
+      bin: gitdorks_go
+      tool_profile: passive
+      requires_env: [GITHUB_TOKEN]
+    - id: ghleaks
+      bin: ghleaks
+      tool_profile: passive
+      requires_env: [GITHUB_TOKEN]
+    - id: trufflehog
+      bin: trufflehog
+      tool_profile: passive
+    - id: gitleaks
+      bin: gitleaks
+      tool_profile: passive
+    - id: leaksearch
+      bin: LeakSearch
+      tool_profile: passive
+    - id: theharvester
+      bin: theHarvester
+      tool_profile: passive
+    - id: spiderfoot
+      bin: sf.py
+      tool_profile: passive
+    - id: bbot
+      bin: bbot
+      tool_profile: passive
+    - id: emailharvester
+      bin: EmailHarvester
+      tool_profile: passive
+    - id: metagoofil
+      bin: metagoofil
+      tool_profile: passive
+    - id: msftrecon
+      bin: msftrecon
+      tool_profile: passive
+    - id: cloud-enum
+      bin: cloud_enum
+      tool_profile: passive
+    - id: dorks-hunter
+      bin: dorks_hunter
+      tool_profile: passive
+
+  recon-active:
+    - id: httpx
+      bin: httpx
+      tool_profile: active
+      feeds: [katana, nuclei]
+    - id: dnsx
+      bin: dnsx
+      tool_profile: active
+    - id: naabu
+      bin: naabu
+      tool_profile: active
+    - id: katana
+      bin: katana
+      tool_profile: active
+      feeds: [nuclei, dalfox]
+    - id: gowitness
+      bin: gowitness
+      tool_profile: active
+    - id: cdncheck
+      bin: cdncheck
+      tool_profile: active
+    - id: dnstake
+      bin: dnstake
+      tool_profile: active
+    - id: regulator
+      bin: regulator
+      tool_profile: active
+    - id: massdns
+      bin: massdns
+      tool_profile: active
+    - id: mapcidr
+      bin: mapcidr
+      tool_profile: active
+
+  vuln-scan:
+    - id: nuclei
+      bin: nuclei
+      tool_profile: active
+      templates: ~/nuclei-templates/
+    - id: misconfig-mapper
+      bin: misconfig-mapper
+      tool_profile: active
+    - id: cmseek
+      bin: CMSeeK
+      tool_profile: active
+    - id: nerva
+      bin: nerva
+      tool_profile: active
+    - id: harbinger
+      bin: harbinger
+      tool_profile: active
+    - id: keyhound
+      bin: keyhound
+      tool_profile: passive
+    - id: flaw
+      bin: flaw
+      tool_profile: passive
+    - id: semgrep
+      bin: semgrep
+      tool_profile: passive
+
+  fuzzing:
+    - id: ffuf
+      bin: ffuf
+      tool_profile: intrusive
+    - id: arjun
+      bin: arjun
+      tool_profile: intrusive
+    - id: jsluice
+      bin: jsluice
+      tool_profile: passive
+    - id: gqlspection
+      bin: gqlspection
+      tool_profile: active
+    - id: payloadforge
+      bin: payloadforge
+      tool_profile: intrusive
+
+  exploitation:
+    - id: dalfox
+      bin: dalfox
+      tool_profile: intrusive
+    - id: nomore403
+      bin: nomore403
+      tool_profile: intrusive
+    - id: loxs
+      bin: loxs
+      tool_profile: intrusive
+    - id: gato
+      bin: gato
+      tool_profile: intrusive
+    - id: jsa
+      bin: JSA
+      tool_profile: passive
+    - id: mantra
+      bin: mantra
+      tool_profile: passive
+    - id: apikey-hunter
+      bin: apikey-hunter
+      tool_profile: passive
+
+  utility:
+    - id: anew
+      bin: anew
+      tool_profile: passive
+    - id: notify
+      bin: notify
+      tool_profile: passive
+    - id: shef
+      bin: shef
+      tool_profile: passive
+    - id: pdtm
+      bin: pdtm
+      tool_profile: passive
+
+  ai-analysis:
+    - id: fabric
+      bin: fabric
+      tool_profile: passive
+      kind: ai-pipeline
+      external: external/fabric
+    - id: claude-bug-bounty
+      bin: claude
+      tool_profile: passive
+      kind: ai-skill-pack
+      external: external/claude-bug-bounty
+    - id: nemoclaw
+      bin: nemoclaw
+      tool_profile: passive
+      kind: ai-runtime
+    - id: csbx
+      bin: csbx
+      tool_profile: passive
+      kind: ai-sandbox
+    - id: openfang
+      bin: openfang
+      tool_profile: passive
+      kind: ai-runtime
+      external: external/openfang
+    - id: hermes
+      bin: hermes
+      tool_profile: passive
+      kind: ai-agent
+      external: external/hermes
+    - id: clawteam
+      bin: clawteam
+      tool_profile: passive
+      kind: ai-orchestrator
+      external: external/clawteam
+    - id: openharness
+      bin: openharness
+      tool_profile: passive
+      kind: ai-runtime
+      external: external/openharness
+    - id: cai
+      bin: cai
+      tool_profile: active
+      kind: ai-offensive
+      external: external/cai
+    - id: agenticseek
+      bin: agenticseek
+      tool_profile: active
+      kind: ai-browser-agent
+      external: external/agenticseek
+    - id: conquer
+      bin: conquer
+      tool_profile: passive
+      external: external/conquer
+    - id: robin
+      bin: robin
+      tool_profile: passive
+      kind: ai-osint
+      external: external/robin
+    - id: wshobson-agents
+      kind: skill-pack
+      external: external/wshobson-agents
+
+  web3:
+    - id: slither
+      bin: slither
+      tool_profile: passive
+      install_hint: "pip install slither-analyzer"
+    - id: mythril
+      bin: myth
+      tool_profile: passive
+      install_hint: "pip install mythril"
+    - id: echidna
+      bin: echidna-test
+      tool_profile: intrusive
+    - id: foundry
+      bin: forge
+      tool_profile: passive
+    - id: semgrep-solidity
+      bin: semgrep
+      tool_profile: passive
+
+  mobile:
+    - id: mobsf
+      bin: mobsf
+      tool_profile: passive
+      install_hint: "docker run -p 8000:8000 opensecurity/mobile-security-framework-mobsf"
+    - id: frida
+      bin: frida
+      tool_profile: intrusive
+    - id: objection
+      bin: objection
+      tool_profile: intrusive
+    - id: apkleaks
+      bin: apkleaks
+      tool_profile: passive
+    - id: jadx
+      bin: jadx
+      tool_profile: passive
+    - id: apktool
+      bin: apktool
+      tool_profile: passive
+
+  cloud:
+    - id: prowler
+      bin: prowler
+      tool_profile: passive
+      install_hint: "pip install prowler"
+    - id: scoutsuite
+      bin: scout
+      tool_profile: passive
+    - id: kube-hunter
+      bin: kube-hunter
+      tool_profile: active
+    - id: pacu
+      bin: pacu
+      tool_profile: intrusive
+    - id: cloudsplaining
+      bin: cloudsplaining
+      tool_profile: passive
+
+  llm-redteam:
+    - id: promptfoo
+      bin: promptfoo
+      tool_profile: active
+      install_hint: "npm install -g promptfoo"
+    - id: garak
+      bin: garak
+      tool_profile: active
+      install_hint: "pip install garak"
+    - id: pyrit
+      bin: pyrit
+      tool_profile: active
+      install_hint: "pip install pyrit"
+    - id: deepteam
+      bin: deepteam
+      tool_profile: active
+      install_hint: "pip install deepteam"
+
+  intel:
+    - id: cve-search
+      bin: cve_searchsploit
+      tool_profile: passive
+    - id: nuclei-templates-watch
+      bin: nuclei
+      args: [-update-templates]
+      tool_profile: passive
+    - id: github-advisories
+      kind: api
+      endpoint: "https://api.github.com/advisories"
+
+  platform-api:
+    - id: hackerone-api
+      kind: api
+      endpoint: "https://api.hackerone.com/v1"
+      requires_env: [HACKERONE_API_USER, HACKERONE_API_TOKEN]
+    - id: bugcrowd-api
+      kind: api
+      endpoint: "https://api.bugcrowd.com"
+      requires_env: [BUGCROWD_API_TOKEN]
+    - id: intigriti-api
+      kind: api
+      endpoint: "https://api.intigriti.com"
+      requires_env: [INTIGRITI_API_TOKEN]
+
+  wordlists:
+    - id: seclists
+      kind: corpus
+      path: /usr/share/seclists
+    - id: cewl
+      bin: cewl
+      tool_profile: passive
+    - id: crunch
+      bin: crunch
+      tool_profile: passive
+
+  memory:
+    - id: prowlr-recall
+      bin: prowlr
+      args: [recall]
+      tool_profile: passive
+    - id: obsidian-vault
+      kind: notebook
+      path_env: OBSIDIAN_VAULT

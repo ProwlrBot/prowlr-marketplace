@@ -1,0 +1,25 @@
+{
+  "id": "agent-prowlr-nexus",
+  "title": "Prowlr Nexus",
+  "description": "Agency orchestrator. Plans engagements, dispatches GHOST/WIDOW/PROOF/QUILL via ROAR, tracks budget and scope across the operation.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["orchestrator", "agency", "bug-bounty"],
+  "capabilities": ["task-planning", "agent-dispatch", "budget-tracking", "scope-validation"],
+  "difficulty": "advanced",
+  "persona_tags": ["security-researcher"],
+  "preferred_provider": "anthropic",
+  "preferred_model": "claude-sonnet-4-6",
+  "fallback_models": ["bounty-gemma4:latest"],
+  "delegates": ["prowlr-triage", "prowlr-ghost", "prowlr-widow", "prowlr-proof", "prowlr-quill", "prowlr-cipher", "prowlr-mirror", "prowlr-drift", "prowlr-broker", "prowlr-scry", "prowlr-forge", "prowlr-prism", "prowlr-chronicle", "prowlr-ledger"],
+  "employees": ["openfang", "hermes", "clawteam", "openharness"],
+  "config_schema": {
+    "max_parallel": {"type": "integer", "default": 3, "minimum": 1, "maximum": 8},
+    "budget_minutes": {"type": "integer", "default": 60}
+  },
+  "name": "Prowlr Nexus"
+}

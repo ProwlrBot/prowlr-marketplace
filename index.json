@@ -1,9 +1,9 @@
 {
   "version": "1",
-  "generated_at": "2026-04-12T12:39:30.736602+00:00",
-  "total": 76,
+  "generated_at": "2026-04-13T10:56:01.713392+00:00",
+  "total": 104,
   "categories": {
-    "agents": 23,
+    "agents": 51,
     "skills": 30,
     "workflows": 9,
     "mcp-servers": 2,
@@ -111,6 +111,76 @@
       "manifest": "agents/prowlr-backend/manifest.json"
     },
     {
+      "id": "agent-prowlr-broker",
+      "slug": "prowlr-broker",
+      "category": "agents",
+      "title": "Prowlr Broker",
+      "description": "Bounty platform liaison. Talks to HackerOne/Bugcrowd/Intigriti APIs — submit reports, sync status, auto-respond to triager nudges, schedule re-tests.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "platform-api",
+        "automation",
+        "submissions"
+      ],
+      "persona_tags": [
+        "bug-bounty-hunter"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-broker",
+      "manifest": "agents/prowlr-broker/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-chronicle",
+      "slug": "prowlr-chronicle",
+      "category": "agents",
+      "title": "Prowlr Chronicle",
+      "description": "Obsidian vault sync writer. Mirrors hunt sessions, recon outputs, and findings into the second-brain structure (04 - Hunt Journal, 03 - Targets). Bridges agency state to your knowledge base.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "obsidian",
+        "sync",
+        "knowledge-base"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-chronicle",
+      "manifest": "agents/prowlr-chronicle/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-cipher",
+      "slug": "prowlr-cipher",
+      "category": "agents",
+      "title": "Prowlr Cipher",
+      "description": "Web3 / smart-contract auditor. Slither + Mythril static analysis, Echidna fuzzing, Foundry tests. Targets Immunefi-scope contracts where payouts dwarf web bounties.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "web3",
+        "smart-contracts",
+        "solidity",
+        "immunefi"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-cipher",
+      "manifest": "agents/prowlr-cipher/manifest.json"
+    },
+    {
       "id": "agent-prowlr-data-engineer",
       "slug": "prowlr-data-engineer",
       "category": "agents",
@@ -185,6 +255,54 @@
       "manifest": "agents/prowlr-devops/manifest.json"
     },
     {
+      "id": "agent-prowlr-drift",
+      "slug": "prowlr-drift",
+      "category": "agents",
+      "title": "Prowlr Drift",
+      "description": "Cloud misconfig hunter. Prowler/ScoutSuite for AWS/Azure/GCP, kube-hunter for k8s, cloud-enum for unauth bucket/blob discovery, cloudsplaining for IAM analysis.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "cloud",
+        "aws",
+        "gcp",
+        "azure",
+        "kubernetes"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-drift",
+      "manifest": "agents/prowlr-drift/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-forge",
+      "slug": "prowlr-forge",
+      "category": "agents",
+      "title": "Prowlr Forge",
+      "description": "Wordlist + payload generator. Curates SecLists subsets per target stack (PHP / Node / Rails / k8s / etc), generates target-specific dictionaries via cewl/crunch, builds custom payload sets for WIDOW.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "wordlists",
+        "payloads",
+        "fuzzing"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-forge",
+      "manifest": "agents/prowlr-forge/manifest.json"
+    },
+    {
       "id": "agent-prowlr-frontend",
       "slug": "prowlr-frontend",
       "category": "agents",
@@ -237,6 +355,29 @@
       "manifest": "agents/prowlr-gamedev/manifest.json"
     },
     {
+      "id": "agent-prowlr-ghost",
+      "slug": "prowlr-ghost",
+      "category": "agents",
+      "title": "Prowlr Ghost",
+      "description": "Recon specialist. Passive-first surface mapping: subdomains, ASNs, archived URLs, leaked secrets, then active probing per profile.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "recon",
+        "osint",
+        "subdomain-enumeration"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-ghost",
+      "manifest": "agents/prowlr-ghost/manifest.json"
+    },
+    {
       "id": "agent-prowlr-guard",
       "slug": "prowlr-guard",
       "category": "agents",
@@ -259,6 +400,56 @@
       "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-guard",
       "manifest": "agents/prowlr-guard/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-hunter",
+      "slug": "prowlr-hunter",
+      "category": "agents",
+      "title": "Prowlr Hunter",
+      "description": "Bug bounty hunter agent — recon, vuln analysis, payload generation, chaining, and report writing. Tool-registry driven. Defaults to the bounty-gemma4 fine-tune via local Ollama.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "bug-bounty",
+        "recon",
+        "vulnerability-research",
+        "payload-generation",
+        "report-writing",
+        "fine-tuned"
+      ],
+      "persona_tags": [
+        "security-researcher",
+        "bug-bounty-hunter"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-hunter",
+      "manifest": "agents/prowlr-hunter/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-ledger",
+      "slug": "prowlr-ledger",
+      "category": "agents",
+      "title": "Prowlr Ledger",
+      "description": "Earnings + ROI tracker. Logs submissions, payouts, time-spent per finding. Writes to Obsidian 10 - Finance/. Tells you which programs actually pay.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "finance",
+        "roi",
+        "tracking"
+      ],
+      "persona_tags": [
+        "bug-bounty-hunter"
+      ],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-ledger",
+      "manifest": "agents/prowlr-ledger/manifest.json"
     },
     {
       "id": "agent-prowlr-legal",
@@ -287,6 +478,31 @@
       "manifest": "agents/prowlr-legal/manifest.json"
     },
     {
+      "id": "agent-prowlr-mirror",
+      "slug": "prowlr-mirror",
+      "category": "agents",
+      "title": "Prowlr Mirror",
+      "description": "Mobile (Android/iOS) testing. APK/IPA decompile via jadx/apktool, static scan with apkleaks + MobSF, dynamic instrumentation with frida + objection.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "mobile",
+        "android",
+        "ios",
+        "apk",
+        "ipa"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-mirror",
+      "manifest": "agents/prowlr-mirror/manifest.json"
+    },
+    {
       "id": "agent-prowlr-mobile",
       "slug": "prowlr-mobile",
       "category": "agents",
@@ -313,6 +529,29 @@
       "manifest": "agents/prowlr-mobile/manifest.json"
     },
     {
+      "id": "agent-prowlr-nexus",
+      "slug": "prowlr-nexus",
+      "category": "agents",
+      "title": "Prowlr Nexus",
+      "description": "Agency orchestrator. Plans engagements, dispatches GHOST/WIDOW/PROOF/QUILL via ROAR, tracks budget and scope across the operation.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "orchestrator",
+        "agency",
+        "bug-bounty"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-nexus",
+      "manifest": "agents/prowlr-nexus/manifest.json"
+    },
+    {
       "id": "agent-prowlr-pm",
       "slug": "prowlr-pm",
       "category": "agents",
@@ -337,6 +576,74 @@
       "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-pm",
       "manifest": "agents/prowlr-pm/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-prism",
+      "slug": "prowlr-prism",
+      "category": "agents",
+      "title": "Prowlr Prism",
+      "description": "LLM red-team specialist. Tests AI systems for prompt injection, data exfiltration, MCP exploitation, system prompt leakage, multi-turn crescendo. Wraps promptfoo/garak/pyrit/deepteam.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "llm-redteam",
+        "ai-security",
+        "prompt-injection"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-prism",
+      "manifest": "agents/prowlr-prism/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-proof",
+      "slug": "prowlr-proof",
+      "category": "agents",
+      "title": "Prowlr Proof",
+      "description": "Validation specialist. Reproduces findings from clean session, captures req/resp, computes CVSS 3.1, kills theoretical bugs.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "validation",
+        "reproduction",
+        "cvss"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-proof",
+      "manifest": "agents/prowlr-proof/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-quill",
+      "slug": "prowlr-quill",
+      "category": "agents",
+      "title": "Prowlr Quill",
+      "description": "Report writer. Generates platform-formatted reports (H1/Bugcrowd/Intigriti/Immunefi) with impact-first writing and CVSS justification.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "reporting",
+        "bug-bounty-report-writing"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-quill",
+      "manifest": "agents/prowlr-quill/manifest.json"
     },
     {
       "id": "agent-prowlr-sales",
@@ -391,6 +698,29 @@
       "manifest": "agents/prowlr-scout/manifest.json"
     },
     {
+      "id": "agent-prowlr-scry",
+      "slug": "prowlr-scry",
+      "category": "agents",
+      "title": "Prowlr Scry",
+      "description": "Threat intel watcher. Monitors fresh CVEs, nuclei templates, GitHub advisories, paste sites — flags when a target's stack has a new published exploit. Feeds TRIAGE and Hunter.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "threat-intel",
+        "monitoring",
+        "cve"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-scry",
+      "manifest": "agents/prowlr-scry/manifest.json"
+    },
+    {
       "id": "agent-prowlr-security",
       "slug": "prowlr-security",
       "category": "agents",
@@ -441,6 +771,29 @@
       "manifest": "agents/prowlr-support/manifest.json"
     },
     {
+      "id": "agent-prowlr-triage",
+      "slug": "prowlr-triage",
+      "category": "agents",
+      "title": "Prowlr Triage",
+      "description": "Pre-hunt triage. Checks scope freshness, dedupe against prowlr-recall memory, RoE constraints, and known-issue lists before NEXUS dispatches the squad.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "triage",
+        "scope-validation",
+        "dedup"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-triage",
+      "manifest": "agents/prowlr-triage/manifest.json"
+    },
+    {
       "id": "agent-prowlr-tutor",
       "slug": "prowlr-tutor",
       "category": "agents",
@@ -465,6 +818,29 @@
       "min_prowlrbot_version": "0.1.0",
       "path": "agents/prowlr-tutor",
       "manifest": "agents/prowlr-tutor/manifest.json"
+    },
+    {
+      "id": "agent-prowlr-widow",
+      "slug": "prowlr-widow",
+      "category": "agents",
+      "title": "Prowlr Widow",
+      "description": "Exploitation specialist. Crafts payloads, runs nuclei + dalfox + ffuf + arjun, chains low-impact bugs into critical findings.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "exploitation",
+        "payload-generation",
+        "vulnerability-chaining"
+      ],
+      "persona_tags": [
+        "security-researcher"
+      ],
+      "difficulty": "advanced",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "agents/prowlr-widow",
+      "manifest": "agents/prowlr-widow/manifest.json"
     },
     {
       "id": "agent-prowlr-writer",
@@ -782,6 +1158,28 @@
       "manifest": "consumer/study-planner/manifest.json"
     },
     {
+      "id": "external-agenticseek",
+      "slug": "agenticseek",
+      "category": "agents",
+      "title": "AgenticSeek (External Employee)",
+      "description": "Fully-local Manus-style autonomous agent — browses web, writes code, plans tasks. No API costs. GHOST delegates JS-heavy SPA recon to AgenticSeek when katana can't render the surface.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "GPL-3.0",
+      "tags": [
+        "external",
+        "local-agent",
+        "web-browsing",
+        "autonomous"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/agenticseek",
+      "manifest": "external/agenticseek/manifest.json"
+    },
+    {
       "id": "computer-use",
       "slug": "computer-use",
       "category": "skills",
@@ -938,6 +1336,71 @@
       "risk_level": "clean"
     },
     {
+      "id": "external-cai",
+      "slug": "cai",
+      "category": "agents",
+      "title": "CAI — Cybersecurity AI (External Employee)",
+      "description": "Alias Robotics CAI — framework for AI Security. Offensive-tuned agent runtime with red-team primitives. WIDOW delegates intrusive-profile chains to CAI when payload depth exceeds local model capacity.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "external",
+        "offensive-ai",
+        "red-team",
+        "framework"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/cai",
+      "manifest": "external/cai/manifest.json"
+    },
+    {
+      "id": "external-claude-bug-bounty",
+      "slug": "claude-bug-bounty",
+      "category": "agents",
+      "title": "Claude Bug Bounty (External Employee)",
+      "description": "Claude skill pack for bug bounty workflows — chain reasoning, report polish, CVSS justification, triage replies. Used by QUILL and Hunter.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "external",
+        "ai-skill-pack",
+        "claude"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/claude-bug-bounty",
+      "manifest": "external/claude-bug-bounty/manifest.json"
+    },
+    {
+      "id": "external-clawteam",
+      "slug": "clawteam",
+      "category": "agents",
+      "title": "ClawTeam (External Employee)",
+      "description": "HKUDS ClawTeam — agent swarm intelligence with one-command full automation. Wired as alt orchestrator for parallel multi-target hunts; NEXUS routes wide-fan engagements through it.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "external",
+        "swarm",
+        "multi-agent",
+        "orchestrator"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/clawteam",
+      "manifest": "external/clawteam/manifest.json"
+    },
+    {
       "id": "cron-scheduler",
       "slug": "cron-scheduler",
       "category": "skills",
@@ -1069,6 +1532,70 @@
       "risk_level": "clean"
     },
     {
+      "id": "external-conquer",
+      "slug": "conquer",
+      "category": "agents",
+      "title": "Conquer (External Employee — 1hehaq)",
+      "description": "Subdomain takeover detection + exploitation by @1hehaq. Extends GHOST passive recon — flags dangling CNAMEs across heroku/s3/github-pages/azure-cloudapp and generates takeover PoCs.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "external",
+        "subdomain-takeover",
+        "1hehaq"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/conquer",
+      "manifest": "external/conquer/manifest.json"
+    },
+    {
+      "id": "external-darkweb-osint",
+      "slug": "darkweb-osint",
+      "category": "agents",
+      "title": "Dark Web OSINT Tools (External Toolkit)",
+      "description": "Curated dark-web OSINT toolkit by @apurvsinghgautam. Companion to Robin — provides the underlying searchers, scrapers, and crawlers.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "external",
+        "darkweb",
+        "osint",
+        "toolkit"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/darkweb-osint",
+      "manifest": "external/darkweb-osint/manifest.json"
+    },
+    {
+      "id": "external-fabric",
+      "slug": "fabric",
+      "category": "agents",
+      "title": "Fabric (External Employee)",
+      "description": "Daniel Miessler's Fabric — pattern-driven AI pipelines. Wired as a ProwlrBot 'employee' agents can call via ROAR delegate for analyze_threat_report, improve_writing, extract_wisdom, etc.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "external",
+        "ai-pipeline",
+        "pattern-library"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/fabric",
+      "manifest": "external/fabric/manifest.json"
+    },
+    {
       "id": "code-review-bot",
       "slug": "code-review-bot",
       "category": "skills",
@@ -1197,6 +1724,116 @@
       "source": "https://github.com/block/goose/tree/main/docs/recipes",
       "verified": true,
       "risk_level": "low"
+    },
+    {
+      "id": "external-hermes",
+      "slug": "hermes",
+      "category": "agents",
+      "title": "Hermes Agent (External Employee)",
+      "description": "NousResearch's Hermes Agent — self-evolving agent that grows skills over time. Wired as a ProwlrBot employee for long-horizon learning tasks: skill discovery, prompt optimization, and persistent capab",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "external",
+        "self-evolving",
+        "skill-learning",
+        "dspy"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/hermes",
+      "manifest": "external/hermes/manifest.json"
+    },
+    {
+      "id": "external-openfang",
+      "slug": "openfang",
+      "category": "agents",
+      "title": "OpenFang (External Employee)",
+      "description": "RightNow-AI's OpenFang — open-source agent operating system. Wired as a ProwlrBot employee for sandboxed agent execution and cross-agent task routing.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "external",
+        "agent-os",
+        "sandbox",
+        "runtime"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/openfang",
+      "manifest": "external/openfang/manifest.json"
+    },
+    {
+      "id": "external-openharness",
+      "slug": "openharness",
+      "category": "agents",
+      "title": "OpenHarness (External Employee)",
+      "description": "HKUDS OpenHarness — open agent harness with built-in personal agent (Ohmo). Alternative runtime to OpenFang; agent loop + tools + memory + multi-agent in one binary.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "Apache-2.0",
+      "tags": [
+        "external",
+        "harness",
+        "agent-loop",
+        "memory"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/openharness",
+      "manifest": "external/openharness/manifest.json"
+    },
+    {
+      "id": "external-robin",
+      "slug": "robin",
+      "category": "agents",
+      "title": "Robin — Dark Web OSINT (External Employee)",
+      "description": "AI-powered dark web OSINT by @apurvsinghgautam. Extends GHOST/SCRY surface — searches onion services, paste sites, breach forums for target leaks.",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "external",
+        "darkweb",
+        "osint",
+        "ai-powered"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/robin",
+      "manifest": "external/robin/manifest.json"
+    },
+    {
+      "id": "external-wshobson-agents",
+      "slug": "wshobson-agents",
+      "category": "agents",
+      "title": "wshobson Claude Agents (External Skill Pack)",
+      "description": "wshobson's intelligent automation + multi-agent orchestration for Claude Code. Provides ~75 specialized subagents we cherry-pick from for non-bounty tasks (code review, infra, research) without rebuil",
+      "version": "0.1.0",
+      "author": "ProwlrBot",
+      "pricing_model": "free",
+      "license": "MIT",
+      "tags": [
+        "external",
+        "claude-code",
+        "subagents",
+        "skill-pack"
+      ],
+      "persona_tags": [],
+      "difficulty": "intermediate",
+      "min_prowlrbot_version": "0.1.0",
+      "path": "external/wshobson-agents",
+      "manifest": "external/wshobson-agents/manifest.json"
     },
     {
       "id": "mcp-prowlr-hub",

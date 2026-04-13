@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "ProwlrBot",
   "license": "MIT",
-  "repository": "https://github.com/ProwlrBot/fabric",
+  "repository": "https://github.com/ProwlrBot/Fabric",
   "upstream": "https://github.com/danielmiessler/fabric",
   "min_prowlrbot_version": "0.1.0",
   "category": "agents",

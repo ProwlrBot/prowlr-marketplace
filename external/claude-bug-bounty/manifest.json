@@ -6,7 +6,7 @@
   "author": "ProwlrBot",
   "license": "MIT",
   "repository": "https://github.com/ProwlrBot/claude-bug-bounty",
-  "upstream": "https://github.com/anthropic-experimental/claude-bug-bounty",
+  "upstream": "https://github.com/shuvonsec/claude-bug-bounty",
   "min_prowlrbot_version": "0.1.0",
   "category": "agents",
   "tags": ["external", "ai-skill-pack", "claude"],

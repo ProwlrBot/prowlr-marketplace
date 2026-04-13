@@ -15,7 +15,7 @@
   "preferred_provider": "anthropic",
   "preferred_model": "claude-sonnet-4-6",
   "fallback_models": ["bounty-gemma4:latest"],
-  "delegates": ["prowlr-ghost", "prowlr-widow", "prowlr-proof", "prowlr-quill"],
+  "delegates": ["prowlr-triage", "prowlr-ghost", "prowlr-widow", "prowlr-proof", "prowlr-quill", "prowlr-cipher", "prowlr-mirror", "prowlr-drift", "prowlr-broker", "prowlr-scry", "prowlr-forge", "prowlr-prism", "prowlr-chronicle", "prowlr-ledger"],
   "employees": ["openfang", "hermes", "clawteam", "openharness"],
   "config_schema": {
     "max_parallel": {"type": "integer", "default": 3, "minimum": 1, "maximum": 8},

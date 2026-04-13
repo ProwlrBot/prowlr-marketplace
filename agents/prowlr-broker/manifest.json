@@ -1,0 +1,17 @@
+{
+  "id": "agent-prowlr-broker",
+  "title": "Prowlr Broker",
+  "description": "Bounty platform liaison. Talks to HackerOne/Bugcrowd/Intigriti APIs — submit reports, sync status, auto-respond to triager nudges, schedule re-tests.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["platform-api", "automation", "submissions"],
+  "capabilities": ["report-submission", "status-sync", "triager-comms"],
+  "difficulty": "advanced", "persona_tags": ["bug-bounty-hunter"],
+  "preferred_provider": "anthropic", "preferred_model": "claude-sonnet-4-6",
+  "fallback_models": ["bounty-gemma4:latest"],
+  "tools_required": {
+    "passive": ["hackerone-api", "bugcrowd-api", "intigriti-api"]
+  },
+  "name": "Prowlr Broker"
+}

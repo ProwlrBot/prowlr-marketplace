@@ -254,6 +254,119 @@ categories:
       kind: skill-pack
       external: external/wshobson-agents
 
+  web3:
+    - id: slither
+      bin: slither
+      tool_profile: passive
+      install_hint: "pip install slither-analyzer"
+    - id: mythril
+      bin: myth
+      tool_profile: passive
+      install_hint: "pip install mythril"
+    - id: echidna
+      bin: echidna-test
+      tool_profile: intrusive
+    - id: foundry
+      bin: forge
+      tool_profile: passive
+    - id: semgrep-solidity
+      bin: semgrep
+      tool_profile: passive
+
+  mobile:
+    - id: mobsf
+      bin: mobsf
+      tool_profile: passive
+      install_hint: "docker run -p 8000:8000 opensecurity/mobile-security-framework-mobsf"
+    - id: frida
+      bin: frida
+      tool_profile: intrusive
+    - id: objection
+      bin: objection
+      tool_profile: intrusive
+    - id: apkleaks
+      bin: apkleaks
+      tool_profile: passive
+    - id: jadx
+      bin: jadx
+      tool_profile: passive
+    - id: apktool
+      bin: apktool
+      tool_profile: passive
+
+  cloud:
+    - id: prowler
+      bin: prowler
+      tool_profile: passive
+      install_hint: "pip install prowler"
+    - id: scoutsuite
+      bin: scout
+      tool_profile: passive
+    - id: kube-hunter
+      bin: kube-hunter
+      tool_profile: active
+    - id: pacu
+      bin: pacu
+      tool_profile: intrusive
+    - id: cloudsplaining
+      bin: cloudsplaining
+      tool_profile: passive
+
+  llm-redteam:
+    - id: promptfoo
+      bin: promptfoo
+      tool_profile: active
+      install_hint: "npm install -g promptfoo"
+    - id: garak
+      bin: garak
+      tool_profile: active
+      install_hint: "pip install garak"
+    - id: pyrit
+      bin: pyrit
+      tool_profile: active
+      install_hint: "pip install pyrit"
+    - id: deepteam
+      bin: deepteam
+      tool_profile: active
+      install_hint: "pip install deepteam"
+
+  intel:
+    - id: cve-search
+      bin: cve_searchsploit
+      tool_profile: passive
+    - id: nuclei-templates-watch
+      bin: nuclei
+      args: [-update-templates]
+      tool_profile: passive
+    - id: github-advisories
+      kind: api
+      endpoint: "https://api.github.com/advisories"
+
+  platform-api:
+    - id: hackerone-api
+      kind: api
+      endpoint: "https://api.hackerone.com/v1"
+      requires_env: [HACKERONE_API_USER, HACKERONE_API_TOKEN]
+    - id: bugcrowd-api
+      kind: api
+      endpoint: "https://api.bugcrowd.com"
+      requires_env: [BUGCROWD_API_TOKEN]
+    - id: intigriti-api
+      kind: api
+      endpoint: "https://api.intigriti.com"
+      requires_env: [INTIGRITI_API_TOKEN]
+
+  wordlists:
+    - id: seclists
+      kind: corpus
+      path: /usr/share/seclists
+    - id: cewl
+      bin: cewl
+      tool_profile: passive
+    - id: crunch
+      bin: crunch
+      tool_profile: passive
+
   memory:
     - id: prowlr-recall
       bin: prowlr

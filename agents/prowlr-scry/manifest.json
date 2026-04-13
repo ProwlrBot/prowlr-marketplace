@@ -1,0 +1,16 @@
+{
+  "id": "agent-prowlr-scry",
+  "title": "Prowlr Scry",
+  "description": "Threat intel watcher. Monitors fresh CVEs, nuclei templates, GitHub advisories, paste sites — flags when a target's stack has a new published exploit. Feeds TRIAGE and Hunter.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["threat-intel", "monitoring", "cve"],
+  "capabilities": ["threat-intel-monitoring", "cve-correlation"],
+  "difficulty": "intermediate", "persona_tags": ["security-researcher"],
+  "preferred_provider": "ollama", "preferred_model": "bounty-gemma4:latest",
+  "tools_required": {
+    "passive": ["cve-search", "nuclei-templates-watch", "github-advisories", "robin"]
+  },
+  "name": "Prowlr Scry"
+}

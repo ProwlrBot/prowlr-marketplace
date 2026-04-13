@@ -1,0 +1,21 @@
+{
+  "id": "agent-prowlr-cipher",
+  "title": "Prowlr Cipher",
+  "description": "Web3 / smart-contract auditor. Slither + Mythril static analysis, Echidna fuzzing, Foundry tests. Targets Immunefi-scope contracts where payouts dwarf web bounties.",
+  "version": "0.1.0", "author": "ProwlrBot", "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0", "category": "agents",
+  "tags": ["web3", "smart-contracts", "solidity", "immunefi"],
+  "capabilities": ["smart-contract-audit", "vulnerability-scanning"],
+  "difficulty": "advanced", "persona_tags": ["security-researcher"],
+  "preferred_provider": "anthropic", "preferred_model": "claude-sonnet-4-6",
+  "fallback_models": ["bounty-gemma4:latest"],
+  "tools_required": {
+    "passive": ["slither", "mythril", "foundry", "semgrep-solidity"],
+    "intrusive": ["echidna"]
+  },
+  "config_schema": {
+    "report_template": {"type": "string", "default": "immunefi", "enum": ["immunefi", "h1", "internal"]}
+  },
+  "name": "Prowlr Cipher"
+}

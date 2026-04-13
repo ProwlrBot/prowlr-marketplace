@@ -1,0 +1,32 @@
+{
+  "id": "agent-prowlr-hunter",
+  "title": "Prowlr Hunter",
+  "description": "Bug bounty hunter agent — recon, vuln analysis, payload generation, chaining, and report writing. Tool-registry driven. Defaults to the bounty-gemma4 fine-tune via local Ollama.",
+  "version": "0.1.0",
+  "author": "ProwlrBot",
+  "pricing_model": "free",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["bug-bounty", "recon", "vulnerability-research", "payload-generation", "report-writing", "fine-tuned"],
+  "capabilities": ["subdomain-enumeration", "tech-fingerprinting", "vulnerability-scanning", "payload-generation", "vulnerability-chaining", "bug-bounty-report-writing", "scope-validation"],
+  "difficulty": "advanced",
+  "persona_tags": ["security-researcher", "bug-bounty-hunter"],
+  "preferred_provider": "ollama",
+  "preferred_model": "bounty-gemma4:latest",
+  "fallback_models": ["qwen3.5:9b", "gemma4:latest"],
+  "tools_required": {
+    "passive": ["subfinder", "asnmap", "waybackurls", "gau", "github-dorks", "trufflehog", "jsluice"],
+    "active": ["httpx", "dnsx", "naabu", "katana", "nuclei"],
+    "intrusive": ["ffuf", "arjun", "dalfox", "nomore403"]
+  },
+  "employees": ["fabric", "claude-bug-bounty"],
+  "config_schema": {
+    "scope_mode": {"type": "string", "default": "strict", "enum": ["strict", "advisory", "off"]},
+    "tool_profile": {"type": "string", "default": "passive", "enum": ["passive", "active", "intrusive"]},
+    "report_template": {"type": "string", "default": "h1", "enum": ["h1", "bugcrowd", "intigriti", "immunefi", "internal"]},
+    "max_steps": {"type": "integer", "default": 25, "minimum": 1, "maximum": 200}
+  },
+  "name": "Prowlr Hunter"
+}

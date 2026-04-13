@@ -1,0 +1,15 @@
+{
+  "id": "external-openfang",
+  "title": "OpenFang (External Employee — Stub)",
+  "description": "Stub for the OpenFang offensive AI runtime. Reserved as an employee slot; not wired in v0.1. Tracking issue at ProwlrBot/prowlr-marketplace.",
+  "version": "0.0.1",
+  "author": "ProwlrBot",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ProwlrBot/prowlr-marketplace",
+  "min_prowlrbot_version": "0.1.0",
+  "category": "agents",
+  "tags": ["external", "stub", "ai-runtime"],
+  "kind": "employee",
+  "status": "stub",
+  "name": "OpenFang"
+}

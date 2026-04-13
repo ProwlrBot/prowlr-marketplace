@@ -216,6 +216,11 @@ categories:
       tool_profile: passive
       kind: ai-runtime
       external: external/openfang
+    - id: hermes
+      bin: hermes
+      tool_profile: passive
+      kind: ai-agent
+      external: external/hermes
 
   memory:
     - id: prowlr-recall

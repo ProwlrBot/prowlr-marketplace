@@ -211,6 +211,11 @@ categories:
       bin: csbx
       tool_profile: passive
       kind: ai-sandbox
+    - id: openfang
+      bin: openfang
+      tool_profile: passive
+      kind: ai-runtime
+      external: external/openfang
 
   memory:
     - id: prowlr-recall

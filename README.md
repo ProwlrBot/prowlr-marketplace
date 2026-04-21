@@ -24,7 +24,7 @@
 
 ## What Is This?
 
-This is the **community registry** for [ProwlrBot](https://github.com/ProwlrBot/prowlrbot). Think npm for AI agents — but with 6 categories and a 70/30 revenue split.
+This is the **community registry** for [ProwlrBot](https://github.com/ProwlrBot/prowlrbot)
 
 When you run `prowlr market update`, your ProwlrBot fetches listings from this repo and makes them available locally.
 
@@ -85,7 +85,6 @@ Every listing needs a `manifest.json`:
   "author": "your-github-handle",
   "category": "skills",
   "tags": ["relevant", "searchable", "tags"],
-  "pricing_model": "free",
   "license": "Apache-2.0"
 }
 ```
@@ -98,7 +97,6 @@ Every listing needs a `manifest.json`:
 | **prowlr-marketplace** (you are here) | Community registry |
 | [roar-protocol](https://github.com/ProwlrBot/roar-protocol) | Agent communication protocol spec |
 | [prowlr-docs](https://github.com/ProwlrBot/prowlr-docs) | Documentation |
-| [agentverse](https://github.com/ProwlrBot/agentverse) | Virtual world for agents |
 
 ---
 
